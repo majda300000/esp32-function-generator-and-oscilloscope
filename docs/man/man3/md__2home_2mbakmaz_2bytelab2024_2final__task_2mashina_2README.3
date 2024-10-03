@@ -1,0 +1,186 @@
+.TH "md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README" 3 "Version ." "Mashina" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README \- 🚀 Function Generator and Oscilloscope on ESP32 Bytelab DevKit 
+.PP
+
+
+.PP
+Welcome to the \fBESP32 Function Generator and Oscilloscope\fP project, developed as part of the \fBBytelab Software Academy 2024\fP final task! This project combines the power of an oscilloscope with a function generator, packed with versatile features and built for the \fBESP32\fP platform\&.
+.SH "📋 Overview"
+.PP
+This project includes:
+.IP "\(bu" 2
+\fBOscilloscope\fP: Capable of measuring and displaying two signals in real-time\&.
+.IP "\(bu" 2
+\fBFunction Generator\fP: Generates 4 waveform types with adjustable frequency, amplitude, and duty cycle\&.
+.PP
+
+.PP
+Perfect for anyone looking to explore signal analysis and waveform generation with an easy-to-use interface that supports both touchscreen and physical controls!
+.SH "🔌 Pinout"
+.PP
+The pin connections for the oscilloscope and function generator are as follows:
+
+.PP
+Component   Pin   ESP32 Pin    \fBOscilloscope CH1\fP   BTN_3   GPIO33    \fBOscilloscope CH2\fP   BTN_2   GPIO32    \fBFunction Output\fP   BTN_4   GPIO25   
+.SH "🎮 Controls"
+.PP
+.IP "\(bu" 2
+\fBTouchscreen\fP: Directly interact with on-screen elements\&.
+.IP "\(bu" 2
+\fBJoystick\fP: Navigate through options by moving left/right\&.
+.IP "\(bu" 2
+\fBButton (BTN_1)\fP: Select an item or confirm an action\&.
+.PP
+.SH "🛠️ Requirements"
+.PP
+Before getting started, ensure you have the following:
+.IP "\(bu" 2
+\fBESP-IDF\fP version 5\&.0 or higher\&.
+.IP "\(bu" 2
+\fBLVGL\fP library version 8\&.3\&.*
+.PP
+.SH "🚀 Getting Started"
+.PP
+.SS "Project Structure"
+This project utilizes two key submodules:
+.IP "\(bu" 2
+\fB\fRLVGL\fP\fP: A powerful graphics library\&.
+.IP "\(bu" 2
+\fB\fRLVGL ESP32 Drivers\fP\fP: Hardware drivers for LVGL\&. \fI(Note: A custom patch for version 8\&.3 is provided)\fP\&.
+.PP
+.SS "Build and Run"
+.IP "1." 4
+\fBClone the repository\fP: 
+.PP
+.nf
+git clone \-\-recursive https://git\&.byte\-lab\&.com/byte\-lab/academy/blesa/blesa\-2024/majda\-bakmaz/mashina\&.git
+
+.fi
+.PP
+
+.IP "2." 4
+\fBApply the LVGL 8\&.3 patch\fP: 
+.PP
+.nf
+cd components/lvgl_esp32_drivers
+git apply \-\-ignore\-space\-change \-\-ignore\-whitespace \&.\&./lvgl_esp32_drivers_8\-3\&.patch
+
+.fi
+.PP
+
+.IP "4." 4
+\fBSet up ESP-IDF environment\fP: 
+.PP
+.nf
+\&. $HOME/esp/esp\-idf/export\&.sh
+
+.fi
+.PP
+
+.IP "5." 4
+\fBBuild the project\fP: 
+.PP
+.nf
+idf\&.py build
+
+.fi
+.PP
+
+.IP "6." 4
+\fBFlash the project\fP to your ESP32: 
+.PP
+.nf
+idf\&.py flash /dev/ttyUSB0
+
+.fi
+.PP
+ ⚠️ Ensure the \fBTCH_IRQ switch\fP is set to \fROFF\fP if using the ByteLab Development Kit\&.
+.IP "7." 4
+\fBMonitor the output\fP: 
+.PP
+.nf
+idf\&.py monitor /dev/ttyUSB0
+
+.fi
+.PP
+
+.PP
+.SH "📐 Features"
+.PP
+.SS "Function Generator"
+.IP "\(bu" 2
+\fBWaveforms Supported\fP:
+.IP "  \(bu" 4
+Sine
+.IP "  \(bu" 4
+Square
+.IP "  \(bu" 4
+Triangle
+.IP "  \(bu" 4
+Sawtooth
+.PP
+
+.IP "\(bu" 2
+\fBAdjustable Parameters\fP:
+.IP "  \(bu" 4
+Frequency
+.IP "  \(bu" 4
+Amplitude (0V to Vmax)
+.IP "  \(bu" 4
+Duty Cycle (0% to 100%)
+.PP
+
+.IP "\(bu" 2
+\fBOn-screen visualization\fP of the generated waveform\&.
+.IP "\(bu" 2
+\fBPresets\fP:
+.IP "  \(bu" 4
+Up to 5 saveable presets
+.PP
+
+.PP
+.SS "Oscilloscope"
+.IP "\(bu" 2
+\fBReal-time waveform display\fP for two channels\&.
+.IP "\(bu" 2
+\fBAdjustable Settings\fP:
+.IP "  \(bu" 4
+Time Base: 10 ms/div to 1 ms/div
+.IP "  \(bu" 4
+Voltage Scale: 500mV/div to 100V/div
+.IP "  \(bu" 4
+Channel Selection: CH1 or CH2
+.PP
+
+.PP
+.SS "Other Features"
+.IP "\(bu" 2
+\fBTemperature & Humidity Monitoring\fP:
+.IP "  \(bu" 4
+Automatic shutdown if temperature exceeds 32°C\&.
+.PP
+
+.IP "\(bu" 2
+\fBLED Signalization\fP for device states:
+.IP "  \(bu" 4
+device turned on \fBGREEN LED on\fP
+.IP "  \(bu" 4
+Function Generator on \fBRED LED fast blink\fP
+.IP "  \(bu" 4
+Oscilloscope on \fBRED LED on\fP
+.IP "  \(bu" 4
+Wi-Fi connected \fBBLUE LED on\fP
+.PP
+
+.PP
+.SH "⚡ Features in Development"
+.PP
+.IP "\(bu" 2
+Historical data logging for temperature and humidity\&.
+.IP "\(bu" 2
+Enhanced Wi-Fi features for screenshot sharing and provisioning\&. 
+.PP
+

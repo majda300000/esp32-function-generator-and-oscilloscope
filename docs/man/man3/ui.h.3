@@ -1,0 +1,925 @@
+.TH "/home/mbakmaz/bytelab2024/final_task/mashina/components/ui_app/squareline/ui.h" 3 "Version ." "Mashina" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/mbakmaz/bytelab2024/final_task/mashina/components/ui_app/squareline/ui.h
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'lvgl\&.h'\fP
+.br
+\fR#include 'ui_helpers\&.h'\fP
+.br
+\fR#include 'components/ui_comp\&.h'\fP
+.br
+\fR#include 'components/ui_comp_hook\&.h'\fP
+.br
+\fR#include 'ui_events\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBui_homescr_screen_init\fP (void)"
+.br
+.ti -1c
+.RI "void \fBui_event_fngen1\fP (lv_event_t *e)"
+.br
+.ti -1c
+.RI "void \fBui_event_oscbutton1\fP (lv_event_t *e)"
+.br
+.ti -1c
+.RI "void \fBui_oscilloscopescr_screen_init\fP (void)"
+.br
+.ti -1c
+.RI "void \fBui_event_backbtn\fP (lv_event_t *e)"
+.br
+.ti -1c
+.RI "void \fBui_event_ch1Btn\fP (lv_event_t *e)"
+.br
+.ti -1c
+.RI "void \fBui_event_ch1Btn1\fP (lv_event_t *e)"
+.br
+.ti -1c
+.RI "void \fBui_event_togglemsBtn\fP (lv_event_t *e)"
+.br
+.ti -1c
+.RI "void \fBui_event_togglemVBtn\fP (lv_event_t *e)"
+.br
+.ti -1c
+.RI "void \fBui_functiongenscr_screen_init\fP (void)"
+.br
+.ti -1c
+.RI "void \fBui_event_backBtn2\fP (lv_event_t *e)"
+.br
+.ti -1c
+.RI "void \fBui_event_signalTypeDropdown\fP (lv_event_t *e)"
+.br
+.ti -1c
+.RI "void \fBui_event_freqarc1\fP (lv_event_t *e)"
+.br
+.ti -1c
+.RI "void \fBui_event_amplArc\fP (lv_event_t *e)"
+.br
+.ti -1c
+.RI "void \fBui_event_startButton\fP (lv_event_t *e)"
+.br
+.ti -1c
+.RI "void \fBui_event_dutyCycleDropdown\fP (lv_event_t *e)"
+.br
+.ti -1c
+.RI "void \fBui_event_savePresetBtn\fP (lv_event_t *e)"
+.br
+.ti -1c
+.RI "void \fBui_event_presetDropdown\fP (lv_event_t *e)"
+.br
+.ti -1c
+.RI "void \fBui_event____initial_actions0\fP (lv_event_t *e)"
+.br
+.ti -1c
+.RI "\fBLV_IMG_DECLARE\fP (\fBui_img_1501662095\fP)"
+.br
+.ti -1c
+.RI "\fBLV_IMG_DECLARE\fP (\fBui_img_bl_logo_light_png\fP)"
+.br
+.ti -1c
+.RI "\fBLV_IMG_DECLARE\fP (\fBui_img_temp_15px_png\fP)"
+.br
+.ti -1c
+.RI "\fBLV_IMG_DECLARE\fP (\fBui_img_humidity_15px_png\fP)"
+.br
+.ti -1c
+.RI "\fBLV_IMG_DECLARE\fP (\fBui_img_wifi_iconmini_png\fP)"
+.br
+.ti -1c
+.RI "\fBLV_IMG_DECLARE\fP (\fBui_img_653708034\fP)"
+.br
+.ti -1c
+.RI "\fBLV_IMG_DECLARE\fP (\fBui_img_bl_logo_symbol_png\fP)"
+.br
+.ti -1c
+.RI "\fBLV_IMG_DECLARE\fP (\fBui_img_1091903730\fP)"
+.br
+.ti -1c
+.RI "void \fBui_init\fP (void)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "lv_obj_t * \fBui_homescr\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_Image14\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_fngen1\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_functiongen1\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_oscbutton1\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_oscilloscope1\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_Image8\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_Panel1\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_humText\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_tempText\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_Image11\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_Image12\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_deviceTooHotLabel1\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_wifiBtn\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_Image17\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_oscilloscopescr\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_backbtn\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_Image4\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_Panel4\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_humText3\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_tempText3\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_Image9\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_Image10\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_oscconfigPanel\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_ch1Btn\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_Label4\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_ch1Btn1\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_Label2\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_divms10\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_Label5\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_divms1\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_Label3\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_div500mV\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_Label6\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_divmV100\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_Label7\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_Label8\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_Label9\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_togglemsBtn\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_togglemVBtn\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_Chart2\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_fngenonflagLabel\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_deviceTooHotLabel\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_functiongenscr\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_Image13\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_Label1\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_backBtn2\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_Image5\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_signalTypeDropdown\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_signalTypeLabel\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_freqarc1\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_freqLabel1\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_HzLabel\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_amplArc\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_amplLabel\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_mVLabel\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_startButton\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_Image6\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_StartSignalLabel1\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_DutyCycleLabel\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_dutyCycleDropdown\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_Panel3\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_humText2\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_tempText2\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_deviceTooHotLabel2\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_savePresetBtn\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_Label10\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_presetDropdown\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_Image7\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui_Image3\fP"
+.br
+.ti -1c
+.RI "lv_obj_t * \fBui____initial_actions0\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "LV_IMG_DECLARE (\fBui_img_1091903730\fP )"
+
+.SS "LV_IMG_DECLARE (\fBui_img_1501662095\fP )"
+
+.SS "LV_IMG_DECLARE (\fBui_img_653708034\fP )"
+
+.SS "LV_IMG_DECLARE (\fBui_img_bl_logo_light_png\fP )"
+
+.SS "LV_IMG_DECLARE (\fBui_img_bl_logo_symbol_png\fP )"
+
+.SS "LV_IMG_DECLARE (\fBui_img_humidity_15px_png\fP )"
+
+.SS "LV_IMG_DECLARE (\fBui_img_temp_15px_png\fP )"
+
+.SS "LV_IMG_DECLARE (\fBui_img_wifi_iconmini_png\fP )"
+
+.SS "void ui_event____initial_actions0 (lv_event_t * e)"
+
+.SS "void ui_event_amplArc (lv_event_t * e)"
+
+.SS "void ui_event_backbtn (lv_event_t * e)"
+
+.SS "void ui_event_backBtn2 (lv_event_t * e)"
+
+.SS "void ui_event_ch1Btn (lv_event_t * e)"
+
+.SS "void ui_event_ch1Btn1 (lv_event_t * e)"
+
+.SS "void ui_event_dutyCycleDropdown (lv_event_t * e)"
+
+.SS "void ui_event_fngen1 (lv_event_t * e)"
+
+.SS "void ui_event_freqarc1 (lv_event_t * e)"
+
+.SS "void ui_event_oscbutton1 (lv_event_t * e)"
+
+.SS "void ui_event_presetDropdown (lv_event_t * e)"
+
+.SS "void ui_event_savePresetBtn (lv_event_t * e)"
+
+.SS "void ui_event_signalTypeDropdown (lv_event_t * e)"
+
+.SS "void ui_event_startButton (lv_event_t * e)"
+
+.SS "void ui_event_togglemsBtn (lv_event_t * e)"
+
+.SS "void ui_event_togglemVBtn (lv_event_t * e)"
+
+.SS "void ui_functiongenscr_screen_init (void )"
+Flags
+
+.PP
+170
+
+.PP
+170
+
+.PP
+Flags
+
+.PP
+Flags
+
+.PP
+1
+
+.PP
+1
+
+.PP
+50
+
+.PP
+50
+
+.PP
+Flags
+
+.PP
+Flags
+
+.PP
+1
+
+.PP
+Flags
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+Flags
+
+.PP
+1
+
+.PP
+1
+
+.PP
+Flags
+
+.PP
+Flags
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+Flags
+
+.PP
+Flags
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+Flags
+
+.PP
+15
+
+.PP
+15
+
+.PP
+Flags
+
+.PP
+Flags
+
+.PP
+15
+
+.PP
+15
+
+.PP
+Flags
+
+.PP
+Flags
+.SS "void ui_homescr_screen_init (void )"
+Flags
+
+.PP
+256
+
+.PP
+256
+
+.PP
+Flags
+
+.PP
+Flags
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+States
+
+.PP
+100
+
+.PP
+32
+
+.PP
+Flags
+
+.PP
+Flags
+
+.PP
+Flags
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+15
+
+.PP
+15
+
+.PP
+Flags
+
+.PP
+Flags
+
+.PP
+15
+
+.PP
+15
+
+.PP
+Flags
+
+.PP
+Flags
+
+.PP
+1
+
+.PP
+1
+
+.PP
+40
+
+.PP
+40
+
+.PP
+Flags
+
+.PP
+Flags
+.SS "void ui_init (void )"
+
+.SS "void ui_oscilloscopescr_screen_init (void )"
+Flags
+
+.PP
+50
+
+.PP
+50
+
+.PP
+Flags
+
+.PP
+Flags
+
+.PP
+Flags
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+15
+
+.PP
+15
+
+.PP
+Flags
+
+.PP
+Flags
+
+.PP
+15
+
+.PP
+15
+
+.PP
+Flags
+
+.PP
+Flags
+
+.PP
+Flags
+
+.PP
+Flags
+
+.PP
+1
+
+.PP
+1
+
+.PP
+Flags
+
+.PP
+1
+
+.PP
+1
+
+.PP
+Flags
+
+.PP
+1
+
+.PP
+1
+
+.PP
+Flags
+
+.PP
+1
+
+.PP
+1
+
+.PP
+Flags
+
+.PP
+1
+
+.PP
+1
+
+.PP
+Flags
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+States
+
+.PP
+Flags
+
+.PP
+States
+
+.PP
+Flags
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+
+.PP
+1
+.SH "Variable Documentation"
+.PP 
+.SS "lv_obj_t* ui____initial_actions0\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_amplArc\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_amplLabel\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_backbtn\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_backBtn2\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_ch1Btn\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_ch1Btn1\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_Chart2\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_deviceTooHotLabel\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_deviceTooHotLabel1\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_deviceTooHotLabel2\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_div500mV\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_divms1\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_divms10\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_divmV100\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_dutyCycleDropdown\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_DutyCycleLabel\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_fngen1\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_fngenonflagLabel\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_freqarc1\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_freqLabel1\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_functiongen1\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_functiongenscr\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_homescr\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_humText\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_humText2\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_humText3\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_HzLabel\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_Image10\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_Image11\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_Image12\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_Image13\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_Image14\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_Image17\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_Image3\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_Image4\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_Image5\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_Image6\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_Image7\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_Image8\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_Image9\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_Label1\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_Label10\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_Label2\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_Label3\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_Label4\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_Label5\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_Label6\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_Label7\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_Label8\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_Label9\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_mVLabel\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_oscbutton1\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_oscconfigPanel\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_oscilloscope1\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_oscilloscopescr\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_Panel1\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_Panel3\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_Panel4\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_presetDropdown\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_savePresetBtn\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_signalTypeDropdown\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_signalTypeLabel\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_startButton\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_StartSignalLabel1\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_tempText\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_tempText2\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_tempText3\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_togglemsBtn\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_togglemVBtn\fR [extern]\fP"
+
+.SS "lv_obj_t* ui_wifiBtn\fR [extern]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Mashina from the source code\&.

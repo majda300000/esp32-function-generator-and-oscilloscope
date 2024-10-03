@@ -1,0 +1,41 @@
+\doxysection{timer.\+h}
+\hypertarget{oscilloscope_2platform_2inc_2timer_8h_source}{}\label{oscilloscope_2platform_2inc_2timer_8h_source}\index{/home/mbakmaz/bytelab2024/final\_task/mashina/components/oscilloscope/platform/inc/timer.h@{/home/mbakmaz/bytelab2024/final\_task/mashina/components/oscilloscope/platform/inc/timer.h}}
+\mbox{\hyperlink{oscilloscope_2platform_2inc_2timer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ \_\_TIMER\_H\_\_}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ \_\_TIMER\_H\_\_}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ INCLUDES\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ MACROS\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ DATA\ TYPES\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00022\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{oscilloscope_2platform_2inc_2timer_8h_a1beb074e0e4a9ce260ab89be2c8408d0}{timer\_callback}})(\textcolor{keywordtype}{void}\ *arg);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__osc__timer__t}{\_osc\_timer\_t}};}
+\DoxyCodeLine{00025\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__osc__timer__t}{\_osc\_timer\_t}}\ \mbox{\hyperlink{struct__osc__timer__t}{osc\_timer\_t}};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ PUBLIC\ FUNCTION\ PROTOTYPES\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00038\ \mbox{\hyperlink{struct__osc__timer__t}{osc\_timer\_t}}\ *\mbox{\hyperlink{oscilloscope_2platform_2inc_2timer_8h_a316363af788750c67b64bd50a232f126}{osc\_timer\_create}}(\mbox{\hyperlink{oscilloscope_2platform_2inc_2timer_8h_a1beb074e0e4a9ce260ab89be2c8408d0}{timer\_callback}}\ cb,\ \ \textcolor{keywordtype}{void}*\ args,\ \textcolor{keywordtype}{int}\ period\_uc);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{oscilloscope_2platform_2inc_2timer_8h_a4639a9c86c4854576c99f19519da8d61}{osc\_timer\_start}}(\mbox{\hyperlink{struct__osc__timer__t}{osc\_timer\_t}}\ *p\_timer);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{oscilloscope_2platform_2inc_2timer_8h_a3cb6a680b5243ca787319d57940b10b9}{osc\_timer\_stop}}(\mbox{\hyperlink{struct__osc__timer__t}{osc\_timer\_t}}\ *p\_timer);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{oscilloscope_2platform_2inc_2timer_8h_aabaa9a72c84489cddd8d06c5e093e467}{osc\_timer\_delete}}(\mbox{\hyperlink{struct__osc__timer__t}{osc\_timer\_t}}\ *p\_timer);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00063\ \}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_TIMER\_H\_\_}}
+
+\end{DoxyCode}

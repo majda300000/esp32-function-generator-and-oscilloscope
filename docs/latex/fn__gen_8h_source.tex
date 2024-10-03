@@ -1,0 +1,93 @@
+\doxysection{fn\+\_\+gen.\+h}
+\hypertarget{fn__gen_8h_source}{}\label{fn__gen_8h_source}\index{/home/mbakmaz/bytelab2024/final\_task/mashina/components/function\_generator/fn\_gen.h@{/home/mbakmaz/bytelab2024/final\_task/mashina/components/function\_generator/fn\_gen.h}}
+\mbox{\hyperlink{fn__gen_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ \_\_FN\_GEN\_H\_\_}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ \_\_FN\_GEN\_H\_\_}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ INCLUDES\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ MACROS\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ FN\_GEN\_POINT\_ARR\_LEN\ 200\ }\textcolor{comment}{//\ Length\ of\ points\ array}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ FN\_GEN\_TIMER\_INTR\_US\ 30\ \ }\textcolor{comment}{//\ Execution\ time\ of\ each\ ISR\ interval\ in\ micro-\/seconds}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ FN\_GEN\_PRESET\_NUMBER\ 5\ \ \ }\textcolor{comment}{//\ Number\ of\ signal\ presets}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ VDD\ \ \ \ \ 3300\ }\textcolor{comment}{//\ VDD\ is\ 3.3V,\ 3300mV}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ AMP\_DAC\ 255\ \ }\textcolor{comment}{//\ Amplitude\ of\ DAC\ voltage.\ If\ it's\ more\ than\ 256\ will\ causes\ dac\_output\_voltage()\ output\ 0.}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ DATA\ TYPES\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3a00d79b9544b9e96233bb7569e18c6059}{FN\_GEN\_ERR\_NONE}}\ =\ 0,}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3ad349607f41ee832e70904137f6acb666}{FN\_GEN\_ERR}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ -\/1,}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3a1855b29d6d8f6dfb7681e253616bdc9f}{FN\_GEN\_ERR\_UNKNOWN\_SIGNAL}}\ =\ -\/2,}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3af0b2a33219dcd397a1f639f9c3f88506}{FN\_GEN\_ERR\_CREATE}}\ \ \ \ \ \ \ \ \ =\ -\/3,}
+\DoxyCodeLine{00037\ \}\ \mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\_gen\_error\_t}};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8aa16c7eb988c881fa06b7888c7fd9964e}{FN\_SIGNAL\_SINE}},}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8a3c17c946c195a0ce7e1670be79ee80fa}{FN\_SIGNAL\_SQUARE}},}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8abc9622aa0a12bb76f35b18ca404f61b8}{FN\_SIGNAL\_TRIANGLE}},}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8a523a73ea002cc1caf9f08d717a0903e4}{FN\_SIGNAL\_SAWTOOTH}},}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8ae8d8526740820d824cda1a498232d291}{FN\_SIGNAL\_COUNT}}}
+\DoxyCodeLine{00047\ \}\ \mbox{\hyperlink{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8}{fn\_signal\_type\_t}};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__fn__signal__config__t}{\_fn\_signal\_config\_t}}}
+\DoxyCodeLine{00050\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8}{fn\_signal\_type\_t}}\ \mbox{\hyperlink{struct__fn__signal__config__t_a596836749dc00027be5c6812d92d32ee}{signal}};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct__fn__signal__config__t_acfa81f25214f673471b8ce07572f9eaf}{frequency\_Hz}};}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct__fn__signal__config__t_ad806c37b147cd8b4493b95c6757f61f4}{amplitude\_mV}};\ \textcolor{comment}{//\ Peak\ to\ peak}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct__fn__signal__config__t_af76da0e8725c765b1d060eb843358ada}{duty\_cycle\_percentage}};}
+\DoxyCodeLine{00055\ \}\ \mbox{\hyperlink{fn__gen_8h_afdea0bbe99c30fc7b98bca7cacab2d9c}{fn\_signal\_config\_t}};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__fn__generator__t}{\_fn\_generator\_t}}}
+\DoxyCodeLine{00058\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{struct__fn__signal__config__t}{fn\_signal\_config\_t}}\ \mbox{\hyperlink{struct__fn__generator__t_ab28befd8d195bd761176a33d62feae4d}{\_config}};}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct__fn__generator__t_ab99999f1100b42c86a11c778878d8623}{\_raw\_val}}[\mbox{\hyperlink{fn__gen_8h_af6981a7693a779d2aa0bff02945a0fc9}{FN\_GEN\_POINT\_ARR\_LEN}}];\ \ \textcolor{comment}{//\ Used\ to\ store\ raw\ values}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct__fn__generator__t_a5660c977bf6a1f4fcba776acfdb103b9}{\_volt\_val}}[\mbox{\hyperlink{fn__gen_8h_af6981a7693a779d2aa0bff02945a0fc9}{FN\_GEN\_POINT\_ARR\_LEN}}];\ \textcolor{comment}{//\ Used\ to\ store\ voltage\ values(in\ mV)}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct__fn__generator__t_a15eb8da19ee80784c671cf7ec334e1a3}{\_period\_index}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Time\ point\ in\ window\ frame\ of\ signal}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct__fn__generator__t_a1b7da4fd3a0f1147397e494215768506}{\_is\_running}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ True\ if\ the\ timer\ is\ running}}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{struct__fn__signal__config__t}{fn\_signal\_config\_t}}\ \mbox{\hyperlink{struct__fn__generator__t_a1227b9013046769fefa65463c5fd26a8}{presets}}[\mbox{\hyperlink{fn__gen_8h_ab5468b058aacd85d18b05640ae040943}{FN\_GEN\_PRESET\_NUMBER}}];\ \ \ \textcolor{comment}{//\ Signal\ presets}}
+\DoxyCodeLine{00065\ \}\ \mbox{\hyperlink{fn__gen_8h_ad91073e891e6ef35672b78036e4cea4b}{fn\_generator\_t}};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ PUBLIC\ FUNCTION\ PROTOTYPES\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{fn__gen_8h_a93c111eb091fb470b14c8c4c2f6f98ea}{fn\_gen\_init}}();}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00081\ \mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\_gen\_error\_t}}\ \mbox{\hyperlink{fn__gen_8h_a7bcb449f5ee82fd318b9941df2959252}{fn\_gen\_set\_signal\_config}}(\mbox{\hyperlink{struct__fn__signal__config__t}{fn\_signal\_config\_t}}\ config);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00089\ \mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\_gen\_error\_t}}\ \mbox{\hyperlink{fn__gen_8h_a098a7b3a1939b09b52d3adb55ca8007d}{fn\_gen\_set\_signal\_type}}(\mbox{\hyperlink{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8}{fn\_signal\_type\_t}}\ type);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00097\ \mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\_gen\_error\_t}}\ \mbox{\hyperlink{fn__gen_8h_aaa11312b6d11ccec43f4db6bd8a3891c}{fn\_gen\_set\_frequency}}(\textcolor{keywordtype}{int}\ frequency\_Hz);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00105\ \mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\_gen\_error\_t}}\ \mbox{\hyperlink{fn__gen_8h_afb457ccd076f7cb3c6b59f6565f7c3e3}{fn\_gen\_set\_amplitude}}(\textcolor{keywordtype}{int}\ amplitude\_mV\_pp);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00114\ \mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\_gen\_error\_t}}\ \mbox{\hyperlink{fn__gen_8h_ad6938a9e9abcc5c2c7586d946db4be5d}{fn\_gen\_set\_duty\_cycle}}(\textcolor{keywordtype}{int}\ duty\_cycle\_percentage);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00123\ \mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\_gen\_error\_t}}\ \mbox{\hyperlink{fn__gen_8h_a3578fdfefd554fc0e6838f4ed9822e38}{fn\_gen\_set\_preset}}(\mbox{\hyperlink{struct__fn__signal__config__t}{fn\_signal\_config\_t}}\ config,\ \textcolor{keywordtype}{int}\ preset\_num);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00132\ \mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\_gen\_error\_t}}\ \mbox{\hyperlink{fn__gen_8h_a27c1bd853ec2ac1aa5ef0e23a9728956}{fn\_gen\_get\_preset}}(\mbox{\hyperlink{struct__fn__signal__config__t}{fn\_signal\_config\_t}}\ *conf,\ \textcolor{keywordtype}{int}\ preset\_num);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00140\ \mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\_gen\_error\_t}}\ \mbox{\hyperlink{fn__gen_8h_a35e6b95a28ba65201db438d94b496620}{fn\_gen\_load\_preset}}(\textcolor{keywordtype}{int}\ preset\_num);}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00147\ \mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\_gen\_error\_t}}\ \mbox{\hyperlink{fn__gen_8h_a0fca009f62dd7a0339c5fdca9378ea16}{fn\_gen\_signal\_start\_task}}();}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00154\ \mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\_gen\_error\_t}}\ \mbox{\hyperlink{fn__gen_8h_a36e923721936c0125485cd6a39797706}{fn\_gen\_signal\_stop\_task}}();}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00157\ \}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_FN\_GEN\_H\_\_}}
+
+\end{DoxyCode}

@@ -1,0 +1,125 @@
+\doxysection{/home/mbakmaz/bytelab2024/final\+\_\+task/mashina/components/potentiometer/potentiometer.c File Reference}
+\hypertarget{potentiometer_8c}{}\label{potentiometer_8c}\index{/home/mbakmaz/bytelab2024/final\_task/mashina/components/potentiometer/potentiometer.c@{/home/mbakmaz/bytelab2024/final\_task/mashina/components/potentiometer/potentiometer.c}}
+
+
+THe file implements behaviour of potentiometer.  
+
+
+{\ttfamily \#include "{}potentiometer.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+adc/adc\+\_\+oneshot.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+log.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/\+Free\+RTOS.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/semphr.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct__potentiometer__t}{\+\_\+potentiometer\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{potentiometer_8c_aa12c1b34134b49166b953bfe48875e8c}{POTENTIOMETER\+\_\+\+ADC\+\_\+\+ATTEN}}~ADC\+\_\+\+ATTEN\+\_\+\+DB\+\_\+11
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{potentiometer_8h_aa053b8c8d8b780096e3396c26dfe9209}{potentiometer\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{potentiometer_8c_a2dd736c46c9ff6207fe8b56498d5eb71}{potentiometer\+\_\+create}} (uint8\+\_\+t pin, uint8\+\_\+t channel, uint16\+\_\+t max\+\_\+voltage\+\_\+mv, bool b\+\_\+is\+\_\+reversed)
+\begin{DoxyCompactList}\small\item\em It creates a potentiometer object and initializes it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{potentiometer_8c_a68ff2648b98d2c8d2949e2a64f1cbaad}{potentiometer\+\_\+delete}} (\mbox{\hyperlink{potentiometer_8h_aa053b8c8d8b780096e3396c26dfe9209}{potentiometer\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+\_\+potentiometer)
+\begin{DoxyCompactList}\small\item\em This function frees the memory allocated for the potentiometer\+\_\+t structure. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{potentiometer_8c_ab08b47a7426e71028e645a2a86c66600}{potentiometer\+\_\+position\+\_\+get}} (\mbox{\hyperlink{potentiometer_8h_aa053b8c8d8b780096e3396c26dfe9209}{potentiometer\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+\_\+potentiometer)
+\begin{DoxyCompactList}\small\item\em This function returns the position of the potentiometer in the interval\+: \mbox{[}0, POTENTIOMETER\+\_\+\+MAX\+\_\+\+POSITION\mbox{]}. 0 means that the potentiometer is in a starting position. POTENTIOMETER\+\_\+\+MAX\+\_\+\+POSITION is returned if the potentiometer is turned all the way. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{potentiometer_8c_a1fb323d92e97d8461cbd603d54d77187}{potentiometer\+\_\+get\+\_\+raw}} (\mbox{\hyperlink{potentiometer_8h_aa053b8c8d8b780096e3396c26dfe9209}{potentiometer\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+\_\+potentiometer)
+\begin{DoxyCompactList}\small\item\em Returns raw value from adc. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+THe file implements behaviour of potentiometer. 
+
+COPYRIGHT NOTICE\+: (c) 2023 Byte Lab Grupa d.\+o.\+o. All rights reserved. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{potentiometer_8c_aa12c1b34134b49166b953bfe48875e8c}\index{potentiometer.c@{potentiometer.c}!POTENTIOMETER\_ADC\_ATTEN@{POTENTIOMETER\_ADC\_ATTEN}}
+\index{POTENTIOMETER\_ADC\_ATTEN@{POTENTIOMETER\_ADC\_ATTEN}!potentiometer.c@{potentiometer.c}}
+\doxysubsubsection{\texorpdfstring{POTENTIOMETER\_ADC\_ATTEN}{POTENTIOMETER\_ADC\_ATTEN}}
+{\footnotesize\ttfamily \label{potentiometer_8c_aa12c1b34134b49166b953bfe48875e8c} 
+\#define POTENTIOMETER\+\_\+\+ADC\+\_\+\+ATTEN~ADC\+\_\+\+ATTEN\+\_\+\+DB\+\_\+11}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{potentiometer_8c_a2dd736c46c9ff6207fe8b56498d5eb71}\index{potentiometer.c@{potentiometer.c}!potentiometer\_create@{potentiometer\_create}}
+\index{potentiometer\_create@{potentiometer\_create}!potentiometer.c@{potentiometer.c}}
+\doxysubsubsection{\texorpdfstring{potentiometer\_create()}{potentiometer\_create()}}
+{\footnotesize\ttfamily \label{potentiometer_8c_a2dd736c46c9ff6207fe8b56498d5eb71} 
+\mbox{\hyperlink{potentiometer_8h_aa053b8c8d8b780096e3396c26dfe9209}{potentiometer\+\_\+t}} \texorpdfstring{$\ast$}{*} potentiometer\+\_\+create (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pin}{, }\item[{uint8\+\_\+t}]{channel}{, }\item[{uint16\+\_\+t}]{max\+\_\+voltage\+\_\+mv}{, }\item[{bool}]{b\+\_\+is\+\_\+reversed}{}\end{DoxyParamCaption})}
+
+
+
+It creates a potentiometer object and initializes it. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pin} & The GPIO pin number that the potentiometer is connected to. \\
+\hline
+\mbox{\texttt{ in}}  & {\em channel} & The ADC channel that the pin is connected to \\
+\hline
+\mbox{\texttt{ in}}  & {\em max\+\_\+voltage\+\_\+mv} & Maximal voltage (in mV) that the ADC can receive from the potentiometers output. \\
+\hline
+\mbox{\texttt{ in}}  & {\em b\+\_\+is\+\_\+reversed} & True if the potentiometers logic is reversed. False otherwise. The logic is reversed if the potentiometer is in a starting position for maximal voltage. The logic is not reversed if the potentiometers starting position gives 0 V to the ADC.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+potentiometer\+\_\+t\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+\Hypertarget{potentiometer_8c_a68ff2648b98d2c8d2949e2a64f1cbaad}\index{potentiometer.c@{potentiometer.c}!potentiometer\_delete@{potentiometer\_delete}}
+\index{potentiometer\_delete@{potentiometer\_delete}!potentiometer.c@{potentiometer.c}}
+\doxysubsubsection{\texorpdfstring{potentiometer\_delete()}{potentiometer\_delete()}}
+{\footnotesize\ttfamily \label{potentiometer_8c_a68ff2648b98d2c8d2949e2a64f1cbaad} 
+void potentiometer\+\_\+delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{potentiometer_8h_aa053b8c8d8b780096e3396c26dfe9209}{potentiometer\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+potentiometer}{}\end{DoxyParamCaption})}
+
+
+
+This function frees the memory allocated for the potentiometer\+\_\+t structure. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p\+\_\+potentiometer} & A pointer to the potentiometer\+\_\+t structure. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{potentiometer_8c_a1fb323d92e97d8461cbd603d54d77187}\index{potentiometer.c@{potentiometer.c}!potentiometer\_get\_raw@{potentiometer\_get\_raw}}
+\index{potentiometer\_get\_raw@{potentiometer\_get\_raw}!potentiometer.c@{potentiometer.c}}
+\doxysubsubsection{\texorpdfstring{potentiometer\_get\_raw()}{potentiometer\_get\_raw()}}
+{\footnotesize\ttfamily \label{potentiometer_8c_a1fb323d92e97d8461cbd603d54d77187} 
+int potentiometer\+\_\+get\+\_\+raw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{potentiometer_8h_aa053b8c8d8b780096e3396c26dfe9209}{potentiometer\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+potentiometer}{}\end{DoxyParamCaption})}
+
+
+
+Returns raw value from adc. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+potentiometer} & A pointer to the potentiometer\+\_\+t structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uintt32\+\_\+t Raw value from adc 
+\end{DoxyReturn}
+\Hypertarget{potentiometer_8c_ab08b47a7426e71028e645a2a86c66600}\index{potentiometer.c@{potentiometer.c}!potentiometer\_position\_get@{potentiometer\_position\_get}}
+\index{potentiometer\_position\_get@{potentiometer\_position\_get}!potentiometer.c@{potentiometer.c}}
+\doxysubsubsection{\texorpdfstring{potentiometer\_position\_get()}{potentiometer\_position\_get()}}
+{\footnotesize\ttfamily \label{potentiometer_8c_ab08b47a7426e71028e645a2a86c66600} 
+uint32\+\_\+t potentiometer\+\_\+position\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{potentiometer_8h_aa053b8c8d8b780096e3396c26dfe9209}{potentiometer\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+potentiometer}{}\end{DoxyParamCaption})}
+
+
+
+This function returns the position of the potentiometer in the interval\+: \mbox{[}0, POTENTIOMETER\+\_\+\+MAX\+\_\+\+POSITION\mbox{]}. 0 means that the potentiometer is in a starting position. POTENTIOMETER\+\_\+\+MAX\+\_\+\+POSITION is returned if the potentiometer is turned all the way. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p\+\_\+potentiometer} & A pointer to the potentiometer\+\_\+t structure.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Potentiometers position in the interval\+: \mbox{[}0, POTENTIOMETER\+\_\+\+MAX\+\_\+\+POSITION\mbox{]}. 
+\end{DoxyReturn}

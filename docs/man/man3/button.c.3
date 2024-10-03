@@ -1,0 +1,62 @@
+.TH "/home/mbakmaz/bytelab2024/final_task/mashina/components/button/button.c" 3 "Version ." "Mashina" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/mbakmaz/bytelab2024/final_task/mashina/components/button/button.c \- Button implementation for Byte Lab Development Kit\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'button\&.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fB_button_config_t\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBbutton_err_t\fP \fBbutton_create\fP (\fBbutton_id_t\fP btn_id, \fBbutton_pressed_t\fP p_btn_cb)"
+.br
+.RI "It creates a button object based on the button type and initializes it\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Button implementation for Byte Lab Development Kit\&. 
+
+
+.PP
+\fB\fP
+.RS 4
+
+.RE
+.PP
+COPYRIGHT NOTICE: (c) 2022 Byte Lab Grupa d\&.o\&.o\&. All rights reserved\&. 
+.SH "Function Documentation"
+.PP 
+.SS "\fBbutton_err_t\fP button_create (\fBbutton_id_t\fP btn_id, \fBbutton_pressed_t\fP p_btn_cb)"
+
+.PP
+It creates a button object based on the button type and initializes it\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIbtn_id\fP The id of the button to create\&. 
+.br
+\fIp_btn_cb\fP This is the callback function that will be called when the button is pressed\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Status of creation\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Mashina from the source code\&.

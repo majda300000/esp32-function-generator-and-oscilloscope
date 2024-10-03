@@ -1,0 +1,242 @@
+\doxysection{/home/mbakmaz/bytelab2024/final\+\_\+task/mashina/components/led/led.h File Reference}
+\hypertarget{led_8h}{}\label{led_8h}\index{/home/mbakmaz/bytelab2024/final\_task/mashina/components/led/led.h@{/home/mbakmaz/bytelab2024/final\_task/mashina/components/led/led.h}}
+
+
+See the source file.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}led\+\_\+gpio.\+h"{}}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{led_8h_a462fb2ba6f2af99ec3d021ded436bb65}{NO\+\_\+\+TIMEOUT}}~(UINT\+\_\+\+MAX)
+\item 
+\#define \mbox{\hyperlink{led_8h_a359e660138ffc606e0836855e6b0ebde}{LED\+\_\+\+SLOWBLINK\+\_\+\+HALF\+\_\+\+PERIOD\+\_\+\+MS}}~(1000U)
+\item 
+\#define \mbox{\hyperlink{led_8h_a9d818d8e271e0162a2be84a50551d911}{LED\+\_\+\+FASTBLINK\+\_\+\+HALF\+\_\+\+PERIOD\+\_\+\+MS}}~(100U)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct__led__t}{\+\_\+led\+\_\+t}} \mbox{\hyperlink{led_8h_ae599217f5dbcdc03174ef0adc89bf852}{led\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{led_8h_a30745a8e50a1e1860c3ef04f1e5559ff}{led\+\_\+pattern\+\_\+t}} \{ \newline
+\mbox{\hyperlink{led_8h_a30745a8e50a1e1860c3ef04f1e5559ffa9c0b99e9c2cd9da70c553b9470d5f9d5}{LED\+\_\+\+PATTERN\+\_\+\+NONE}}
+, \mbox{\hyperlink{led_8h_a30745a8e50a1e1860c3ef04f1e5559ffa7d455aa9694aff95a2119c9256d40cfb}{LED\+\_\+\+PATTERN\+\_\+\+KEEP\+\_\+\+ON}}
+, \mbox{\hyperlink{led_8h_a30745a8e50a1e1860c3ef04f1e5559ffa59398df8d9a9641f5c3fb60e3481c7d2}{LED\+\_\+\+PATTERN\+\_\+\+SLOWBLINK}}
+, \mbox{\hyperlink{led_8h_a30745a8e50a1e1860c3ef04f1e5559ffa54a4619e6d74ff82726f2f98227463f6}{LED\+\_\+\+PATTERN\+\_\+\+FASTBLINK}}
+, \newline
+\mbox{\hyperlink{led_8h_a30745a8e50a1e1860c3ef04f1e5559ffab3009d10c4ce8c707e8022d62ea06da7}{LED\+\_\+\+PATTERN\+\_\+\+COUNT}}
+ \}
+\item 
+enum \mbox{\hyperlink{led_8h_af8035fb15444d8810efaebb6e9a48903}{led\+\_\+name\+\_\+t}} \{ \mbox{\hyperlink{led_8h_af8035fb15444d8810efaebb6e9a48903ad80f13022b6d309268fadc7b1da89cb9}{LED\+\_\+\+RED}}
+, \mbox{\hyperlink{led_8h_af8035fb15444d8810efaebb6e9a48903a0ad916c7f80666dc88f6b5b22a72e742}{LED\+\_\+\+GREEN}}
+, \mbox{\hyperlink{led_8h_af8035fb15444d8810efaebb6e9a48903aa67c57c0ff22a2772cb6a5751a3327bf}{LED\+\_\+\+BLUE}}
+, \mbox{\hyperlink{led_8h_af8035fb15444d8810efaebb6e9a48903a0bc6b9364ec72b19c74a14f15aa3832c}{LED\+\_\+\+COUNT}}
+ \}
+\item 
+enum \mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} \{ \newline
+\mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933a1a0d66903718eec85f5cf20fa1b53af1}{LED\+\_\+\+ERR\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933a4edeee06233a3b86fe24e84afb5b37a1}{LED\+\_\+\+ERR\+\_\+\+CREATE}} = -\/1
+, \mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933a1e8c6e274fd6924d911b104ed55b2bf6}{LED\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+PATTERN}} = -\/2
+, \mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933a2e4911a845688c2b031c042f0ef03615}{LED\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+LED}} = -\/3
+, \newline
+\mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933a723a6028a20a74d44a0a546b84e51f89}{LED\+\_\+\+ERR\+\_\+\+MUTEX\+\_\+\+FAIL}} = -\/4
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} \mbox{\hyperlink{led_8h_a2a7427a84163514c7c9d77e1e835591e}{led\+\_\+create}} (\mbox{\hyperlink{led_8h_af8035fb15444d8810efaebb6e9a48903}{led\+\_\+name\+\_\+t}} led)
+\begin{DoxyCompactList}\small\item\em Create LED driver and configure all needed functionalities. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} \mbox{\hyperlink{led_8h_a4370f952b230fff915edf708469da9a7}{led\+\_\+pattern\+\_\+run}} (\mbox{\hyperlink{led_8h_af8035fb15444d8810efaebb6e9a48903}{led\+\_\+name\+\_\+t}} led, \mbox{\hyperlink{led_8h_a30745a8e50a1e1860c3ef04f1e5559ff}{led\+\_\+pattern\+\_\+t}} led\+\_\+pattern, uint32\+\_\+t timeout\+\_\+ms)
+\begin{DoxyCompactList}\small\item\em Set led pattern. Don\textquotesingle{}t call this function from ISR. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} \mbox{\hyperlink{led_8h_a8511c5b3a4deec755f7c52208fed564a}{led\+\_\+pattern\+\_\+reset}} (\mbox{\hyperlink{led_8h_af8035fb15444d8810efaebb6e9a48903}{led\+\_\+name\+\_\+t}} led)
+\begin{DoxyCompactList}\small\item\em Reset LED pattern. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+See the source file. 
+
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+COPYRIGHT NOTICE\+: (c) 2022 Byte Lab Grupa d.\+o.\+o. All rights reserved. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{led_8h_a9d818d8e271e0162a2be84a50551d911}\index{led.h@{led.h}!LED\_FASTBLINK\_HALF\_PERIOD\_MS@{LED\_FASTBLINK\_HALF\_PERIOD\_MS}}
+\index{LED\_FASTBLINK\_HALF\_PERIOD\_MS@{LED\_FASTBLINK\_HALF\_PERIOD\_MS}!led.h@{led.h}}
+\doxysubsubsection{\texorpdfstring{LED\_FASTBLINK\_HALF\_PERIOD\_MS}{LED\_FASTBLINK\_HALF\_PERIOD\_MS}}
+{\footnotesize\ttfamily \label{led_8h_a9d818d8e271e0162a2be84a50551d911} 
+\#define LED\+\_\+\+FASTBLINK\+\_\+\+HALF\+\_\+\+PERIOD\+\_\+\+MS~(100U)}
+
+\Hypertarget{led_8h_a359e660138ffc606e0836855e6b0ebde}\index{led.h@{led.h}!LED\_SLOWBLINK\_HALF\_PERIOD\_MS@{LED\_SLOWBLINK\_HALF\_PERIOD\_MS}}
+\index{LED\_SLOWBLINK\_HALF\_PERIOD\_MS@{LED\_SLOWBLINK\_HALF\_PERIOD\_MS}!led.h@{led.h}}
+\doxysubsubsection{\texorpdfstring{LED\_SLOWBLINK\_HALF\_PERIOD\_MS}{LED\_SLOWBLINK\_HALF\_PERIOD\_MS}}
+{\footnotesize\ttfamily \label{led_8h_a359e660138ffc606e0836855e6b0ebde} 
+\#define LED\+\_\+\+SLOWBLINK\+\_\+\+HALF\+\_\+\+PERIOD\+\_\+\+MS~(1000U)}
+
+\Hypertarget{led_8h_a462fb2ba6f2af99ec3d021ded436bb65}\index{led.h@{led.h}!NO\_TIMEOUT@{NO\_TIMEOUT}}
+\index{NO\_TIMEOUT@{NO\_TIMEOUT}!led.h@{led.h}}
+\doxysubsubsection{\texorpdfstring{NO\_TIMEOUT}{NO\_TIMEOUT}}
+{\footnotesize\ttfamily \label{led_8h_a462fb2ba6f2af99ec3d021ded436bb65} 
+\#define NO\+\_\+\+TIMEOUT~(UINT\+\_\+\+MAX)}
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{led_8h_ae599217f5dbcdc03174ef0adc89bf852}\index{led.h@{led.h}!led\_t@{led\_t}}
+\index{led\_t@{led\_t}!led.h@{led.h}}
+\doxysubsubsection{\texorpdfstring{led\_t}{led\_t}}
+{\footnotesize\ttfamily \label{led_8h_ae599217f5dbcdc03174ef0adc89bf852} 
+typedef struct \mbox{\hyperlink{struct__led__t}{\+\_\+led\+\_\+t}} \mbox{\hyperlink{led_8h_ae599217f5dbcdc03174ef0adc89bf852}{led\+\_\+t}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{led_8h_a3d3e6ae20813940d2bbc54b606205933}\index{led.h@{led.h}!led\_err\_t@{led\_err\_t}}
+\index{led\_err\_t@{led\_err\_t}!led.h@{led.h}}
+\doxysubsubsection{\texorpdfstring{led\_err\_t}{led\_err\_t}}
+{\footnotesize\ttfamily \label{led_8h_a3d3e6ae20813940d2bbc54b606205933} 
+enum \mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_ERR\_NONE@{LED\_ERR\_NONE}!led.h@{led.h}}\index{led.h@{led.h}!LED\_ERR\_NONE@{LED\_ERR\_NONE}}}\Hypertarget{led_8h_a3d3e6ae20813940d2bbc54b606205933a1a0d66903718eec85f5cf20fa1b53af1}\label{led_8h_a3d3e6ae20813940d2bbc54b606205933} 
+LED\+\_\+\+ERR\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_ERR\_CREATE@{LED\_ERR\_CREATE}!led.h@{led.h}}\index{led.h@{led.h}!LED\_ERR\_CREATE@{LED\_ERR\_CREATE}}}\Hypertarget{led_8h_a3d3e6ae20813940d2bbc54b606205933a4edeee06233a3b86fe24e84afb5b37a1}\label{led_8h_a3d3e6ae20813940d2bbc54b606205933} 
+LED\+\_\+\+ERR\+\_\+\+CREATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_ERR\_INVALID\_PATTERN@{LED\_ERR\_INVALID\_PATTERN}!led.h@{led.h}}\index{led.h@{led.h}!LED\_ERR\_INVALID\_PATTERN@{LED\_ERR\_INVALID\_PATTERN}}}\Hypertarget{led_8h_a3d3e6ae20813940d2bbc54b606205933a1e8c6e274fd6924d911b104ed55b2bf6}\label{led_8h_a3d3e6ae20813940d2bbc54b606205933} 
+LED\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+PATTERN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_ERR\_INVALID\_LED@{LED\_ERR\_INVALID\_LED}!led.h@{led.h}}\index{led.h@{led.h}!LED\_ERR\_INVALID\_LED@{LED\_ERR\_INVALID\_LED}}}\Hypertarget{led_8h_a3d3e6ae20813940d2bbc54b606205933a2e4911a845688c2b031c042f0ef03615}\label{led_8h_a3d3e6ae20813940d2bbc54b606205933} 
+LED\+\_\+\+ERR\+\_\+\+INVALID\+\_\+\+LED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_ERR\_MUTEX\_FAIL@{LED\_ERR\_MUTEX\_FAIL}!led.h@{led.h}}\index{led.h@{led.h}!LED\_ERR\_MUTEX\_FAIL@{LED\_ERR\_MUTEX\_FAIL}}}\Hypertarget{led_8h_a3d3e6ae20813940d2bbc54b606205933a723a6028a20a74d44a0a546b84e51f89}\label{led_8h_a3d3e6ae20813940d2bbc54b606205933} 
+LED\+\_\+\+ERR\+\_\+\+MUTEX\+\_\+\+FAIL&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{led_8h_af8035fb15444d8810efaebb6e9a48903}\index{led.h@{led.h}!led\_name\_t@{led\_name\_t}}
+\index{led\_name\_t@{led\_name\_t}!led.h@{led.h}}
+\doxysubsubsection{\texorpdfstring{led\_name\_t}{led\_name\_t}}
+{\footnotesize\ttfamily \label{led_8h_af8035fb15444d8810efaebb6e9a48903} 
+enum \mbox{\hyperlink{led_8h_af8035fb15444d8810efaebb6e9a48903}{led\+\_\+name\+\_\+t}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_RED@{LED\_RED}!led.h@{led.h}}\index{led.h@{led.h}!LED\_RED@{LED\_RED}}}\Hypertarget{led_8h_af8035fb15444d8810efaebb6e9a48903ad80f13022b6d309268fadc7b1da89cb9}\label{led_8h_af8035fb15444d8810efaebb6e9a48903} 
+LED\+\_\+\+RED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_GREEN@{LED\_GREEN}!led.h@{led.h}}\index{led.h@{led.h}!LED\_GREEN@{LED\_GREEN}}}\Hypertarget{led_8h_af8035fb15444d8810efaebb6e9a48903a0ad916c7f80666dc88f6b5b22a72e742}\label{led_8h_af8035fb15444d8810efaebb6e9a48903} 
+LED\+\_\+\+GREEN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_BLUE@{LED\_BLUE}!led.h@{led.h}}\index{led.h@{led.h}!LED\_BLUE@{LED\_BLUE}}}\Hypertarget{led_8h_af8035fb15444d8810efaebb6e9a48903aa67c57c0ff22a2772cb6a5751a3327bf}\label{led_8h_af8035fb15444d8810efaebb6e9a48903} 
+LED\+\_\+\+BLUE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_COUNT@{LED\_COUNT}!led.h@{led.h}}\index{led.h@{led.h}!LED\_COUNT@{LED\_COUNT}}}\Hypertarget{led_8h_af8035fb15444d8810efaebb6e9a48903a0bc6b9364ec72b19c74a14f15aa3832c}\label{led_8h_af8035fb15444d8810efaebb6e9a48903} 
+LED\+\_\+\+COUNT&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{led_8h_a30745a8e50a1e1860c3ef04f1e5559ff}\index{led.h@{led.h}!led\_pattern\_t@{led\_pattern\_t}}
+\index{led\_pattern\_t@{led\_pattern\_t}!led.h@{led.h}}
+\doxysubsubsection{\texorpdfstring{led\_pattern\_t}{led\_pattern\_t}}
+{\footnotesize\ttfamily \label{led_8h_a30745a8e50a1e1860c3ef04f1e5559ff} 
+enum \mbox{\hyperlink{led_8h_a30745a8e50a1e1860c3ef04f1e5559ff}{led\+\_\+pattern\+\_\+t}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_PATTERN\_NONE@{LED\_PATTERN\_NONE}!led.h@{led.h}}\index{led.h@{led.h}!LED\_PATTERN\_NONE@{LED\_PATTERN\_NONE}}}\Hypertarget{led_8h_a30745a8e50a1e1860c3ef04f1e5559ffa9c0b99e9c2cd9da70c553b9470d5f9d5}\label{led_8h_a30745a8e50a1e1860c3ef04f1e5559ff} 
+LED\+\_\+\+PATTERN\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_PATTERN\_KEEP\_ON@{LED\_PATTERN\_KEEP\_ON}!led.h@{led.h}}\index{led.h@{led.h}!LED\_PATTERN\_KEEP\_ON@{LED\_PATTERN\_KEEP\_ON}}}\Hypertarget{led_8h_a30745a8e50a1e1860c3ef04f1e5559ffa7d455aa9694aff95a2119c9256d40cfb}\label{led_8h_a30745a8e50a1e1860c3ef04f1e5559ff} 
+LED\+\_\+\+PATTERN\+\_\+\+KEEP\+\_\+\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_PATTERN\_SLOWBLINK@{LED\_PATTERN\_SLOWBLINK}!led.h@{led.h}}\index{led.h@{led.h}!LED\_PATTERN\_SLOWBLINK@{LED\_PATTERN\_SLOWBLINK}}}\Hypertarget{led_8h_a30745a8e50a1e1860c3ef04f1e5559ffa59398df8d9a9641f5c3fb60e3481c7d2}\label{led_8h_a30745a8e50a1e1860c3ef04f1e5559ff} 
+LED\+\_\+\+PATTERN\+\_\+\+SLOWBLINK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_PATTERN\_FASTBLINK@{LED\_PATTERN\_FASTBLINK}!led.h@{led.h}}\index{led.h@{led.h}!LED\_PATTERN\_FASTBLINK@{LED\_PATTERN\_FASTBLINK}}}\Hypertarget{led_8h_a30745a8e50a1e1860c3ef04f1e5559ffa54a4619e6d74ff82726f2f98227463f6}\label{led_8h_a30745a8e50a1e1860c3ef04f1e5559ff} 
+LED\+\_\+\+PATTERN\+\_\+\+FASTBLINK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_PATTERN\_COUNT@{LED\_PATTERN\_COUNT}!led.h@{led.h}}\index{led.h@{led.h}!LED\_PATTERN\_COUNT@{LED\_PATTERN\_COUNT}}}\Hypertarget{led_8h_a30745a8e50a1e1860c3ef04f1e5559ffab3009d10c4ce8c707e8022d62ea06da7}\label{led_8h_a30745a8e50a1e1860c3ef04f1e5559ff} 
+LED\+\_\+\+PATTERN\+\_\+\+COUNT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{led_8h_a2a7427a84163514c7c9d77e1e835591e}\index{led.h@{led.h}!led\_create@{led\_create}}
+\index{led\_create@{led\_create}!led.h@{led.h}}
+\doxysubsubsection{\texorpdfstring{led\_create()}{led\_create()}}
+{\footnotesize\ttfamily \label{led_8h_a2a7427a84163514c7c9d77e1e835591e} 
+\mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} led\+\_\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{led_8h_af8035fb15444d8810efaebb6e9a48903}{led\+\_\+name\+\_\+t}}}]{led}{}\end{DoxyParamCaption})}
+
+
+
+Create LED driver and configure all needed functionalities. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em led} & -\/ Name of the LED to be created.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of creation. 
+\end{DoxyReturn}
+\Hypertarget{led_8h_a8511c5b3a4deec755f7c52208fed564a}\index{led.h@{led.h}!led\_pattern\_reset@{led\_pattern\_reset}}
+\index{led\_pattern\_reset@{led\_pattern\_reset}!led.h@{led.h}}
+\doxysubsubsection{\texorpdfstring{led\_pattern\_reset()}{led\_pattern\_reset()}}
+{\footnotesize\ttfamily \label{led_8h_a8511c5b3a4deec755f7c52208fed564a} 
+\mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} led\+\_\+pattern\+\_\+reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{led_8h_af8035fb15444d8810efaebb6e9a48903}{led\+\_\+name\+\_\+t}}}]{led}{}\end{DoxyParamCaption})}
+
+
+
+Reset LED pattern. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em led} & -\/ LED name.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of pattern reseting. 
+\end{DoxyReturn}
+\Hypertarget{led_8h_a4370f952b230fff915edf708469da9a7}\index{led.h@{led.h}!led\_pattern\_run@{led\_pattern\_run}}
+\index{led\_pattern\_run@{led\_pattern\_run}!led.h@{led.h}}
+\doxysubsubsection{\texorpdfstring{led\_pattern\_run()}{led\_pattern\_run()}}
+{\footnotesize\ttfamily \label{led_8h_a4370f952b230fff915edf708469da9a7} 
+\mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} led\+\_\+pattern\+\_\+run (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{led_8h_af8035fb15444d8810efaebb6e9a48903}{led\+\_\+name\+\_\+t}}}]{led}{, }\item[{\mbox{\hyperlink{led_8h_a30745a8e50a1e1860c3ef04f1e5559ff}{led\+\_\+pattern\+\_\+t}}}]{led\+\_\+pattern}{, }\item[{uint32\+\_\+t}]{timeout\+\_\+ms}{}\end{DoxyParamCaption})}
+
+
+
+Set led pattern. Don\textquotesingle{}t call this function from ISR. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em led} & -\/ LED name. \\
+\hline
+\mbox{\texttt{ in}}  & {\em led\+\_\+pattern} & -\/ LED pattern to be run. \\
+\hline
+\mbox{\texttt{ in}}  & {\em timeout\+\_\+ms} & -\/ timeout in milliseconds (if 0 run infinitely).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of pattern starting. 
+\end{DoxyReturn}

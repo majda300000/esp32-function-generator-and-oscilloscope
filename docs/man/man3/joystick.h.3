@@ -1,0 +1,155 @@
+.TH "/home/mbakmaz/bytelab2024/final_task/mashina/components/joystick/joystick.h" 3 "Version ." "Mashina" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/mbakmaz/bytelab2024/final_task/mashina/components/joystick/joystick.h \- See the source file\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <stdio\&.h>\fP
+.br
+\fR#include 'potentiometer\&.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBjoystick_position_t\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBJOYSTICK_MAX_POSITION\fP   (1000U)"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBjoystick_id_t\fP { \fBJOYSTICK_1\fP, \fBJOYSTICK_COUNT\fP }"
+.br
+.ti -1c
+.RI "enum \fBjoystick_err_t\fP { \fBJOYSTICK_ERR_NONE\fP = 0, \fBJOYSTICK_ERR\fP = -1, \fBJOYSTICK_ERR_CREATE\fP = -2, \fBJOYSTICK_ERR_UNKNOWN_INSTANCE\fP = -3 }"
+.br
+.ti -1c
+.RI "enum \fBjoystick_discrete_position_t\fP { \fBJOYSTICK_MIDDLE\fP, \fBJOYSTICK_UP\fP, \fBJOYSTICK_LEFT\fP, \fBJOYSTICK_RIGHT\fP, \fBJOYSTICK_DOWN\fP, \fBJOYSTICK_POS_COUNT\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBjoystick_err_t\fP \fBjoystick_create\fP (\fBjoystick_id_t\fP joystick_id)"
+.br
+.RI "The function creates the joystick object\&. "
+.ti -1c
+.RI "\fBjoystick_position_t\fP \fBjoystick_position_get\fP (\fBjoystick_id_t\fP joystick_id)"
+.br
+.RI "This function returns the joysticks position as a structure containing 2 positions (for x and y axis)\&. Both of the positions can be in the interval [0, JOYSTICK_MAX_POSITION]\&. "
+.ti -1c
+.RI "\fBjoystick_discrete_position_t\fP \fBjoystick_discrete_position_get\fP (\fBjoystick_id_t\fP joystick_id)"
+.br
+.RI "This function returns the joysticks position as a discrete poition of MIDDLE, UP, DOWN, LEFT or RIGHT\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+See the source file\&. 
+
+
+.PP
+\fB\fP
+.RS 4
+
+.RE
+.PP
+COPYRIGHT NOTICE: (c) 2022 Byte Lab Grupa d\&.o\&.o\&. All rights reserved\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define JOYSTICK_MAX_POSITION   (1000U)"
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBjoystick_discrete_position_t\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIJOYSTICK_MIDDLE \fP
+.TP
+\f(BIJOYSTICK_UP \fP
+.TP
+\f(BIJOYSTICK_LEFT \fP
+.TP
+\f(BIJOYSTICK_RIGHT \fP
+.TP
+\f(BIJOYSTICK_DOWN \fP
+.TP
+\f(BIJOYSTICK_POS_COUNT \fP
+.SS "enum \fBjoystick_err_t\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIJOYSTICK_ERR_NONE \fP
+.TP
+\f(BIJOYSTICK_ERR \fP
+.TP
+\f(BIJOYSTICK_ERR_CREATE \fP
+.TP
+\f(BIJOYSTICK_ERR_UNKNOWN_INSTANCE \fP
+.SS "enum \fBjoystick_id_t\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIJOYSTICK_1 \fP
+.TP
+\f(BIJOYSTICK_COUNT \fP
+.SH "Function Documentation"
+.PP 
+.SS "\fBjoystick_err_t\fP joystick_create (\fBjoystick_id_t\fP joystick_id)"
+
+.PP
+The function creates the joystick object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick_id\fP The id of the joystick to create\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The status of creation\&. 
+.RE
+.PP
+
+.SS "\fBjoystick_discrete_position_t\fP joystick_discrete_position_get (\fBjoystick_id_t\fP joystick_id)"
+
+.PP
+This function returns the joysticks position as a discrete poition of MIDDLE, UP, DOWN, LEFT or RIGHT\&. 
+.SS "\fBjoystick_position_t\fP joystick_position_get (\fBjoystick_id_t\fP joystick_id)"
+
+.PP
+This function returns the joysticks position as a structure containing 2 positions (for x and y axis)\&. Both of the positions can be in the interval [0, JOYSTICK_MAX_POSITION]\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick_id\fP The id of the joystick which is being checked\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Joysticks position structure (for x and y axis positions)\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Mashina from the source code\&.

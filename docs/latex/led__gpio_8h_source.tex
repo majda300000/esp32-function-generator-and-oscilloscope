@@ -1,0 +1,41 @@
+\doxysection{led\+\_\+gpio.\+h}
+\hypertarget{led__gpio_8h_source}{}\label{led__gpio_8h_source}\index{/home/mbakmaz/bytelab2024/final\_task/mashina/components/led/platform/inc/led\_gpio.h@{/home/mbakmaz/bytelab2024/final\_task/mashina/components/led/platform/inc/led\_gpio.h}}
+\mbox{\hyperlink{led__gpio_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ \_\_LED\_GPIO\_H\_\_}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ \_\_LED\_GPIO\_H\_\_}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ INCLUDES\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ MACROS\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00022\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__led__gpio__t}{\_led\_gpio\_t}};}
+\DoxyCodeLine{00023\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__led__gpio__t}{\_led\_gpio\_t}}\ \mbox{\hyperlink{struct__led__gpio__t}{led\_gpio\_t}};\ \textcolor{comment}{//\ TODO}}
+\DoxyCodeLine{00024\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ DATA\ TYPES\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{led__gpio_8h_a25dc233a9dc8904b8ce586b61edc282dafc0ca8cc6cbe215fd3f1ae6d40255b40}{LED\_OFF}}\ =\ 0,}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{led__gpio_8h_a25dc233a9dc8904b8ce586b61edc282dadd01b80eb93658fb4cf7eb9aceb89a1d}{LED\_ON}}\ =\ 1}
+\DoxyCodeLine{00029\ \}\ \mbox{\hyperlink{led__gpio_8h_a25dc233a9dc8904b8ce586b61edc282d}{led\_state\_t}};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ PUBLIC\ FUNCTION\ PROTOTYPES\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00040\ \mbox{\hyperlink{struct__led__gpio__t}{led\_gpio\_t}}\ *\mbox{\hyperlink{led__gpio_8h_af6c880c2b7e4f7996f168172d8ea47eb}{led\_gpio\_create}}(uint8\_t\ \mbox{\hyperlink{struct__led__gpio__t_ab40a673fb19c1e650e1f79de91788aa5}{pin}});}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{led__gpio_8h_ac519d91bc133b9bc61ddedb7bb6ef9a5}{led\_gpio\_delete}}(\mbox{\hyperlink{struct__led__gpio__t}{led\_gpio\_t}}\ *p\_led);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{led__gpio_8h_a6a0f424f0e43e65d14bb690e7515fc11}{led\_gpio\_on}}(\mbox{\hyperlink{struct__led__gpio__t}{led\_gpio\_t}}\ *p\_led);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{led__gpio_8h_a8ae6e878584e7008f72732b61fa6fcc4}{led\_gpio\_off}}(\mbox{\hyperlink{struct__led__gpio__t}{led\_gpio\_t}}\ *p\_led);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00067\ \}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_LED\_GPIO\_H\_\_}}
+
+\end{DoxyCode}

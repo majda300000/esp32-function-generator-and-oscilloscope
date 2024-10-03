@@ -1,0 +1,114 @@
+.TH "/home/mbakmaz/bytelab2024/final_task/mashina/components/led/led.c" 3 "Version ." "Mashina" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/mbakmaz/bytelab2024/final_task/mashina/components/led/led.c \- High level LED driver\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'led\&.h'\fP
+.br
+\fR#include 'esp_log\&.h'\fP
+.br
+\fR#include 'freertos/FreeRTOS\&.h'\fP
+.br
+\fR#include 'freertos/task\&.h'\fP
+.br
+\fR#include 'freertos/timers\&.h'\fP
+.br
+\fR#include 'freertos/semphr\&.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fB_led_t\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBled_err_t\fP \fBled_create\fP (\fBled_name_t\fP led)"
+.br
+.RI "Create LED driver and configure all needed functionalities\&. "
+.ti -1c
+.RI "\fBled_err_t\fP \fBled_pattern_run\fP (\fBled_name_t\fP led, \fBled_pattern_t\fP led_pattern, uint32_t timeout_ms)"
+.br
+.RI "Set led pattern\&. Don't call this function from ISR\&. "
+.ti -1c
+.RI "\fBled_err_t\fP \fBled_pattern_reset\fP (\fBled_name_t\fP led)"
+.br
+.RI "Reset LED pattern\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+High level LED driver\&. 
+
+
+.PP
+\fB\fP
+.RS 4
+
+.RE
+.PP
+COPYRIGHT NOTICE: (c) 2022 Byte Lab Grupa d\&.o\&.o\&. All rights reserved\&. 
+.SH "Function Documentation"
+.PP 
+.SS "\fBled_err_t\fP led_create (\fBled_name_t\fP led)"
+
+.PP
+Create LED driver and configure all needed functionalities\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIled\fP - Name of the LED to be created\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Status of creation\&. 
+.RE
+.PP
+
+.SS "\fBled_err_t\fP led_pattern_reset (\fBled_name_t\fP led)"
+
+.PP
+Reset LED pattern\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIled\fP - LED name\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Status of pattern reseting\&. 
+.RE
+.PP
+
+.SS "\fBled_err_t\fP led_pattern_run (\fBled_name_t\fP led, \fBled_pattern_t\fP led_pattern, uint32_t timeout_ms)"
+
+.PP
+Set led pattern\&. Don't call this function from ISR\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIled\fP - LED name\&. 
+.br
+\fIled_pattern\fP - LED pattern to be run\&. 
+.br
+\fItimeout_ms\fP - timeout in milliseconds (if 0 run infinitely)\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Status of pattern starting\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Mashina from the source code\&.

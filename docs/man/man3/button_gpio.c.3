@@ -1,0 +1,99 @@
+.TH "/home/mbakmaz/bytelab2024/final_task/mashina/components/button/platform/src/button_gpio.c" 3 "Version ." "Mashina" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/mbakmaz/bytelab2024/final_task/mashina/components/button/platform/src/button_gpio.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'button_gpio\&.h'\fP
+.br
+\fR#include 'driver/gpio\&.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fB_button_gpio_t\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBESP_INTR_FLAG_DEFAULT\fP   (0)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBbutton_gpio_t\fP * \fBbutton_gpio_create\fP (uint8_t pin, bool b_is_active_on_high_level, \fBbtn_gpio_pressed_t\fP p_button_pressed_cb)"
+.br
+.RI "It creates a button object and initializes it\&. "
+.ti -1c
+.RI "void \fBbutton_gpio_delete\fP (\fBbutton_gpio_t\fP *p_btn)"
+.br
+.RI "This function frees the memory allocated for the button_gpio_t structure\&. "
+.ti -1c
+.RI "bool \fBbutton_gpio_is_pressed\fP (\fBbutton_gpio_t\fP *p_btn)"
+.br
+.RI "This function checks if the button is pressed\&. "
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ESP_INTR_FLAG_DEFAULT   (0)"
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBbutton_gpio_t\fP * button_gpio_create (uint8_t pin, bool b_is_active_on_high_level, \fBbtn_gpio_pressed_t\fP p_button_pressed_cb)"
+
+.PP
+It creates a button object and initializes it\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpin\fP The GPIO pin number that the button is connected to\&. 
+.br
+\fIb_is_active_on_high_level\fP If true, the button is active when the GPIO is high\&. If false, the button is active when the GPIO is low\&. 
+.br
+\fIp_button_pressed_cb\fP This is the callback function that will be called when the button is pressed\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A pointer to a button_gpio_t struct\&. 
+.RE
+.PP
+
+.SS "void button_gpio_delete (\fBbutton_gpio_t\fP * p_btn)"
+
+.PP
+This function frees the memory allocated for the button_gpio_t structure\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIp_btn\fP A pointer to the button_gpio_t structure that was created by the \fBbutton_gpio_create()\fP function\&. 
+.RE
+.PP
+
+.SS "bool button_gpio_is_pressed (\fBbutton_gpio_t\fP * p_btn)"
+
+.PP
+This function checks if the button is pressed\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIp_btn\fP A pointer to the button_gpio_t structure that was created in the previous step\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the button is pressed, false otherwise\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Mashina from the source code\&.

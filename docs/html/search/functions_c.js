@@ -1,0 +1,8 @@
+var searchData=
+[
+  ['temp_5fsensor_5finit_0',['temp_sensor_init',['../temp__sensor__sht31_8c.html#af58bdcbba04b8d295cfd879adcb62650',1,'temp_sensor_init(void):&#160;temp_sensor_sht31.c'],['../temp__sensor__sht31_8h.html#af58bdcbba04b8d295cfd879adcb62650',1,'temp_sensor_init(void):&#160;temp_sensor_sht31.c']]],
+  ['temp_5fsensor_5fread_1',['temp_sensor_read',['../temp__sensor__sht31_8c.html#a004315d9d82f6669ead6689efe63897e',1,'temp_sensor_read(float *temperature, float *humidity):&#160;temp_sensor_sht31.c'],['../temp__sensor__sht31_8h.html#a004315d9d82f6669ead6689efe63897e',1,'temp_sensor_read(float *temperature, float *humidity):&#160;temp_sensor_sht31.c']]],
+  ['timer_5finit_2',['timer_init',['../function__generator_2platform_2inc_2timer_8h.html#a97cbd8e299851af63d9c47a588aa25cd',1,'timer_init(int alarm_count_us, gptimer_alarm_cb_t cb):&#160;timer.c'],['../function__generator_2platform_2src_2timer_8c.html#a97cbd8e299851af63d9c47a588aa25cd',1,'timer_init(int alarm_count_us, gptimer_alarm_cb_t cb):&#160;timer.c']]],
+  ['timer_5fstart_3',['timer_start',['../function__generator_2platform_2inc_2timer_8h.html#a161432848a326da3a1ea7765fc2bc023',1,'timer_start():&#160;timer.c'],['../function__generator_2platform_2src_2timer_8c.html#a161432848a326da3a1ea7765fc2bc023',1,'timer_start():&#160;timer.c']]],
+  ['timer_5fstop_4',['timer_stop',['../function__generator_2platform_2inc_2timer_8h.html#aa04078f48a0e8f5b6860a393ad06b535',1,'timer_stop():&#160;timer.c'],['../function__generator_2platform_2src_2timer_8c.html#aa04078f48a0e8f5b6860a393ad06b535',1,'timer_stop():&#160;timer.c']]]
+];

@@ -1,0 +1,159 @@
+.TH "/home/mbakmaz/bytelab2024/final_task/mashina/components/ui_app/gui.c" 3 "Version ." "Mashina" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/mbakmaz/bytelab2024/final_task/mashina/components/ui_app/gui.c \- This file is an example for how to use the LVGL library\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'gui\&.h'\fP
+.br
+\fR#include <stdbool\&.h>\fP
+.br
+\fR#include <stdio\&.h>\fP
+.br
+\fR#include <stdlib\&.h>\fP
+.br
+\fR#include <string\&.h>\fP
+.br
+\fR#include 'freertos/FreeRTOS\&.h'\fP
+.br
+\fR#include 'freertos/task\&.h'\fP
+.br
+\fR#include 'esp_freertos_hooks\&.h'\fP
+.br
+\fR#include 'freertos/semphr\&.h'\fP
+.br
+\fR#include 'esp_log\&.h'\fP
+.br
+\fR#include 'esp_timer\&.h'\fP
+.br
+\fR#include 'lvgl\&.h'\fP
+.br
+\fR#include 'lvgl_helpers\&.h'\fP
+.br
+\fR#include 'squareline/ui\&.h'\fP
+.br
+\fR#include 'button\&.h'\fP
+.br
+\fR#include 'joystick\&.h'\fP
+.br
+\fR#include 'led\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBLV_TICK_PERIOD_MS\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEBOUNCE_THRESH\fP   (5)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBgui_init\fP ()"
+.br
+.RI "Initializes LVGL, TFT drivers and input drivers and starts task needed for GUI operation\&. "
+.ti -1c
+.RI "void \fBgui_receive_joystick_pos\fP (int pos)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBbutton_id_t\fP \fBphysical_btn\fP"
+.br
+.ti -1c
+.RI "   \fBjoystick_id_t\fP \fBjoystick\fP"
+.br
+.ti -1c
+.RI "   bool \fBphysical_btn_pressed_flag\fP"
+.br
+.ti -1c
+.RI "   \fBjoystick_discrete_position_t\fP \fBj_pos\fP"
+.br
+.ti -1c
+.RI "   bool \fBj_pos_changed\fP"
+.br
+.ti -1c
+.RI "   lv_group_t * \fBfocus_scr_0\fP"
+.br
+.ti -1c
+.RI "   lv_group_t * \fBfocus_scr_1\fP"
+.br
+.ti -1c
+.RI "   lv_group_t * \fBfocus_scr_2\fP"
+.br
+.ti -1c
+.RI "   SemaphoreHandle_t \fBbtn_mutex\fP"
+.br
+.ti -1c
+.RI "} \fBgui_io\fP"
+.br
+.RI "Struct to hold gui config variables\&. "
+.ti -1c
+.RI "lv_indev_drv_t \fBio_drv\fP"
+.br
+.ti -1c
+.RI "lv_indev_t * \fBindev_io\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file is an example for how to use the LVGL library\&. 
+
+COPYRIGHT NOTICE: (c) 2022 Byte Lab Grupa d\&.o\&.o\&. All rights reserved\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DEBOUNCE_THRESH   (5)"
+
+.SS "#define LV_TICK_PERIOD_MS   (1U)"
+
+.SH "Function Documentation"
+.PP 
+.SS "void gui_init (void )"
+
+.PP
+Initializes LVGL, TFT drivers and input drivers and starts task needed for GUI operation\&. 
+.SS "void gui_receive_joystick_pos (int pos)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "SemaphoreHandle_t btn_mutex"
+
+.SS "lv_group_t* focus_scr_0"
+
+.SS "lv_group_t* focus_scr_1"
+
+.SS "lv_group_t* focus_scr_2"
+
+.SS "struct  { \&.\&.\&. }  gui_io"
+
+.PP
+Struct to hold gui config variables\&. 
+.SS "lv_indev_t* indev_io"
+
+.SS "lv_indev_drv_t io_drv"
+
+.SS "\fBjoystick_discrete_position_t\fP j_pos"
+
+.SS "bool j_pos_changed"
+
+.SS "\fBjoystick_id_t\fP joystick"
+
+.SS "\fBbutton_id_t\fP physical_btn"
+
+.SS "bool physical_btn_pressed_flag"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Mashina from the source code\&.

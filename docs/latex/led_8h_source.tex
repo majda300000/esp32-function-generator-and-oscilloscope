@@ -1,0 +1,70 @@
+\doxysection{led.\+h}
+\hypertarget{led_8h_source}{}\label{led_8h_source}\index{/home/mbakmaz/bytelab2024/final\_task/mashina/components/led/led.h@{/home/mbakmaz/bytelab2024/final\_task/mashina/components/led/led.h}}
+\mbox{\hyperlink{led_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ \_\_LED\_H\_\_}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ \_\_LED\_H\_\_}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ INCLUDES\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{led__gpio_8h}{led\_gpio.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <limits.h>}}
+\DoxyCodeLine{00023\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ MACROS\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ NO\_TIMEOUT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (UINT\_MAX)}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ LED\_SLOWBLINK\_HALF\_PERIOD\_MS\ (1000U)}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ LED\_FASTBLINK\_HALF\_PERIOD\_MS\ (100U)}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ DATA\ TYPES\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00029\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__led__t}{\_led\_t}};}
+\DoxyCodeLine{00030\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__led__t}{\_led\_t}}\ \mbox{\hyperlink{struct__led__t}{led\_t}};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{led_8h_a30745a8e50a1e1860c3ef04f1e5559ffa9c0b99e9c2cd9da70c553b9470d5f9d5}{LED\_PATTERN\_NONE}},\ \textcolor{comment}{/*\ LED\ is\ off\ */}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{led_8h_a30745a8e50a1e1860c3ef04f1e5559ffa7d455aa9694aff95a2119c9256d40cfb}{LED\_PATTERN\_KEEP\_ON}},\ \ \ \textcolor{comment}{/*\ LED\ is\ on\ \ \ */}}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{led_8h_a30745a8e50a1e1860c3ef04f1e5559ffa59398df8d9a9641f5c3fb60e3481c7d2}{LED\_PATTERN\_SLOWBLINK}},\ \textcolor{comment}{/*\ 1000\ ms\ on,\ 1000\ ms\ off\ */}}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{led_8h_a30745a8e50a1e1860c3ef04f1e5559ffa54a4619e6d74ff82726f2f98227463f6}{LED\_PATTERN\_FASTBLINK}},\ \textcolor{comment}{/*\ 100\ ms\ on,\ 100\ ms\ off\ */}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{led_8h_a30745a8e50a1e1860c3ef04f1e5559ffab3009d10c4ce8c707e8022d62ea06da7}{LED\_PATTERN\_COUNT}}}
+\DoxyCodeLine{00041\ \}\ \mbox{\hyperlink{led_8h_a30745a8e50a1e1860c3ef04f1e5559ff}{led\_pattern\_t}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{led_8h_af8035fb15444d8810efaebb6e9a48903ad80f13022b6d309268fadc7b1da89cb9}{LED\_RED}},}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{led_8h_af8035fb15444d8810efaebb6e9a48903a0ad916c7f80666dc88f6b5b22a72e742}{LED\_GREEN}},}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{led_8h_af8035fb15444d8810efaebb6e9a48903aa67c57c0ff22a2772cb6a5751a3327bf}{LED\_BLUE}},}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{led_8h_af8035fb15444d8810efaebb6e9a48903a0bc6b9364ec72b19c74a14f15aa3832c}{LED\_COUNT}}}
+\DoxyCodeLine{00050\ \}\ \mbox{\hyperlink{led_8h_af8035fb15444d8810efaebb6e9a48903}{led\_name\_t}};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00053\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933a1a0d66903718eec85f5cf20fa1b53af1}{LED\_ERR\_NONE}}\ =\ 0,}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933a4edeee06233a3b86fe24e84afb5b37a1}{LED\_ERR\_CREATE}}\ \ \ \ \ \ \ \ \ \ =\ -\/1,}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933a1e8c6e274fd6924d911b104ed55b2bf6}{LED\_ERR\_INVALID\_PATTERN}}\ =\ -\/2,}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933a2e4911a845688c2b031c042f0ef03615}{LED\_ERR\_INVALID\_LED}}\ \ \ \ \ =\ -\/3,}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933a723a6028a20a74d44a0a546b84e51f89}{LED\_ERR\_MUTEX\_FAIL}}\ \ \ \ \ \ =\ -\/4}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \}\ \mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933}{led\_err\_t}};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ PUBLIC\ FUNCTION\ PROTOTYPES\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00071\ \mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933}{led\_err\_t}}\ \mbox{\hyperlink{led_8h_a2a7427a84163514c7c9d77e1e835591e}{led\_create}}(\mbox{\hyperlink{led_8h_af8035fb15444d8810efaebb6e9a48903}{led\_name\_t}}\ led);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00083\ \mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933}{led\_err\_t}}\ \mbox{\hyperlink{led_8h_a4370f952b230fff915edf708469da9a7}{led\_pattern\_run}}(\mbox{\hyperlink{led_8h_af8035fb15444d8810efaebb6e9a48903}{led\_name\_t}}\ led,\ \mbox{\hyperlink{led_8h_a30745a8e50a1e1860c3ef04f1e5559ff}{led\_pattern\_t}}\ led\_pattern,\ uint32\_t\ \mbox{\hyperlink{struct__led__t_aca14dfa629015ee4cc42bd01d9933944}{timeout\_ms}});}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00092\ \mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933}{led\_err\_t}}\ \mbox{\hyperlink{led_8h_a8511c5b3a4deec755f7c52208fed564a}{led\_pattern\_reset}}(\mbox{\hyperlink{led_8h_af8035fb15444d8810efaebb6e9a48903}{led\_name\_t}}\ led);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00095\ \}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_LED\_H\_\_}}
+
+\end{DoxyCode}

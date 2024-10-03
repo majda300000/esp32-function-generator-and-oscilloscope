@@ -1,0 +1,99 @@
+\doxysection{/home/mbakmaz/bytelab2024/final\+\_\+task/mashina/components/joystick/joystick.c File Reference}
+\hypertarget{joystick_8c}{}\label{joystick_8c}\index{/home/mbakmaz/bytelab2024/final\_task/mashina/components/joystick/joystick.c@{/home/mbakmaz/bytelab2024/final\_task/mashina/components/joystick/joystick.c}}
+
+
+This file implements Joystick as two potentiometers.  
+
+
+{\ttfamily \#include "{}joystick.\+h"{}}\newline
+{\ttfamily \#include "{}stdbool.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct__joystick__config__t}{\+\_\+joystick\+\_\+config\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{joystick_8c_a307e4e735fc5770fe3fba0a937dcce01}{JOYSTICK\+\_\+\+THRESHOLD\+\_\+\+CENTER\+\_\+\+LOW}}~400
+\item 
+\#define \mbox{\hyperlink{joystick_8c_acc6c4f79d2053cafd42701ab68a772e6}{JOYSTICK\+\_\+\+THRESHOLD\+\_\+\+CENTER\+\_\+\+HIGH}}~600
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{joystick_8h_aaa0ea8a638ba74df856a5e6b1d4ff053}{joystick\+\_\+err\+\_\+t}} \mbox{\hyperlink{joystick_8c_a7391524364c863719f92f34d1cc6c0b1}{joystick\+\_\+create}} (\mbox{\hyperlink{joystick_8h_ad599c835dc79f7435efdc8083d5f233b}{joystick\+\_\+id\+\_\+t}} joystick\+\_\+id)
+\begin{DoxyCompactList}\small\item\em The function creates the joystick object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structjoystick__position__t}{joystick\+\_\+position\+\_\+t}} \mbox{\hyperlink{joystick_8c_a83d0d40dd9c801077a44ea307fe9ce10}{joystick\+\_\+position\+\_\+get}} (\mbox{\hyperlink{joystick_8h_ad599c835dc79f7435efdc8083d5f233b}{joystick\+\_\+id\+\_\+t}} joystick\+\_\+id)
+\begin{DoxyCompactList}\small\item\em This function returns the joysticks position as a structure containing 2 positions (for x and y axis). Both of the positions can be in the interval \mbox{[}0, JOYSTICK\+\_\+\+MAX\+\_\+\+POSITION\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{joystick_8h_a5a11fcab04d00f05b11056b65987995f}{joystick\+\_\+discrete\+\_\+position\+\_\+t}} \mbox{\hyperlink{joystick_8c_a8ffed41800bec294451e5b845d83e585}{joystick\+\_\+discrete\+\_\+position\+\_\+get}} (\mbox{\hyperlink{joystick_8h_ad599c835dc79f7435efdc8083d5f233b}{joystick\+\_\+id\+\_\+t}} joystick\+\_\+id)
+\begin{DoxyCompactList}\small\item\em This function returns the joysticks position as a discrete poition of MIDDLE, UP, DOWN, LEFT or RIGHT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file implements Joystick as two potentiometers. 
+
+COPYRIGHT NOTICE\+: (c) 2023 Byte Lab Grupa d.\+o.\+o. All rights reserved. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{joystick_8c_acc6c4f79d2053cafd42701ab68a772e6}\index{joystick.c@{joystick.c}!JOYSTICK\_THRESHOLD\_CENTER\_HIGH@{JOYSTICK\_THRESHOLD\_CENTER\_HIGH}}
+\index{JOYSTICK\_THRESHOLD\_CENTER\_HIGH@{JOYSTICK\_THRESHOLD\_CENTER\_HIGH}!joystick.c@{joystick.c}}
+\doxysubsubsection{\texorpdfstring{JOYSTICK\_THRESHOLD\_CENTER\_HIGH}{JOYSTICK\_THRESHOLD\_CENTER\_HIGH}}
+{\footnotesize\ttfamily \label{joystick_8c_acc6c4f79d2053cafd42701ab68a772e6} 
+\#define JOYSTICK\+\_\+\+THRESHOLD\+\_\+\+CENTER\+\_\+\+HIGH~600}
+
+\Hypertarget{joystick_8c_a307e4e735fc5770fe3fba0a937dcce01}\index{joystick.c@{joystick.c}!JOYSTICK\_THRESHOLD\_CENTER\_LOW@{JOYSTICK\_THRESHOLD\_CENTER\_LOW}}
+\index{JOYSTICK\_THRESHOLD\_CENTER\_LOW@{JOYSTICK\_THRESHOLD\_CENTER\_LOW}!joystick.c@{joystick.c}}
+\doxysubsubsection{\texorpdfstring{JOYSTICK\_THRESHOLD\_CENTER\_LOW}{JOYSTICK\_THRESHOLD\_CENTER\_LOW}}
+{\footnotesize\ttfamily \label{joystick_8c_a307e4e735fc5770fe3fba0a937dcce01} 
+\#define JOYSTICK\+\_\+\+THRESHOLD\+\_\+\+CENTER\+\_\+\+LOW~400}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{joystick_8c_a7391524364c863719f92f34d1cc6c0b1}\index{joystick.c@{joystick.c}!joystick\_create@{joystick\_create}}
+\index{joystick\_create@{joystick\_create}!joystick.c@{joystick.c}}
+\doxysubsubsection{\texorpdfstring{joystick\_create()}{joystick\_create()}}
+{\footnotesize\ttfamily \label{joystick_8c_a7391524364c863719f92f34d1cc6c0b1} 
+\mbox{\hyperlink{joystick_8h_aaa0ea8a638ba74df856a5e6b1d4ff053}{joystick\+\_\+err\+\_\+t}} joystick\+\_\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{joystick_8h_ad599c835dc79f7435efdc8083d5f233b}{joystick\+\_\+id\+\_\+t}}}]{joystick\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+The function creates the joystick object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em joystick\+\_\+id} & The id of the joystick to create.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status of creation. 
+\end{DoxyReturn}
+\Hypertarget{joystick_8c_a8ffed41800bec294451e5b845d83e585}\index{joystick.c@{joystick.c}!joystick\_discrete\_position\_get@{joystick\_discrete\_position\_get}}
+\index{joystick\_discrete\_position\_get@{joystick\_discrete\_position\_get}!joystick.c@{joystick.c}}
+\doxysubsubsection{\texorpdfstring{joystick\_discrete\_position\_get()}{joystick\_discrete\_position\_get()}}
+{\footnotesize\ttfamily \label{joystick_8c_a8ffed41800bec294451e5b845d83e585} 
+\mbox{\hyperlink{joystick_8h_a5a11fcab04d00f05b11056b65987995f}{joystick\+\_\+discrete\+\_\+position\+\_\+t}} joystick\+\_\+discrete\+\_\+position\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{joystick_8h_ad599c835dc79f7435efdc8083d5f233b}{joystick\+\_\+id\+\_\+t}}}]{joystick\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+This function returns the joysticks position as a discrete poition of MIDDLE, UP, DOWN, LEFT or RIGHT. 
+
+\Hypertarget{joystick_8c_a83d0d40dd9c801077a44ea307fe9ce10}\index{joystick.c@{joystick.c}!joystick\_position\_get@{joystick\_position\_get}}
+\index{joystick\_position\_get@{joystick\_position\_get}!joystick.c@{joystick.c}}
+\doxysubsubsection{\texorpdfstring{joystick\_position\_get()}{joystick\_position\_get()}}
+{\footnotesize\ttfamily \label{joystick_8c_a83d0d40dd9c801077a44ea307fe9ce10} 
+\mbox{\hyperlink{structjoystick__position__t}{joystick\+\_\+position\+\_\+t}} joystick\+\_\+position\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{joystick_8h_ad599c835dc79f7435efdc8083d5f233b}{joystick\+\_\+id\+\_\+t}}}]{joystick\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+This function returns the joysticks position as a structure containing 2 positions (for x and y axis). Both of the positions can be in the interval \mbox{[}0, JOYSTICK\+\_\+\+MAX\+\_\+\+POSITION\mbox{]}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em joystick\+\_\+id} & The id of the joystick which is being checked.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Joysticks position structure (for x and y axis positions). 
+\end{DoxyReturn}

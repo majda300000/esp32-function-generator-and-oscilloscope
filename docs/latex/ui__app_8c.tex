@@ -1,0 +1,175 @@
+\doxysection{/home/mbakmaz/bytelab2024/final\+\_\+task/mashina/components/ui\+\_\+app/ui\+\_\+app.c File Reference}
+\hypertarget{ui__app_8c}{}\label{ui__app_8c}\index{/home/mbakmaz/bytelab2024/final\_task/mashina/components/ui\_app/ui\_app.c@{/home/mbakmaz/bytelab2024/final\_task/mashina/components/ui\_app/ui\_app.c}}
+
+
+System init.  
+
+
+{\ttfamily \#include "{}ui\+\_\+app.\+h"{}}\newline
+{\ttfamily \#include "{}fn\+\_\+gen.\+h"{}}\newline
+{\ttfamily \#include "{}gui.\+h"{}}\newline
+{\ttfamily \#include "{}ui.\+h"{}}\newline
+{\ttfamily \#include "{}oscilloscope.\+h"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}freertos/\+Free\+RTOS.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/task.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+freertos\+\_\+hooks.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/semphr.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+log.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+timer.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+sleep.\+h"{}}\newline
+{\ttfamily \#include "{}button.\+h"{}}\newline
+{\ttfamily \#include "{}joystick.\+h"{}}\newline
+{\ttfamily \#include "{}led.\+h"{}}\newline
+{\ttfamily \#include "{}temp\+\_\+sensor\+\_\+sht31.\+h"{}}\newline
+{\ttfamily \#include "{}osc\+\_\+chart.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ui__app_8c_a050008db59156ca0958558f4628299a6}{JOYSTICK\+\_\+\+TASK\+\_\+\+PERIOD\+\_\+\+MS}}~(250)
+\item 
+\#define \mbox{\hyperlink{ui__app_8c_af2042810c79fea955176b3ffe15bb95a}{UI\+\_\+\+TEMP\+\_\+\+TASK\+\_\+\+PERIOD\+\_\+\+MS}}~(3000)
+\item 
+\#define \mbox{\hyperlink{ui__app_8c_a6be634a340087f21374868184587ad34}{JOYSTICK\+\_\+\+TASK\+\_\+\+STACK\+\_\+\+SIZE}}~(1024)
+\item 
+\#define \mbox{\hyperlink{ui__app_8c_ad229550a53d5bcfff513a64081a9053d}{UI\+\_\+\+TEMP\+\_\+\+TASK\+\_\+\+STACK\+\_\+\+SIZE}}~(1024 \texorpdfstring{$\ast$}{*} 2)
+\item 
+\#define \mbox{\hyperlink{ui__app_8c_a36e31823268d2da1cf3d75cffb0f1365}{UI\+\_\+\+ADC1\+\_\+\+CHAN\+\_\+\+A\+\_\+\+PIN}}~(33)
+\item 
+\#define \mbox{\hyperlink{ui__app_8c_ab0a3888dc74a0773634fb1dd154c8b26}{UI\+\_\+\+ADC1\+\_\+\+CHANNEL\+\_\+A}}~(5)
+\item 
+\#define \mbox{\hyperlink{ui__app_8c_adcfd75787fa13093fda3dc9165318f8e}{UI\+\_\+\+ADC1\+\_\+\+CHAN\+\_\+\+B\+\_\+\+PIN}}~(32)
+\item 
+\#define \mbox{\hyperlink{ui__app_8c_a9951d617d5d8e7f6ca8189dfee807e18}{UI\+\_\+\+ADC1\+\_\+\+CHANNEL\+\_\+B}}~(4)
+\item 
+\#define \mbox{\hyperlink{ui__app_8c_ae4a0386c66b19fd6022df8d56f429e95}{UI\+\_\+\+TEMP\+\_\+\+SHUTOWN\+\_\+\+THRESH\+\_\+C}}~(32)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ui__app_8c_af0c94d79193624994df85c52e2e30ca4}{app\+\_\+start}} (void)
+\begin{DoxyCompactList}\small\item\em Starts application. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ui__app_8c_ad4e14f81d32675d681859d916bb65221}{ui\+\_\+turn\+\_\+off\+\_\+oscilloscope}} (void)
+\begin{DoxyCompactList}\small\item\em Turns off adc reading while function generator is active. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ui__app_8c_a520cf2fbe898343cf144aa0c89e38601}{ui\+\_\+turn\+\_\+on\+\_\+oscilloscope}} (void)
+\begin{DoxyCompactList}\small\item\em Turns adc back on while function generator stops. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{oscilloscope_8h_a95fdf0e1118bbf509126d9d2888f6ef1}{oscilloscope\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ui__app_8c_a15938075e0ba814cbb182c3fe052777f}{p\+\_\+osc}}
+\item 
+\mbox{\hyperlink{oscilloscope_8h_a95fdf0e1118bbf509126d9d2888f6ef1}{oscilloscope\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ui__app_8c_a683ab30018dfcf6ad6cf0809616dcb63}{p\+\_\+osc\+\_\+other}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+System init. 
+
+COPYRIGHT NOTICE\+: (c) 2024 Byte Lab Grupa d.\+o.\+o. All rights reserved. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{ui__app_8c_a050008db59156ca0958558f4628299a6}\index{ui\_app.c@{ui\_app.c}!JOYSTICK\_TASK\_PERIOD\_MS@{JOYSTICK\_TASK\_PERIOD\_MS}}
+\index{JOYSTICK\_TASK\_PERIOD\_MS@{JOYSTICK\_TASK\_PERIOD\_MS}!ui\_app.c@{ui\_app.c}}
+\doxysubsubsection{\texorpdfstring{JOYSTICK\_TASK\_PERIOD\_MS}{JOYSTICK\_TASK\_PERIOD\_MS}}
+{\footnotesize\ttfamily \label{ui__app_8c_a050008db59156ca0958558f4628299a6} 
+\#define JOYSTICK\+\_\+\+TASK\+\_\+\+PERIOD\+\_\+\+MS~(250)}
+
+\Hypertarget{ui__app_8c_a6be634a340087f21374868184587ad34}\index{ui\_app.c@{ui\_app.c}!JOYSTICK\_TASK\_STACK\_SIZE@{JOYSTICK\_TASK\_STACK\_SIZE}}
+\index{JOYSTICK\_TASK\_STACK\_SIZE@{JOYSTICK\_TASK\_STACK\_SIZE}!ui\_app.c@{ui\_app.c}}
+\doxysubsubsection{\texorpdfstring{JOYSTICK\_TASK\_STACK\_SIZE}{JOYSTICK\_TASK\_STACK\_SIZE}}
+{\footnotesize\ttfamily \label{ui__app_8c_a6be634a340087f21374868184587ad34} 
+\#define JOYSTICK\+\_\+\+TASK\+\_\+\+STACK\+\_\+\+SIZE~(1024)}
+
+\Hypertarget{ui__app_8c_a36e31823268d2da1cf3d75cffb0f1365}\index{ui\_app.c@{ui\_app.c}!UI\_ADC1\_CHAN\_A\_PIN@{UI\_ADC1\_CHAN\_A\_PIN}}
+\index{UI\_ADC1\_CHAN\_A\_PIN@{UI\_ADC1\_CHAN\_A\_PIN}!ui\_app.c@{ui\_app.c}}
+\doxysubsubsection{\texorpdfstring{UI\_ADC1\_CHAN\_A\_PIN}{UI\_ADC1\_CHAN\_A\_PIN}}
+{\footnotesize\ttfamily \label{ui__app_8c_a36e31823268d2da1cf3d75cffb0f1365} 
+\#define UI\+\_\+\+ADC1\+\_\+\+CHAN\+\_\+\+A\+\_\+\+PIN~(33)}
+
+\Hypertarget{ui__app_8c_adcfd75787fa13093fda3dc9165318f8e}\index{ui\_app.c@{ui\_app.c}!UI\_ADC1\_CHAN\_B\_PIN@{UI\_ADC1\_CHAN\_B\_PIN}}
+\index{UI\_ADC1\_CHAN\_B\_PIN@{UI\_ADC1\_CHAN\_B\_PIN}!ui\_app.c@{ui\_app.c}}
+\doxysubsubsection{\texorpdfstring{UI\_ADC1\_CHAN\_B\_PIN}{UI\_ADC1\_CHAN\_B\_PIN}}
+{\footnotesize\ttfamily \label{ui__app_8c_adcfd75787fa13093fda3dc9165318f8e} 
+\#define UI\+\_\+\+ADC1\+\_\+\+CHAN\+\_\+\+B\+\_\+\+PIN~(32)}
+
+\Hypertarget{ui__app_8c_ab0a3888dc74a0773634fb1dd154c8b26}\index{ui\_app.c@{ui\_app.c}!UI\_ADC1\_CHANNEL\_A@{UI\_ADC1\_CHANNEL\_A}}
+\index{UI\_ADC1\_CHANNEL\_A@{UI\_ADC1\_CHANNEL\_A}!ui\_app.c@{ui\_app.c}}
+\doxysubsubsection{\texorpdfstring{UI\_ADC1\_CHANNEL\_A}{UI\_ADC1\_CHANNEL\_A}}
+{\footnotesize\ttfamily \label{ui__app_8c_ab0a3888dc74a0773634fb1dd154c8b26} 
+\#define UI\+\_\+\+ADC1\+\_\+\+CHANNEL\+\_\+A~(5)}
+
+\Hypertarget{ui__app_8c_a9951d617d5d8e7f6ca8189dfee807e18}\index{ui\_app.c@{ui\_app.c}!UI\_ADC1\_CHANNEL\_B@{UI\_ADC1\_CHANNEL\_B}}
+\index{UI\_ADC1\_CHANNEL\_B@{UI\_ADC1\_CHANNEL\_B}!ui\_app.c@{ui\_app.c}}
+\doxysubsubsection{\texorpdfstring{UI\_ADC1\_CHANNEL\_B}{UI\_ADC1\_CHANNEL\_B}}
+{\footnotesize\ttfamily \label{ui__app_8c_a9951d617d5d8e7f6ca8189dfee807e18} 
+\#define UI\+\_\+\+ADC1\+\_\+\+CHANNEL\+\_\+B~(4)}
+
+\Hypertarget{ui__app_8c_ae4a0386c66b19fd6022df8d56f429e95}\index{ui\_app.c@{ui\_app.c}!UI\_TEMP\_SHUTOWN\_THRESH\_C@{UI\_TEMP\_SHUTOWN\_THRESH\_C}}
+\index{UI\_TEMP\_SHUTOWN\_THRESH\_C@{UI\_TEMP\_SHUTOWN\_THRESH\_C}!ui\_app.c@{ui\_app.c}}
+\doxysubsubsection{\texorpdfstring{UI\_TEMP\_SHUTOWN\_THRESH\_C}{UI\_TEMP\_SHUTOWN\_THRESH\_C}}
+{\footnotesize\ttfamily \label{ui__app_8c_ae4a0386c66b19fd6022df8d56f429e95} 
+\#define UI\+\_\+\+TEMP\+\_\+\+SHUTOWN\+\_\+\+THRESH\+\_\+C~(32)}
+
+\Hypertarget{ui__app_8c_af2042810c79fea955176b3ffe15bb95a}\index{ui\_app.c@{ui\_app.c}!UI\_TEMP\_TASK\_PERIOD\_MS@{UI\_TEMP\_TASK\_PERIOD\_MS}}
+\index{UI\_TEMP\_TASK\_PERIOD\_MS@{UI\_TEMP\_TASK\_PERIOD\_MS}!ui\_app.c@{ui\_app.c}}
+\doxysubsubsection{\texorpdfstring{UI\_TEMP\_TASK\_PERIOD\_MS}{UI\_TEMP\_TASK\_PERIOD\_MS}}
+{\footnotesize\ttfamily \label{ui__app_8c_af2042810c79fea955176b3ffe15bb95a} 
+\#define UI\+\_\+\+TEMP\+\_\+\+TASK\+\_\+\+PERIOD\+\_\+\+MS~(3000)}
+
+\Hypertarget{ui__app_8c_ad229550a53d5bcfff513a64081a9053d}\index{ui\_app.c@{ui\_app.c}!UI\_TEMP\_TASK\_STACK\_SIZE@{UI\_TEMP\_TASK\_STACK\_SIZE}}
+\index{UI\_TEMP\_TASK\_STACK\_SIZE@{UI\_TEMP\_TASK\_STACK\_SIZE}!ui\_app.c@{ui\_app.c}}
+\doxysubsubsection{\texorpdfstring{UI\_TEMP\_TASK\_STACK\_SIZE}{UI\_TEMP\_TASK\_STACK\_SIZE}}
+{\footnotesize\ttfamily \label{ui__app_8c_ad229550a53d5bcfff513a64081a9053d} 
+\#define UI\+\_\+\+TEMP\+\_\+\+TASK\+\_\+\+STACK\+\_\+\+SIZE~(1024 \texorpdfstring{$\ast$}{*} 2)}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ui__app_8c_af0c94d79193624994df85c52e2e30ca4}\index{ui\_app.c@{ui\_app.c}!app\_start@{app\_start}}
+\index{app\_start@{app\_start}!ui\_app.c@{ui\_app.c}}
+\doxysubsubsection{\texorpdfstring{app\_start()}{app\_start()}}
+{\footnotesize\ttfamily \label{ui__app_8c_af0c94d79193624994df85c52e2e30ca4} 
+void app\+\_\+start (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Starts application. 
+
+\Hypertarget{ui__app_8c_ad4e14f81d32675d681859d916bb65221}\index{ui\_app.c@{ui\_app.c}!ui\_turn\_off\_oscilloscope@{ui\_turn\_off\_oscilloscope}}
+\index{ui\_turn\_off\_oscilloscope@{ui\_turn\_off\_oscilloscope}!ui\_app.c@{ui\_app.c}}
+\doxysubsubsection{\texorpdfstring{ui\_turn\_off\_oscilloscope()}{ui\_turn\_off\_oscilloscope()}}
+{\footnotesize\ttfamily \label{ui__app_8c_ad4e14f81d32675d681859d916bb65221} 
+void ui\+\_\+turn\+\_\+off\+\_\+oscilloscope (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Turns off adc reading while function generator is active. 
+
+\Hypertarget{ui__app_8c_a520cf2fbe898343cf144aa0c89e38601}\index{ui\_app.c@{ui\_app.c}!ui\_turn\_on\_oscilloscope@{ui\_turn\_on\_oscilloscope}}
+\index{ui\_turn\_on\_oscilloscope@{ui\_turn\_on\_oscilloscope}!ui\_app.c@{ui\_app.c}}
+\doxysubsubsection{\texorpdfstring{ui\_turn\_on\_oscilloscope()}{ui\_turn\_on\_oscilloscope()}}
+{\footnotesize\ttfamily \label{ui__app_8c_a520cf2fbe898343cf144aa0c89e38601} 
+void ui\+\_\+turn\+\_\+on\+\_\+oscilloscope (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Turns adc back on while function generator stops. 
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{ui__app_8c_a15938075e0ba814cbb182c3fe052777f}\index{ui\_app.c@{ui\_app.c}!p\_osc@{p\_osc}}
+\index{p\_osc@{p\_osc}!ui\_app.c@{ui\_app.c}}
+\doxysubsubsection{\texorpdfstring{p\_osc}{p\_osc}}
+{\footnotesize\ttfamily \label{ui__app_8c_a15938075e0ba814cbb182c3fe052777f} 
+\mbox{\hyperlink{oscilloscope_8h_a95fdf0e1118bbf509126d9d2888f6ef1}{oscilloscope\+\_\+t}}\texorpdfstring{$\ast$}{*} p\+\_\+osc}
+
+\Hypertarget{ui__app_8c_a683ab30018dfcf6ad6cf0809616dcb63}\index{ui\_app.c@{ui\_app.c}!p\_osc\_other@{p\_osc\_other}}
+\index{p\_osc\_other@{p\_osc\_other}!ui\_app.c@{ui\_app.c}}
+\doxysubsubsection{\texorpdfstring{p\_osc\_other}{p\_osc\_other}}
+{\footnotesize\ttfamily \label{ui__app_8c_a683ab30018dfcf6ad6cf0809616dcb63} 
+\mbox{\hyperlink{oscilloscope_8h_a95fdf0e1118bbf509126d9d2888f6ef1}{oscilloscope\+\_\+t}}\texorpdfstring{$\ast$}{*} p\+\_\+osc\+\_\+other}
+

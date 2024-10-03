@@ -1,0 +1,19 @@
+SET(SOURCES components/ui_comp_freqlabel.c
+    components/ui_comp.c
+    screens/ui_homescr.c
+    screens/ui_oscilloscopescr.c
+    screens/ui_functiongenscr.c
+    ui.c
+    components/ui_comp_hook.c
+    ui_helpers.c
+    ui_events.c
+    images/ui_img_1501662095.c
+    images/ui_img_bl_logo_light_png.c
+    images/ui_img_temp_15px_png.c
+    images/ui_img_humidity_15px_png.c
+    images/ui_img_wifi_iconmini_png.c
+    images/ui_img_653708034.c
+    images/ui_img_bl_logo_symbol_png.c
+    images/ui_img_1091903730.c)
+
+add_library(ui ${SOURCES})

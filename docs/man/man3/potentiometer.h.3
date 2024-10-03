@@ -1,0 +1,148 @@
+.TH "/home/mbakmaz/bytelab2024/final_task/mashina/components/potentiometer/potentiometer.h" 3 "Version ." "Mashina" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/mbakmaz/bytelab2024/final_task/mashina/components/potentiometer/potentiometer.h \- See the source file\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <stdbool\&.h>\fP
+.br
+\fR#include <stdio\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBPOTENTIOMETER_MAX_POSITION\fP   (1000U)"
+.br
+.ti -1c
+.RI "#define \fBPOTENTIOMETER_ADC_INT_RANGE\fP   (4095)"
+.br
+.ti -1c
+.RI "#define \fBVDD\fP   (3300)"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fB_potentiometer_t\fP \fBpotentiometer_t\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBpotentiometer_t\fP * \fBpotentiometer_create\fP (uint8_t pin, uint8_t channel, uint16_t max_voltage_mv, bool b_is_reversed)"
+.br
+.RI "It creates a potentiometer object and initializes it\&. "
+.ti -1c
+.RI "void \fBpotentiometer_delete\fP (\fBpotentiometer_t\fP *p_potentiometer)"
+.br
+.RI "This function frees the memory allocated for the potentiometer_t structure\&. "
+.ti -1c
+.RI "uint32_t \fBpotentiometer_position_get\fP (\fBpotentiometer_t\fP *p_potentiometer)"
+.br
+.RI "This function returns the position of the potentiometer in the interval: [0, POTENTIOMETER_MAX_POSITION]\&. 0 means that the potentiometer is in a starting position\&. POTENTIOMETER_MAX_POSITION is returned if the potentiometer is turned all the way\&. "
+.ti -1c
+.RI "int \fBpotentiometer_get_raw\fP (\fBpotentiometer_t\fP *p_potentiometer)"
+.br
+.RI "Returns raw value from adc\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+See the source file\&. 
+
+
+.PP
+\fB\fP
+.RS 4
+
+.RE
+.PP
+COPYRIGHT NOTICE: (c) 2022 Byte Lab Grupa d\&.o\&.o\&. All rights reserved\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define POTENTIOMETER_ADC_INT_RANGE   (4095)"
+
+.SS "#define POTENTIOMETER_MAX_POSITION   (1000U)"
+
+.SS "#define VDD   (3300)"
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fB_potentiometer_t\fP \fBpotentiometer_t\fP"
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBpotentiometer_t\fP * potentiometer_create (uint8_t pin, uint8_t channel, uint16_t max_voltage_mv, bool b_is_reversed)"
+
+.PP
+It creates a potentiometer object and initializes it\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpin\fP The GPIO pin number that the potentiometer is connected to\&. 
+.br
+\fIchannel\fP The ADC channel that the pin is connected to 
+.br
+\fImax_voltage_mv\fP Maximal voltage (in mV) that the ADC can receive from the potentiometers output\&. 
+.br
+\fIb_is_reversed\fP True if the potentiometers logic is reversed\&. False otherwise\&. The logic is reversed if the potentiometer is in a starting position for maximal voltage\&. The logic is not reversed if the potentiometers starting position gives 0 V to the ADC\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+potentiometer_t* 
+.RE
+.PP
+
+.SS "void potentiometer_delete (\fBpotentiometer_t\fP * p_potentiometer)"
+
+.PP
+This function frees the memory allocated for the potentiometer_t structure\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIp_potentiometer\fP A pointer to the potentiometer_t structure\&. 
+.RE
+.PP
+
+.SS "int potentiometer_get_raw (\fBpotentiometer_t\fP * p_potentiometer)"
+
+.PP
+Returns raw value from adc\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIp_potentiometer\fP A pointer to the potentiometer_t structure\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+uintt32_t Raw value from adc 
+.RE
+.PP
+
+.SS "uint32_t potentiometer_position_get (\fBpotentiometer_t\fP * p_potentiometer)"
+
+.PP
+This function returns the position of the potentiometer in the interval: [0, POTENTIOMETER_MAX_POSITION]\&. 0 means that the potentiometer is in a starting position\&. POTENTIOMETER_MAX_POSITION is returned if the potentiometer is turned all the way\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIp_potentiometer\fP A pointer to the potentiometer_t structure\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Potentiometers position in the interval: [0, POTENTIOMETER_MAX_POSITION]\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Mashina from the source code\&.

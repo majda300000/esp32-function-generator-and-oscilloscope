@@ -1,0 +1,157 @@
+.TH "/home/mbakmaz/bytelab2024/final_task/mashina/components/ui_app/ui_app.c" 3 "Version ." "Mashina" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/mbakmaz/bytelab2024/final_task/mashina/components/ui_app/ui_app.c \- System init\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'ui_app\&.h'\fP
+.br
+\fR#include 'fn_gen\&.h'\fP
+.br
+\fR#include 'gui\&.h'\fP
+.br
+\fR#include 'ui\&.h'\fP
+.br
+\fR#include 'oscilloscope\&.h'\fP
+.br
+\fR#include <stdbool\&.h>\fP
+.br
+\fR#include <stdio\&.h>\fP
+.br
+\fR#include <stdlib\&.h>\fP
+.br
+\fR#include <string\&.h>\fP
+.br
+\fR#include 'freertos/FreeRTOS\&.h'\fP
+.br
+\fR#include 'freertos/task\&.h'\fP
+.br
+\fR#include 'esp_freertos_hooks\&.h'\fP
+.br
+\fR#include 'freertos/semphr\&.h'\fP
+.br
+\fR#include 'esp_log\&.h'\fP
+.br
+\fR#include 'esp_timer\&.h'\fP
+.br
+\fR#include 'esp_sleep\&.h'\fP
+.br
+\fR#include 'button\&.h'\fP
+.br
+\fR#include 'joystick\&.h'\fP
+.br
+\fR#include 'led\&.h'\fP
+.br
+\fR#include 'temp_sensor_sht31\&.h'\fP
+.br
+\fR#include 'osc_chart\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBJOYSTICK_TASK_PERIOD_MS\fP   (250)"
+.br
+.ti -1c
+.RI "#define \fBUI_TEMP_TASK_PERIOD_MS\fP   (3000)"
+.br
+.ti -1c
+.RI "#define \fBJOYSTICK_TASK_STACK_SIZE\fP   (1024)"
+.br
+.ti -1c
+.RI "#define \fBUI_TEMP_TASK_STACK_SIZE\fP   (1024 * 2)"
+.br
+.ti -1c
+.RI "#define \fBUI_ADC1_CHAN_A_PIN\fP   (33)"
+.br
+.ti -1c
+.RI "#define \fBUI_ADC1_CHANNEL_A\fP   (5)"
+.br
+.ti -1c
+.RI "#define \fBUI_ADC1_CHAN_B_PIN\fP   (32)"
+.br
+.ti -1c
+.RI "#define \fBUI_ADC1_CHANNEL_B\fP   (4)"
+.br
+.ti -1c
+.RI "#define \fBUI_TEMP_SHUTOWN_THRESH_C\fP   (32)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBapp_start\fP (void)"
+.br
+.RI "Starts application\&. "
+.ti -1c
+.RI "void \fBui_turn_off_oscilloscope\fP (void)"
+.br
+.RI "Turns off adc reading while function generator is active\&. "
+.ti -1c
+.RI "void \fBui_turn_on_oscilloscope\fP (void)"
+.br
+.RI "Turns adc back on while function generator stops\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBoscilloscope_t\fP * \fBp_osc\fP"
+.br
+.ti -1c
+.RI "\fBoscilloscope_t\fP * \fBp_osc_other\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+System init\&. 
+
+COPYRIGHT NOTICE: (c) 2024 Byte Lab Grupa d\&.o\&.o\&. All rights reserved\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define JOYSTICK_TASK_PERIOD_MS   (250)"
+
+.SS "#define JOYSTICK_TASK_STACK_SIZE   (1024)"
+
+.SS "#define UI_ADC1_CHAN_A_PIN   (33)"
+
+.SS "#define UI_ADC1_CHAN_B_PIN   (32)"
+
+.SS "#define UI_ADC1_CHANNEL_A   (5)"
+
+.SS "#define UI_ADC1_CHANNEL_B   (4)"
+
+.SS "#define UI_TEMP_SHUTOWN_THRESH_C   (32)"
+
+.SS "#define UI_TEMP_TASK_PERIOD_MS   (3000)"
+
+.SS "#define UI_TEMP_TASK_STACK_SIZE   (1024 * 2)"
+
+.SH "Function Documentation"
+.PP 
+.SS "void app_start (void )"
+
+.PP
+Starts application\&. 
+.SS "void ui_turn_off_oscilloscope (void )"
+
+.PP
+Turns off adc reading while function generator is active\&. 
+.SS "void ui_turn_on_oscilloscope (void )"
+
+.PP
+Turns adc back on while function generator stops\&. 
+.SH "Variable Documentation"
+.PP 
+.SS "\fBoscilloscope_t\fP* p_osc"
+
+.SS "\fBoscilloscope_t\fP* p_osc_other"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Mashina from the source code\&.

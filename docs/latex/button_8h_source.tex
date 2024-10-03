@@ -1,0 +1,49 @@
+\doxysection{button.\+h}
+\hypertarget{button_8h_source}{}\label{button_8h_source}\index{/home/mbakmaz/bytelab2024/final\_task/mashina/components/button/button.h@{/home/mbakmaz/bytelab2024/final\_task/mashina/components/button/button.h}}
+\mbox{\hyperlink{button_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ \_\_BUTTON\_H\_\_}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ \_\_BUTTON\_H\_\_}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ INCLUDES\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{button__gpio_8h}{button\_gpio.h}}>}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ MACROS\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ DATA\ TYPES\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00025\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{button_8h_a9dd6b837ed5d286038db41b45fdc39d4}{button\_pressed\_t}})(\textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69a60fdded36114049211edfe95a7ad6335}{BUTTON\_1}},}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69af517ae2c92b6a906cfe017cb2c4cf5d6}{BUTTON\_2}},}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69a99e905f2b95d0eb72f968e81243c4c28}{BUTTON\_3}},}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69aa5bb77fb4c55853d07d50a3075f459f4}{BUTTON\_4}},}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69a5eced1b61300568bf3ad61ebe3d7b3d8}{BUTTON\_COUNT}}}
+\DoxyCodeLine{00035\ \}\ \mbox{\hyperlink{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69}{button\_id\_t}};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{button_8h_a09d4d27c5babe9f26f61c77e50bc34fdade5ee8be67f15f1fb90d05cfc9eb977a}{BUTTON\_ERR\_NONE}}\ =\ 0,}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{button_8h_a09d4d27c5babe9f26f61c77e50bc34fda8db84b1f5212a277232a81a0cb6f921f}{BUTTON\_ERR}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ -\/1,}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{button_8h_a09d4d27c5babe9f26f61c77e50bc34fdab81ec308186e70d0cd1d35738a5b567d}{BUTTON\_ERR\_CREATE}}\ \ \ \ \ \ \ \ \ =\ -\/2,}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{button_8h_a09d4d27c5babe9f26f61c77e50bc34fdadfe15c9b2ac479b4881af08f84add5af}{BUTTON\_ERR\_UNKNOWN\_BUTTON}}\ =\ -\/3,}
+\DoxyCodeLine{00044\ \}\ \mbox{\hyperlink{button_8h_a09d4d27c5babe9f26f61c77e50bc34fd}{button\_err\_t}};}
+\DoxyCodeLine{00045\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ PUBLIC\ FUNCTION\ PROTOTYPES\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00055\ \mbox{\hyperlink{button_8h_a09d4d27c5babe9f26f61c77e50bc34fd}{button\_err\_t}}\ \mbox{\hyperlink{button_8h_aa5f109031476d9d810fc612b2e8deb71}{button\_create}}(\mbox{\hyperlink{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69}{button\_id\_t}}\ btn\_id,\ \mbox{\hyperlink{button_8h_a9dd6b837ed5d286038db41b45fdc39d4}{button\_pressed\_t}}\ p\_btn\_cb);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00058\ \}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_BUTTON\_H\_\_}}
+
+\end{DoxyCode}

@@ -1,0 +1,40 @@
+\doxysection{button\+\_\+gpio.\+h}
+\hypertarget{button__gpio_8h_source}{}\label{button__gpio_8h_source}\index{/home/mbakmaz/bytelab2024/final\_task/mashina/components/button/platform/inc/button\_gpio.h@{/home/mbakmaz/bytelab2024/final\_task/mashina/components/button/platform/inc/button\_gpio.h}}
+\mbox{\hyperlink{button__gpio_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ \_\_BUTTON\_GPIO\_H\_\_}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ \_\_BUTTON\_GPIO\_H\_\_}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ INCLUDES\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ MACROS\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ DATA\ TYPES\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{button__gpio_8h_a8421a23c28dee385c39fc60f9011c543}{btn\_gpio\_pressed\_t}})(\textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ Struct\ is\ hidden\ on\ purpose\ from\ an\ user.\ }}
+\DoxyCodeLine{00029\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__button__gpio__t}{\_button\_gpio\_t}};}
+\DoxyCodeLine{00030\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__button__gpio__t}{\_button\_gpio\_t}}\ \mbox{\hyperlink{struct__button__gpio__t}{button\_gpio\_t}};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ PUBLIC\ FUNCTION\ PROTOTYPES\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00045\ \mbox{\hyperlink{struct__button__gpio__t}{button\_gpio\_t}}\ *\mbox{\hyperlink{button__gpio_8h_adc89b5debc29642a103555703193a1c7}{button\_gpio\_create}}(uint8\_t\ \mbox{\hyperlink{struct__button__gpio__t_ab40a673fb19c1e650e1f79de91788aa5}{pin}},\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct__button__gpio__t_a97ca3f5c02794e959b2cc4c828e01422}{b\_is\_active\_on\_high\_level}},\ \mbox{\hyperlink{button__gpio_8h_a8421a23c28dee385c39fc60f9011c543}{btn\_gpio\_pressed\_t}}\ p\_button\_pressed\_cb);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{button__gpio_8h_a218116d9cac8fc010a1af59b597f8826}{button\_gpio\_delete}}(\mbox{\hyperlink{struct__button__gpio__t}{button\_gpio\_t}}\ *p\_btn);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{button__gpio_8h_a26ffefb7ff02bfa80c1593b4861d6c10}{button\_gpio\_is\_pressed}}(\mbox{\hyperlink{struct__button__gpio__t}{button\_gpio\_t}}\ *p\_btn);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00065\ \}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_BUTTON\_GPIO\_H\_\_}}
+
+\end{DoxyCode}

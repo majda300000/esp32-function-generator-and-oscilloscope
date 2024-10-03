@@ -1,0 +1,374 @@
+\doxysection{/home/mbakmaz/bytelab2024/final\+\_\+task/mashina/components/function\+\_\+generator/fn\+\_\+gen.h File Reference}
+\hypertarget{fn__gen_8h}{}\label{fn__gen_8h}\index{/home/mbakmaz/bytelab2024/final\_task/mashina/components/function\_generator/fn\_gen.h@{/home/mbakmaz/bytelab2024/final\_task/mashina/components/function\_generator/fn\_gen.h}}
+
+
+See the source file.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct__fn__signal__config__t}{\+\_\+fn\+\_\+signal\+\_\+config\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct__fn__generator__t}{\+\_\+fn\+\_\+generator\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{fn__gen_8h_af6981a7693a779d2aa0bff02945a0fc9}{FN\+\_\+\+GEN\+\_\+\+POINT\+\_\+\+ARR\+\_\+\+LEN}}~200
+\item 
+\#define \mbox{\hyperlink{fn__gen_8h_ac8d79d24c04e47dbb6736a2cdc745945}{FN\+\_\+\+GEN\+\_\+\+TIMER\+\_\+\+INTR\+\_\+\+US}}~30
+\item 
+\#define \mbox{\hyperlink{fn__gen_8h_ab5468b058aacd85d18b05640ae040943}{FN\+\_\+\+GEN\+\_\+\+PRESET\+\_\+\+NUMBER}}~5
+\item 
+\#define \mbox{\hyperlink{fn__gen_8h_aca282936bcfbb85c24a95855c0dffd6f}{VDD}}~3300
+\item 
+\#define \mbox{\hyperlink{fn__gen_8h_a962d2b546a215764f62875ea2247c048}{AMP\+\_\+\+DAC}}~255
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct__fn__signal__config__t}{\+\_\+fn\+\_\+signal\+\_\+config\+\_\+t}} \mbox{\hyperlink{fn__gen_8h_afdea0bbe99c30fc7b98bca7cacab2d9c}{fn\+\_\+signal\+\_\+config\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct__fn__generator__t}{\+\_\+fn\+\_\+generator\+\_\+t}} \mbox{\hyperlink{fn__gen_8h_ad91073e891e6ef35672b78036e4cea4b}{fn\+\_\+generator\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\+\_\+gen\+\_\+error\+\_\+t}} \{ \mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3a00d79b9544b9e96233bb7569e18c6059}{FN\+\_\+\+GEN\+\_\+\+ERR\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3ad349607f41ee832e70904137f6acb666}{FN\+\_\+\+GEN\+\_\+\+ERR}} = -\/1
+, \mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3a1855b29d6d8f6dfb7681e253616bdc9f}{FN\+\_\+\+GEN\+\_\+\+ERR\+\_\+\+UNKNOWN\+\_\+\+SIGNAL}} = -\/2
+, \mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3af0b2a33219dcd397a1f639f9c3f88506}{FN\+\_\+\+GEN\+\_\+\+ERR\+\_\+\+CREATE}} = -\/3
+ \}
+\item 
+enum \mbox{\hyperlink{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8}{fn\+\_\+signal\+\_\+type\+\_\+t}} \{ \newline
+\mbox{\hyperlink{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8aa16c7eb988c881fa06b7888c7fd9964e}{FN\+\_\+\+SIGNAL\+\_\+\+SINE}}
+, \mbox{\hyperlink{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8a3c17c946c195a0ce7e1670be79ee80fa}{FN\+\_\+\+SIGNAL\+\_\+\+SQUARE}}
+, \mbox{\hyperlink{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8abc9622aa0a12bb76f35b18ca404f61b8}{FN\+\_\+\+SIGNAL\+\_\+\+TRIANGLE}}
+, \mbox{\hyperlink{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8a523a73ea002cc1caf9f08d717a0903e4}{FN\+\_\+\+SIGNAL\+\_\+\+SAWTOOTH}}
+, \newline
+\mbox{\hyperlink{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8ae8d8526740820d824cda1a498232d291}{FN\+\_\+\+SIGNAL\+\_\+\+COUNT}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{fn__gen_8h_a93c111eb091fb470b14c8c4c2f6f98ea}{fn\+\_\+gen\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes function generator module. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\+\_\+gen\+\_\+error\+\_\+t}} \mbox{\hyperlink{fn__gen_8h_a7bcb449f5ee82fd318b9941df2959252}{fn\+\_\+gen\+\_\+set\+\_\+signal\+\_\+config}} (\mbox{\hyperlink{fn__gen_8h_afdea0bbe99c30fc7b98bca7cacab2d9c}{fn\+\_\+signal\+\_\+config\+\_\+t}} config)
+\begin{DoxyCompactList}\small\item\em Sets parameters of signal to be generated. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\+\_\+gen\+\_\+error\+\_\+t}} \mbox{\hyperlink{fn__gen_8h_a098a7b3a1939b09b52d3adb55ca8007d}{fn\+\_\+gen\+\_\+set\+\_\+signal\+\_\+type}} (\mbox{\hyperlink{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8}{fn\+\_\+signal\+\_\+type\+\_\+t}} type)
+\begin{DoxyCompactList}\small\item\em Sets signal\textquotesingle{}s type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\+\_\+gen\+\_\+error\+\_\+t}} \mbox{\hyperlink{fn__gen_8h_aaa11312b6d11ccec43f4db6bd8a3891c}{fn\+\_\+gen\+\_\+set\+\_\+frequency}} (int frequency\+\_\+\+Hz)
+\begin{DoxyCompactList}\small\item\em Sets signal\textquotesingle{}s frequency. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\+\_\+gen\+\_\+error\+\_\+t}} \mbox{\hyperlink{fn__gen_8h_afb457ccd076f7cb3c6b59f6565f7c3e3}{fn\+\_\+gen\+\_\+set\+\_\+amplitude}} (int amplitude\+\_\+m\+V\+\_\+pp)
+\begin{DoxyCompactList}\small\item\em Sets signal\textquotesingle{}s amplitude. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\+\_\+gen\+\_\+error\+\_\+t}} \mbox{\hyperlink{fn__gen_8h_ad6938a9e9abcc5c2c7586d946db4be5d}{fn\+\_\+gen\+\_\+set\+\_\+duty\+\_\+cycle}} (int duty\+\_\+cycle\+\_\+percentage)
+\begin{DoxyCompactList}\small\item\em Sets square wave\textquotesingle{}s duty cycle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\+\_\+gen\+\_\+error\+\_\+t}} \mbox{\hyperlink{fn__gen_8h_a3578fdfefd554fc0e6838f4ed9822e38}{fn\+\_\+gen\+\_\+set\+\_\+preset}} (\mbox{\hyperlink{fn__gen_8h_afdea0bbe99c30fc7b98bca7cacab2d9c}{fn\+\_\+signal\+\_\+config\+\_\+t}} config, int preset\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Saves config for preset number preset\+\_\+num. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\+\_\+gen\+\_\+error\+\_\+t}} \mbox{\hyperlink{fn__gen_8h_a27c1bd853ec2ac1aa5ef0e23a9728956}{fn\+\_\+gen\+\_\+get\+\_\+preset}} (\mbox{\hyperlink{fn__gen_8h_afdea0bbe99c30fc7b98bca7cacab2d9c}{fn\+\_\+signal\+\_\+config\+\_\+t}} \texorpdfstring{$\ast$}{*}conf, int preset\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Returns config at preset with index preset\+\_\+num. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\+\_\+gen\+\_\+error\+\_\+t}} \mbox{\hyperlink{fn__gen_8h_a35e6b95a28ba65201db438d94b496620}{fn\+\_\+gen\+\_\+load\+\_\+preset}} (int preset\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Sets signal config to preset with the index of preset\+\_\+num. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\+\_\+gen\+\_\+error\+\_\+t}} \mbox{\hyperlink{fn__gen_8h_a0fca009f62dd7a0339c5fdca9378ea16}{fn\+\_\+gen\+\_\+signal\+\_\+start\+\_\+task}} ()
+\begin{DoxyCompactList}\small\item\em Starts outputing signal to DAC. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\+\_\+gen\+\_\+error\+\_\+t}} \mbox{\hyperlink{fn__gen_8h_a36e923721936c0125485cd6a39797706}{fn\+\_\+gen\+\_\+signal\+\_\+stop\+\_\+task}} ()
+\begin{DoxyCompactList}\small\item\em Stops outputing signal to DAC. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+See the source file. 
+
+COPYRIGHT NOTICE\+: (c) 2024 Byte Lab Grupa d.\+o.\+o. All rights reserved. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{fn__gen_8h_a962d2b546a215764f62875ea2247c048}\index{fn\_gen.h@{fn\_gen.h}!AMP\_DAC@{AMP\_DAC}}
+\index{AMP\_DAC@{AMP\_DAC}!fn\_gen.h@{fn\_gen.h}}
+\doxysubsubsection{\texorpdfstring{AMP\_DAC}{AMP\_DAC}}
+{\footnotesize\ttfamily \label{fn__gen_8h_a962d2b546a215764f62875ea2247c048} 
+\#define AMP\+\_\+\+DAC~255}
+
+\Hypertarget{fn__gen_8h_af6981a7693a779d2aa0bff02945a0fc9}\index{fn\_gen.h@{fn\_gen.h}!FN\_GEN\_POINT\_ARR\_LEN@{FN\_GEN\_POINT\_ARR\_LEN}}
+\index{FN\_GEN\_POINT\_ARR\_LEN@{FN\_GEN\_POINT\_ARR\_LEN}!fn\_gen.h@{fn\_gen.h}}
+\doxysubsubsection{\texorpdfstring{FN\_GEN\_POINT\_ARR\_LEN}{FN\_GEN\_POINT\_ARR\_LEN}}
+{\footnotesize\ttfamily \label{fn__gen_8h_af6981a7693a779d2aa0bff02945a0fc9} 
+\#define FN\+\_\+\+GEN\+\_\+\+POINT\+\_\+\+ARR\+\_\+\+LEN~200}
+
+\Hypertarget{fn__gen_8h_ab5468b058aacd85d18b05640ae040943}\index{fn\_gen.h@{fn\_gen.h}!FN\_GEN\_PRESET\_NUMBER@{FN\_GEN\_PRESET\_NUMBER}}
+\index{FN\_GEN\_PRESET\_NUMBER@{FN\_GEN\_PRESET\_NUMBER}!fn\_gen.h@{fn\_gen.h}}
+\doxysubsubsection{\texorpdfstring{FN\_GEN\_PRESET\_NUMBER}{FN\_GEN\_PRESET\_NUMBER}}
+{\footnotesize\ttfamily \label{fn__gen_8h_ab5468b058aacd85d18b05640ae040943} 
+\#define FN\+\_\+\+GEN\+\_\+\+PRESET\+\_\+\+NUMBER~5}
+
+\Hypertarget{fn__gen_8h_ac8d79d24c04e47dbb6736a2cdc745945}\index{fn\_gen.h@{fn\_gen.h}!FN\_GEN\_TIMER\_INTR\_US@{FN\_GEN\_TIMER\_INTR\_US}}
+\index{FN\_GEN\_TIMER\_INTR\_US@{FN\_GEN\_TIMER\_INTR\_US}!fn\_gen.h@{fn\_gen.h}}
+\doxysubsubsection{\texorpdfstring{FN\_GEN\_TIMER\_INTR\_US}{FN\_GEN\_TIMER\_INTR\_US}}
+{\footnotesize\ttfamily \label{fn__gen_8h_ac8d79d24c04e47dbb6736a2cdc745945} 
+\#define FN\+\_\+\+GEN\+\_\+\+TIMER\+\_\+\+INTR\+\_\+\+US~30}
+
+\Hypertarget{fn__gen_8h_aca282936bcfbb85c24a95855c0dffd6f}\index{fn\_gen.h@{fn\_gen.h}!VDD@{VDD}}
+\index{VDD@{VDD}!fn\_gen.h@{fn\_gen.h}}
+\doxysubsubsection{\texorpdfstring{VDD}{VDD}}
+{\footnotesize\ttfamily \label{fn__gen_8h_aca282936bcfbb85c24a95855c0dffd6f} 
+\#define VDD~3300}
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{fn__gen_8h_ad91073e891e6ef35672b78036e4cea4b}\index{fn\_gen.h@{fn\_gen.h}!fn\_generator\_t@{fn\_generator\_t}}
+\index{fn\_generator\_t@{fn\_generator\_t}!fn\_gen.h@{fn\_gen.h}}
+\doxysubsubsection{\texorpdfstring{fn\_generator\_t}{fn\_generator\_t}}
+{\footnotesize\ttfamily \label{fn__gen_8h_ad91073e891e6ef35672b78036e4cea4b} 
+typedef struct \mbox{\hyperlink{struct__fn__generator__t}{\+\_\+fn\+\_\+generator\+\_\+t}} \mbox{\hyperlink{fn__gen_8h_ad91073e891e6ef35672b78036e4cea4b}{fn\+\_\+generator\+\_\+t}}}
+
+\Hypertarget{fn__gen_8h_afdea0bbe99c30fc7b98bca7cacab2d9c}\index{fn\_gen.h@{fn\_gen.h}!fn\_signal\_config\_t@{fn\_signal\_config\_t}}
+\index{fn\_signal\_config\_t@{fn\_signal\_config\_t}!fn\_gen.h@{fn\_gen.h}}
+\doxysubsubsection{\texorpdfstring{fn\_signal\_config\_t}{fn\_signal\_config\_t}}
+{\footnotesize\ttfamily \label{fn__gen_8h_afdea0bbe99c30fc7b98bca7cacab2d9c} 
+typedef struct \mbox{\hyperlink{struct__fn__signal__config__t}{\+\_\+fn\+\_\+signal\+\_\+config\+\_\+t}} \mbox{\hyperlink{fn__gen_8h_afdea0bbe99c30fc7b98bca7cacab2d9c}{fn\+\_\+signal\+\_\+config\+\_\+t}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}\index{fn\_gen.h@{fn\_gen.h}!fn\_gen\_error\_t@{fn\_gen\_error\_t}}
+\index{fn\_gen\_error\_t@{fn\_gen\_error\_t}!fn\_gen.h@{fn\_gen.h}}
+\doxysubsubsection{\texorpdfstring{fn\_gen\_error\_t}{fn\_gen\_error\_t}}
+{\footnotesize\ttfamily \label{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3} 
+enum \mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\+\_\+gen\+\_\+error\+\_\+t}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FN\_GEN\_ERR\_NONE@{FN\_GEN\_ERR\_NONE}!fn\_gen.h@{fn\_gen.h}}\index{fn\_gen.h@{fn\_gen.h}!FN\_GEN\_ERR\_NONE@{FN\_GEN\_ERR\_NONE}}}\Hypertarget{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3a00d79b9544b9e96233bb7569e18c6059}\label{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3} 
+FN\+\_\+\+GEN\+\_\+\+ERR\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FN\_GEN\_ERR@{FN\_GEN\_ERR}!fn\_gen.h@{fn\_gen.h}}\index{fn\_gen.h@{fn\_gen.h}!FN\_GEN\_ERR@{FN\_GEN\_ERR}}}\Hypertarget{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3ad349607f41ee832e70904137f6acb666}\label{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3} 
+FN\+\_\+\+GEN\+\_\+\+ERR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FN\_GEN\_ERR\_UNKNOWN\_SIGNAL@{FN\_GEN\_ERR\_UNKNOWN\_SIGNAL}!fn\_gen.h@{fn\_gen.h}}\index{fn\_gen.h@{fn\_gen.h}!FN\_GEN\_ERR\_UNKNOWN\_SIGNAL@{FN\_GEN\_ERR\_UNKNOWN\_SIGNAL}}}\Hypertarget{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3a1855b29d6d8f6dfb7681e253616bdc9f}\label{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3} 
+FN\+\_\+\+GEN\+\_\+\+ERR\+\_\+\+UNKNOWN\+\_\+\+SIGNAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FN\_GEN\_ERR\_CREATE@{FN\_GEN\_ERR\_CREATE}!fn\_gen.h@{fn\_gen.h}}\index{fn\_gen.h@{fn\_gen.h}!FN\_GEN\_ERR\_CREATE@{FN\_GEN\_ERR\_CREATE}}}\Hypertarget{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3af0b2a33219dcd397a1f639f9c3f88506}\label{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3} 
+FN\+\_\+\+GEN\+\_\+\+ERR\+\_\+\+CREATE&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8}\index{fn\_gen.h@{fn\_gen.h}!fn\_signal\_type\_t@{fn\_signal\_type\_t}}
+\index{fn\_signal\_type\_t@{fn\_signal\_type\_t}!fn\_gen.h@{fn\_gen.h}}
+\doxysubsubsection{\texorpdfstring{fn\_signal\_type\_t}{fn\_signal\_type\_t}}
+{\footnotesize\ttfamily \label{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8} 
+enum \mbox{\hyperlink{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8}{fn\+\_\+signal\+\_\+type\+\_\+t}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FN\_SIGNAL\_SINE@{FN\_SIGNAL\_SINE}!fn\_gen.h@{fn\_gen.h}}\index{fn\_gen.h@{fn\_gen.h}!FN\_SIGNAL\_SINE@{FN\_SIGNAL\_SINE}}}\Hypertarget{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8aa16c7eb988c881fa06b7888c7fd9964e}\label{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8} 
+FN\+\_\+\+SIGNAL\+\_\+\+SINE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FN\_SIGNAL\_SQUARE@{FN\_SIGNAL\_SQUARE}!fn\_gen.h@{fn\_gen.h}}\index{fn\_gen.h@{fn\_gen.h}!FN\_SIGNAL\_SQUARE@{FN\_SIGNAL\_SQUARE}}}\Hypertarget{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8a3c17c946c195a0ce7e1670be79ee80fa}\label{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8} 
+FN\+\_\+\+SIGNAL\+\_\+\+SQUARE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FN\_SIGNAL\_TRIANGLE@{FN\_SIGNAL\_TRIANGLE}!fn\_gen.h@{fn\_gen.h}}\index{fn\_gen.h@{fn\_gen.h}!FN\_SIGNAL\_TRIANGLE@{FN\_SIGNAL\_TRIANGLE}}}\Hypertarget{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8abc9622aa0a12bb76f35b18ca404f61b8}\label{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8} 
+FN\+\_\+\+SIGNAL\+\_\+\+TRIANGLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FN\_SIGNAL\_SAWTOOTH@{FN\_SIGNAL\_SAWTOOTH}!fn\_gen.h@{fn\_gen.h}}\index{fn\_gen.h@{fn\_gen.h}!FN\_SIGNAL\_SAWTOOTH@{FN\_SIGNAL\_SAWTOOTH}}}\Hypertarget{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8a523a73ea002cc1caf9f08d717a0903e4}\label{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8} 
+FN\+\_\+\+SIGNAL\+\_\+\+SAWTOOTH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FN\_SIGNAL\_COUNT@{FN\_SIGNAL\_COUNT}!fn\_gen.h@{fn\_gen.h}}\index{fn\_gen.h@{fn\_gen.h}!FN\_SIGNAL\_COUNT@{FN\_SIGNAL\_COUNT}}}\Hypertarget{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8ae8d8526740820d824cda1a498232d291}\label{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8} 
+FN\+\_\+\+SIGNAL\+\_\+\+COUNT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{fn__gen_8h_a27c1bd853ec2ac1aa5ef0e23a9728956}\index{fn\_gen.h@{fn\_gen.h}!fn\_gen\_get\_preset@{fn\_gen\_get\_preset}}
+\index{fn\_gen\_get\_preset@{fn\_gen\_get\_preset}!fn\_gen.h@{fn\_gen.h}}
+\doxysubsubsection{\texorpdfstring{fn\_gen\_get\_preset()}{fn\_gen\_get\_preset()}}
+{\footnotesize\ttfamily \label{fn__gen_8h_a27c1bd853ec2ac1aa5ef0e23a9728956} 
+\mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\+\_\+gen\+\_\+error\+\_\+t}} fn\+\_\+gen\+\_\+get\+\_\+preset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{fn__gen_8h_afdea0bbe99c30fc7b98bca7cacab2d9c}{fn\+\_\+signal\+\_\+config\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{conf}{, }\item[{int}]{preset\+\_\+num}{}\end{DoxyParamCaption})}
+
+
+
+Returns config at preset with index preset\+\_\+num. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em conf} & Pointer to place the config \\
+\hline
+{\em preset\+\_\+num} & index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+fn\+\_\+gen\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{fn__gen_8h_a93c111eb091fb470b14c8c4c2f6f98ea}\index{fn\_gen.h@{fn\_gen.h}!fn\_gen\_init@{fn\_gen\_init}}
+\index{fn\_gen\_init@{fn\_gen\_init}!fn\_gen.h@{fn\_gen.h}}
+\doxysubsubsection{\texorpdfstring{fn\_gen\_init()}{fn\_gen\_init()}}
+{\footnotesize\ttfamily \label{fn__gen_8h_a93c111eb091fb470b14c8c4c2f6f98ea} 
+void fn\+\_\+gen\+\_\+init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes function generator module. 
+
+\Hypertarget{fn__gen_8h_a35e6b95a28ba65201db438d94b496620}\index{fn\_gen.h@{fn\_gen.h}!fn\_gen\_load\_preset@{fn\_gen\_load\_preset}}
+\index{fn\_gen\_load\_preset@{fn\_gen\_load\_preset}!fn\_gen.h@{fn\_gen.h}}
+\doxysubsubsection{\texorpdfstring{fn\_gen\_load\_preset()}{fn\_gen\_load\_preset()}}
+{\footnotesize\ttfamily \label{fn__gen_8h_a35e6b95a28ba65201db438d94b496620} 
+\mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\+\_\+gen\+\_\+error\+\_\+t}} fn\+\_\+gen\+\_\+load\+\_\+preset (\begin{DoxyParamCaption}\item[{int}]{preset\+\_\+num}{}\end{DoxyParamCaption})}
+
+
+
+Sets signal config to preset with the index of preset\+\_\+num. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em preset\+\_\+num} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+fn\+\_\+gen\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{fn__gen_8h_afb457ccd076f7cb3c6b59f6565f7c3e3}\index{fn\_gen.h@{fn\_gen.h}!fn\_gen\_set\_amplitude@{fn\_gen\_set\_amplitude}}
+\index{fn\_gen\_set\_amplitude@{fn\_gen\_set\_amplitude}!fn\_gen.h@{fn\_gen.h}}
+\doxysubsubsection{\texorpdfstring{fn\_gen\_set\_amplitude()}{fn\_gen\_set\_amplitude()}}
+{\footnotesize\ttfamily \label{fn__gen_8h_afb457ccd076f7cb3c6b59f6565f7c3e3} 
+\mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\+\_\+gen\+\_\+error\+\_\+t}} fn\+\_\+gen\+\_\+set\+\_\+amplitude (\begin{DoxyParamCaption}\item[{int}]{amplitude\+\_\+m\+V\+\_\+pp}{}\end{DoxyParamCaption})}
+
+
+
+Sets signal\textquotesingle{}s amplitude. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amplitude\+\_\+m\+V\+\_\+pp} & Aplitude in mV from 0 to 3300 mV \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+fn\+\_\+gen\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{fn__gen_8h_ad6938a9e9abcc5c2c7586d946db4be5d}\index{fn\_gen.h@{fn\_gen.h}!fn\_gen\_set\_duty\_cycle@{fn\_gen\_set\_duty\_cycle}}
+\index{fn\_gen\_set\_duty\_cycle@{fn\_gen\_set\_duty\_cycle}!fn\_gen.h@{fn\_gen.h}}
+\doxysubsubsection{\texorpdfstring{fn\_gen\_set\_duty\_cycle()}{fn\_gen\_set\_duty\_cycle()}}
+{\footnotesize\ttfamily \label{fn__gen_8h_ad6938a9e9abcc5c2c7586d946db4be5d} 
+\mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\+\_\+gen\+\_\+error\+\_\+t}} fn\+\_\+gen\+\_\+set\+\_\+duty\+\_\+cycle (\begin{DoxyParamCaption}\item[{int}]{duty\+\_\+cycle\+\_\+percentage}{}\end{DoxyParamCaption})}
+
+
+
+Sets square wave\textquotesingle{}s duty cycle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em duty\+\_\+cycle\+\_\+percentage} & from 0\% to 100\% \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+fn\+\_\+gen\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{fn__gen_8h_aaa11312b6d11ccec43f4db6bd8a3891c}\index{fn\_gen.h@{fn\_gen.h}!fn\_gen\_set\_frequency@{fn\_gen\_set\_frequency}}
+\index{fn\_gen\_set\_frequency@{fn\_gen\_set\_frequency}!fn\_gen.h@{fn\_gen.h}}
+\doxysubsubsection{\texorpdfstring{fn\_gen\_set\_frequency()}{fn\_gen\_set\_frequency()}}
+{\footnotesize\ttfamily \label{fn__gen_8h_aaa11312b6d11ccec43f4db6bd8a3891c} 
+\mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\+\_\+gen\+\_\+error\+\_\+t}} fn\+\_\+gen\+\_\+set\+\_\+frequency (\begin{DoxyParamCaption}\item[{int}]{frequency\+\_\+\+Hz}{}\end{DoxyParamCaption})}
+
+
+
+Sets signal\textquotesingle{}s frequency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frequency\+\_\+\+Hz} & frequency in Hz from 0 to 3000 Hz \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+fn\+\_\+gen\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{fn__gen_8h_a3578fdfefd554fc0e6838f4ed9822e38}\index{fn\_gen.h@{fn\_gen.h}!fn\_gen\_set\_preset@{fn\_gen\_set\_preset}}
+\index{fn\_gen\_set\_preset@{fn\_gen\_set\_preset}!fn\_gen.h@{fn\_gen.h}}
+\doxysubsubsection{\texorpdfstring{fn\_gen\_set\_preset()}{fn\_gen\_set\_preset()}}
+{\footnotesize\ttfamily \label{fn__gen_8h_a3578fdfefd554fc0e6838f4ed9822e38} 
+\mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\+\_\+gen\+\_\+error\+\_\+t}} fn\+\_\+gen\+\_\+set\+\_\+preset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{fn__gen_8h_afdea0bbe99c30fc7b98bca7cacab2d9c}{fn\+\_\+signal\+\_\+config\+\_\+t}}}]{config}{, }\item[{int}]{preset\+\_\+num}{}\end{DoxyParamCaption})}
+
+
+
+Saves config for preset number preset\+\_\+num. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & config to be saved \\
+\hline
+{\em preset\+\_\+num} & number of preset \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+fn\+\_\+gen\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{fn__gen_8h_a7bcb449f5ee82fd318b9941df2959252}\index{fn\_gen.h@{fn\_gen.h}!fn\_gen\_set\_signal\_config@{fn\_gen\_set\_signal\_config}}
+\index{fn\_gen\_set\_signal\_config@{fn\_gen\_set\_signal\_config}!fn\_gen.h@{fn\_gen.h}}
+\doxysubsubsection{\texorpdfstring{fn\_gen\_set\_signal\_config()}{fn\_gen\_set\_signal\_config()}}
+{\footnotesize\ttfamily \label{fn__gen_8h_a7bcb449f5ee82fd318b9941df2959252} 
+\mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\+\_\+gen\+\_\+error\+\_\+t}} fn\+\_\+gen\+\_\+set\+\_\+signal\+\_\+config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{fn__gen_8h_afdea0bbe99c30fc7b98bca7cacab2d9c}{fn\+\_\+signal\+\_\+config\+\_\+t}}}]{config}{}\end{DoxyParamCaption})}
+
+
+
+Sets parameters of signal to be generated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & Signal parameters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+fn\+\_\+gen\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{fn__gen_8h_a098a7b3a1939b09b52d3adb55ca8007d}\index{fn\_gen.h@{fn\_gen.h}!fn\_gen\_set\_signal\_type@{fn\_gen\_set\_signal\_type}}
+\index{fn\_gen\_set\_signal\_type@{fn\_gen\_set\_signal\_type}!fn\_gen.h@{fn\_gen.h}}
+\doxysubsubsection{\texorpdfstring{fn\_gen\_set\_signal\_type()}{fn\_gen\_set\_signal\_type()}}
+{\footnotesize\ttfamily \label{fn__gen_8h_a098a7b3a1939b09b52d3adb55ca8007d} 
+\mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\+\_\+gen\+\_\+error\+\_\+t}} fn\+\_\+gen\+\_\+set\+\_\+signal\+\_\+type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{fn__gen_8h_ad616d126b38b16f0465370d20c697fc8}{fn\+\_\+signal\+\_\+type\+\_\+t}}}]{type}{}\end{DoxyParamCaption})}
+
+
+
+Sets signal\textquotesingle{}s type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & enum type fn\+\_\+signal\+\_\+type\+\_\+t \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+fn\+\_\+gen\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{fn__gen_8h_a0fca009f62dd7a0339c5fdca9378ea16}\index{fn\_gen.h@{fn\_gen.h}!fn\_gen\_signal\_start\_task@{fn\_gen\_signal\_start\_task}}
+\index{fn\_gen\_signal\_start\_task@{fn\_gen\_signal\_start\_task}!fn\_gen.h@{fn\_gen.h}}
+\doxysubsubsection{\texorpdfstring{fn\_gen\_signal\_start\_task()}{fn\_gen\_signal\_start\_task()}}
+{\footnotesize\ttfamily \label{fn__gen_8h_a0fca009f62dd7a0339c5fdca9378ea16} 
+\mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\+\_\+gen\+\_\+error\+\_\+t}} fn\+\_\+gen\+\_\+signal\+\_\+start\+\_\+task (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Starts outputing signal to DAC. 
+
+\begin{DoxyReturn}{Returns}
+fn\+\_\+gen\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{fn__gen_8h_a36e923721936c0125485cd6a39797706}\index{fn\_gen.h@{fn\_gen.h}!fn\_gen\_signal\_stop\_task@{fn\_gen\_signal\_stop\_task}}
+\index{fn\_gen\_signal\_stop\_task@{fn\_gen\_signal\_stop\_task}!fn\_gen.h@{fn\_gen.h}}
+\doxysubsubsection{\texorpdfstring{fn\_gen\_signal\_stop\_task()}{fn\_gen\_signal\_stop\_task()}}
+{\footnotesize\ttfamily \label{fn__gen_8h_a36e923721936c0125485cd6a39797706} 
+\mbox{\hyperlink{fn__gen_8h_a2bcb30031bc5e794e385fbf1619805e3}{fn\+\_\+gen\+\_\+error\+\_\+t}} fn\+\_\+gen\+\_\+signal\+\_\+stop\+\_\+task (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Stops outputing signal to DAC. 
+
+\begin{DoxyReturn}{Returns}
+fn\+\_\+gen\+\_\+err\+\_\+t 
+\end{DoxyReturn}

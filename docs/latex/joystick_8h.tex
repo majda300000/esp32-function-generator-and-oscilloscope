@@ -1,0 +1,192 @@
+\doxysection{/home/mbakmaz/bytelab2024/final\+\_\+task/mashina/components/joystick/joystick.h File Reference}
+\hypertarget{joystick_8h}{}\label{joystick_8h}\index{/home/mbakmaz/bytelab2024/final\_task/mashina/components/joystick/joystick.h@{/home/mbakmaz/bytelab2024/final\_task/mashina/components/joystick/joystick.h}}
+
+
+See the source file.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}potentiometer.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structjoystick__position__t}{joystick\+\_\+position\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{joystick_8h_aaa23ccac0cd817d10bc1dff3e2c90c41}{JOYSTICK\+\_\+\+MAX\+\_\+\+POSITION}}~(1000U)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{joystick_8h_ad599c835dc79f7435efdc8083d5f233b}{joystick\+\_\+id\+\_\+t}} \{ \mbox{\hyperlink{joystick_8h_ad599c835dc79f7435efdc8083d5f233bae8acc2c49f074271cf8ceada067b51a0}{JOYSTICK\+\_\+1}}
+, \mbox{\hyperlink{joystick_8h_ad599c835dc79f7435efdc8083d5f233baa902041d24a898db60d7b6aafbfeca28}{JOYSTICK\+\_\+\+COUNT}}
+ \}
+\item 
+enum \mbox{\hyperlink{joystick_8h_aaa0ea8a638ba74df856a5e6b1d4ff053}{joystick\+\_\+err\+\_\+t}} \{ \mbox{\hyperlink{joystick_8h_aaa0ea8a638ba74df856a5e6b1d4ff053a3642817fb3401692fd50669154c6693d}{JOYSTICK\+\_\+\+ERR\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{joystick_8h_aaa0ea8a638ba74df856a5e6b1d4ff053af162b0e3b61bd1b9c2d23732ec6bf07a}{JOYSTICK\+\_\+\+ERR}} = -\/1
+, \mbox{\hyperlink{joystick_8h_aaa0ea8a638ba74df856a5e6b1d4ff053a064734fa06aea5c72d0ee84769209606}{JOYSTICK\+\_\+\+ERR\+\_\+\+CREATE}} = -\/2
+, \mbox{\hyperlink{joystick_8h_aaa0ea8a638ba74df856a5e6b1d4ff053a9122f57848d2c77245bf2f873084a053}{JOYSTICK\+\_\+\+ERR\+\_\+\+UNKNOWN\+\_\+\+INSTANCE}} = -\/3
+ \}
+\item 
+enum \mbox{\hyperlink{joystick_8h_a5a11fcab04d00f05b11056b65987995f}{joystick\+\_\+discrete\+\_\+position\+\_\+t}} \{ \newline
+\mbox{\hyperlink{joystick_8h_a5a11fcab04d00f05b11056b65987995fae4e4e658bbf9e064c5176b6cea07fddc}{JOYSTICK\+\_\+\+MIDDLE}}
+, \mbox{\hyperlink{joystick_8h_a5a11fcab04d00f05b11056b65987995fa50768334177f1121514b999d9f6b0c11}{JOYSTICK\+\_\+\+UP}}
+, \mbox{\hyperlink{joystick_8h_a5a11fcab04d00f05b11056b65987995fa867418ff8371cf9497ba8ed436e0ebf3}{JOYSTICK\+\_\+\+LEFT}}
+, \mbox{\hyperlink{joystick_8h_a5a11fcab04d00f05b11056b65987995fa529afbf47abb82d495f3c4e7c22eefae}{JOYSTICK\+\_\+\+RIGHT}}
+, \newline
+\mbox{\hyperlink{joystick_8h_a5a11fcab04d00f05b11056b65987995fa39dc96253eaaf30978bee483f0fcc7e3}{JOYSTICK\+\_\+\+DOWN}}
+, \mbox{\hyperlink{joystick_8h_a5a11fcab04d00f05b11056b65987995fa680e8de17ccf283c70c8f4d4e7555c91}{JOYSTICK\+\_\+\+POS\+\_\+\+COUNT}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{joystick_8h_aaa0ea8a638ba74df856a5e6b1d4ff053}{joystick\+\_\+err\+\_\+t}} \mbox{\hyperlink{joystick_8h_a7391524364c863719f92f34d1cc6c0b1}{joystick\+\_\+create}} (\mbox{\hyperlink{joystick_8h_ad599c835dc79f7435efdc8083d5f233b}{joystick\+\_\+id\+\_\+t}} joystick\+\_\+id)
+\begin{DoxyCompactList}\small\item\em The function creates the joystick object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structjoystick__position__t}{joystick\+\_\+position\+\_\+t}} \mbox{\hyperlink{joystick_8h_a83d0d40dd9c801077a44ea307fe9ce10}{joystick\+\_\+position\+\_\+get}} (\mbox{\hyperlink{joystick_8h_ad599c835dc79f7435efdc8083d5f233b}{joystick\+\_\+id\+\_\+t}} joystick\+\_\+id)
+\begin{DoxyCompactList}\small\item\em This function returns the joysticks position as a structure containing 2 positions (for x and y axis). Both of the positions can be in the interval \mbox{[}0, JOYSTICK\+\_\+\+MAX\+\_\+\+POSITION\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{joystick_8h_a5a11fcab04d00f05b11056b65987995f}{joystick\+\_\+discrete\+\_\+position\+\_\+t}} \mbox{\hyperlink{joystick_8h_a8ffed41800bec294451e5b845d83e585}{joystick\+\_\+discrete\+\_\+position\+\_\+get}} (\mbox{\hyperlink{joystick_8h_ad599c835dc79f7435efdc8083d5f233b}{joystick\+\_\+id\+\_\+t}} joystick\+\_\+id)
+\begin{DoxyCompactList}\small\item\em This function returns the joysticks position as a discrete poition of MIDDLE, UP, DOWN, LEFT or RIGHT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+See the source file. 
+
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+COPYRIGHT NOTICE\+: (c) 2022 Byte Lab Grupa d.\+o.\+o. All rights reserved. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{joystick_8h_aaa23ccac0cd817d10bc1dff3e2c90c41}\index{joystick.h@{joystick.h}!JOYSTICK\_MAX\_POSITION@{JOYSTICK\_MAX\_POSITION}}
+\index{JOYSTICK\_MAX\_POSITION@{JOYSTICK\_MAX\_POSITION}!joystick.h@{joystick.h}}
+\doxysubsubsection{\texorpdfstring{JOYSTICK\_MAX\_POSITION}{JOYSTICK\_MAX\_POSITION}}
+{\footnotesize\ttfamily \label{joystick_8h_aaa23ccac0cd817d10bc1dff3e2c90c41} 
+\#define JOYSTICK\+\_\+\+MAX\+\_\+\+POSITION~(1000U)}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{joystick_8h_a5a11fcab04d00f05b11056b65987995f}\index{joystick.h@{joystick.h}!joystick\_discrete\_position\_t@{joystick\_discrete\_position\_t}}
+\index{joystick\_discrete\_position\_t@{joystick\_discrete\_position\_t}!joystick.h@{joystick.h}}
+\doxysubsubsection{\texorpdfstring{joystick\_discrete\_position\_t}{joystick\_discrete\_position\_t}}
+{\footnotesize\ttfamily \label{joystick_8h_a5a11fcab04d00f05b11056b65987995f} 
+enum \mbox{\hyperlink{joystick_8h_a5a11fcab04d00f05b11056b65987995f}{joystick\+\_\+discrete\+\_\+position\+\_\+t}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JOYSTICK\_MIDDLE@{JOYSTICK\_MIDDLE}!joystick.h@{joystick.h}}\index{joystick.h@{joystick.h}!JOYSTICK\_MIDDLE@{JOYSTICK\_MIDDLE}}}\Hypertarget{joystick_8h_a5a11fcab04d00f05b11056b65987995fae4e4e658bbf9e064c5176b6cea07fddc}\label{joystick_8h_a5a11fcab04d00f05b11056b65987995f} 
+JOYSTICK\+\_\+\+MIDDLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JOYSTICK\_UP@{JOYSTICK\_UP}!joystick.h@{joystick.h}}\index{joystick.h@{joystick.h}!JOYSTICK\_UP@{JOYSTICK\_UP}}}\Hypertarget{joystick_8h_a5a11fcab04d00f05b11056b65987995fa50768334177f1121514b999d9f6b0c11}\label{joystick_8h_a5a11fcab04d00f05b11056b65987995f} 
+JOYSTICK\+\_\+\+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JOYSTICK\_LEFT@{JOYSTICK\_LEFT}!joystick.h@{joystick.h}}\index{joystick.h@{joystick.h}!JOYSTICK\_LEFT@{JOYSTICK\_LEFT}}}\Hypertarget{joystick_8h_a5a11fcab04d00f05b11056b65987995fa867418ff8371cf9497ba8ed436e0ebf3}\label{joystick_8h_a5a11fcab04d00f05b11056b65987995f} 
+JOYSTICK\+\_\+\+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JOYSTICK\_RIGHT@{JOYSTICK\_RIGHT}!joystick.h@{joystick.h}}\index{joystick.h@{joystick.h}!JOYSTICK\_RIGHT@{JOYSTICK\_RIGHT}}}\Hypertarget{joystick_8h_a5a11fcab04d00f05b11056b65987995fa529afbf47abb82d495f3c4e7c22eefae}\label{joystick_8h_a5a11fcab04d00f05b11056b65987995f} 
+JOYSTICK\+\_\+\+RIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JOYSTICK\_DOWN@{JOYSTICK\_DOWN}!joystick.h@{joystick.h}}\index{joystick.h@{joystick.h}!JOYSTICK\_DOWN@{JOYSTICK\_DOWN}}}\Hypertarget{joystick_8h_a5a11fcab04d00f05b11056b65987995fa39dc96253eaaf30978bee483f0fcc7e3}\label{joystick_8h_a5a11fcab04d00f05b11056b65987995f} 
+JOYSTICK\+\_\+\+DOWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JOYSTICK\_POS\_COUNT@{JOYSTICK\_POS\_COUNT}!joystick.h@{joystick.h}}\index{joystick.h@{joystick.h}!JOYSTICK\_POS\_COUNT@{JOYSTICK\_POS\_COUNT}}}\Hypertarget{joystick_8h_a5a11fcab04d00f05b11056b65987995fa680e8de17ccf283c70c8f4d4e7555c91}\label{joystick_8h_a5a11fcab04d00f05b11056b65987995f} 
+JOYSTICK\+\_\+\+POS\+\_\+\+COUNT&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{joystick_8h_aaa0ea8a638ba74df856a5e6b1d4ff053}\index{joystick.h@{joystick.h}!joystick\_err\_t@{joystick\_err\_t}}
+\index{joystick\_err\_t@{joystick\_err\_t}!joystick.h@{joystick.h}}
+\doxysubsubsection{\texorpdfstring{joystick\_err\_t}{joystick\_err\_t}}
+{\footnotesize\ttfamily \label{joystick_8h_aaa0ea8a638ba74df856a5e6b1d4ff053} 
+enum \mbox{\hyperlink{joystick_8h_aaa0ea8a638ba74df856a5e6b1d4ff053}{joystick\+\_\+err\+\_\+t}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JOYSTICK\_ERR\_NONE@{JOYSTICK\_ERR\_NONE}!joystick.h@{joystick.h}}\index{joystick.h@{joystick.h}!JOYSTICK\_ERR\_NONE@{JOYSTICK\_ERR\_NONE}}}\Hypertarget{joystick_8h_aaa0ea8a638ba74df856a5e6b1d4ff053a3642817fb3401692fd50669154c6693d}\label{joystick_8h_aaa0ea8a638ba74df856a5e6b1d4ff053} 
+JOYSTICK\+\_\+\+ERR\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JOYSTICK\_ERR@{JOYSTICK\_ERR}!joystick.h@{joystick.h}}\index{joystick.h@{joystick.h}!JOYSTICK\_ERR@{JOYSTICK\_ERR}}}\Hypertarget{joystick_8h_aaa0ea8a638ba74df856a5e6b1d4ff053af162b0e3b61bd1b9c2d23732ec6bf07a}\label{joystick_8h_aaa0ea8a638ba74df856a5e6b1d4ff053} 
+JOYSTICK\+\_\+\+ERR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JOYSTICK\_ERR\_CREATE@{JOYSTICK\_ERR\_CREATE}!joystick.h@{joystick.h}}\index{joystick.h@{joystick.h}!JOYSTICK\_ERR\_CREATE@{JOYSTICK\_ERR\_CREATE}}}\Hypertarget{joystick_8h_aaa0ea8a638ba74df856a5e6b1d4ff053a064734fa06aea5c72d0ee84769209606}\label{joystick_8h_aaa0ea8a638ba74df856a5e6b1d4ff053} 
+JOYSTICK\+\_\+\+ERR\+\_\+\+CREATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JOYSTICK\_ERR\_UNKNOWN\_INSTANCE@{JOYSTICK\_ERR\_UNKNOWN\_INSTANCE}!joystick.h@{joystick.h}}\index{joystick.h@{joystick.h}!JOYSTICK\_ERR\_UNKNOWN\_INSTANCE@{JOYSTICK\_ERR\_UNKNOWN\_INSTANCE}}}\Hypertarget{joystick_8h_aaa0ea8a638ba74df856a5e6b1d4ff053a9122f57848d2c77245bf2f873084a053}\label{joystick_8h_aaa0ea8a638ba74df856a5e6b1d4ff053} 
+JOYSTICK\+\_\+\+ERR\+\_\+\+UNKNOWN\+\_\+\+INSTANCE&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{joystick_8h_ad599c835dc79f7435efdc8083d5f233b}\index{joystick.h@{joystick.h}!joystick\_id\_t@{joystick\_id\_t}}
+\index{joystick\_id\_t@{joystick\_id\_t}!joystick.h@{joystick.h}}
+\doxysubsubsection{\texorpdfstring{joystick\_id\_t}{joystick\_id\_t}}
+{\footnotesize\ttfamily \label{joystick_8h_ad599c835dc79f7435efdc8083d5f233b} 
+enum \mbox{\hyperlink{joystick_8h_ad599c835dc79f7435efdc8083d5f233b}{joystick\+\_\+id\+\_\+t}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JOYSTICK\_1@{JOYSTICK\_1}!joystick.h@{joystick.h}}\index{joystick.h@{joystick.h}!JOYSTICK\_1@{JOYSTICK\_1}}}\Hypertarget{joystick_8h_ad599c835dc79f7435efdc8083d5f233bae8acc2c49f074271cf8ceada067b51a0}\label{joystick_8h_ad599c835dc79f7435efdc8083d5f233b} 
+JOYSTICK\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JOYSTICK\_COUNT@{JOYSTICK\_COUNT}!joystick.h@{joystick.h}}\index{joystick.h@{joystick.h}!JOYSTICK\_COUNT@{JOYSTICK\_COUNT}}}\Hypertarget{joystick_8h_ad599c835dc79f7435efdc8083d5f233baa902041d24a898db60d7b6aafbfeca28}\label{joystick_8h_ad599c835dc79f7435efdc8083d5f233b} 
+JOYSTICK\+\_\+\+COUNT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{joystick_8h_a7391524364c863719f92f34d1cc6c0b1}\index{joystick.h@{joystick.h}!joystick\_create@{joystick\_create}}
+\index{joystick\_create@{joystick\_create}!joystick.h@{joystick.h}}
+\doxysubsubsection{\texorpdfstring{joystick\_create()}{joystick\_create()}}
+{\footnotesize\ttfamily \label{joystick_8h_a7391524364c863719f92f34d1cc6c0b1} 
+\mbox{\hyperlink{joystick_8h_aaa0ea8a638ba74df856a5e6b1d4ff053}{joystick\+\_\+err\+\_\+t}} joystick\+\_\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{joystick_8h_ad599c835dc79f7435efdc8083d5f233b}{joystick\+\_\+id\+\_\+t}}}]{joystick\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+The function creates the joystick object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em joystick\+\_\+id} & The id of the joystick to create.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status of creation. 
+\end{DoxyReturn}
+\Hypertarget{joystick_8h_a8ffed41800bec294451e5b845d83e585}\index{joystick.h@{joystick.h}!joystick\_discrete\_position\_get@{joystick\_discrete\_position\_get}}
+\index{joystick\_discrete\_position\_get@{joystick\_discrete\_position\_get}!joystick.h@{joystick.h}}
+\doxysubsubsection{\texorpdfstring{joystick\_discrete\_position\_get()}{joystick\_discrete\_position\_get()}}
+{\footnotesize\ttfamily \label{joystick_8h_a8ffed41800bec294451e5b845d83e585} 
+\mbox{\hyperlink{joystick_8h_a5a11fcab04d00f05b11056b65987995f}{joystick\+\_\+discrete\+\_\+position\+\_\+t}} joystick\+\_\+discrete\+\_\+position\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{joystick_8h_ad599c835dc79f7435efdc8083d5f233b}{joystick\+\_\+id\+\_\+t}}}]{joystick\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+This function returns the joysticks position as a discrete poition of MIDDLE, UP, DOWN, LEFT or RIGHT. 
+
+\Hypertarget{joystick_8h_a83d0d40dd9c801077a44ea307fe9ce10}\index{joystick.h@{joystick.h}!joystick\_position\_get@{joystick\_position\_get}}
+\index{joystick\_position\_get@{joystick\_position\_get}!joystick.h@{joystick.h}}
+\doxysubsubsection{\texorpdfstring{joystick\_position\_get()}{joystick\_position\_get()}}
+{\footnotesize\ttfamily \label{joystick_8h_a83d0d40dd9c801077a44ea307fe9ce10} 
+\mbox{\hyperlink{structjoystick__position__t}{joystick\+\_\+position\+\_\+t}} joystick\+\_\+position\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{joystick_8h_ad599c835dc79f7435efdc8083d5f233b}{joystick\+\_\+id\+\_\+t}}}]{joystick\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+This function returns the joysticks position as a structure containing 2 positions (for x and y axis). Both of the positions can be in the interval \mbox{[}0, JOYSTICK\+\_\+\+MAX\+\_\+\+POSITION\mbox{]}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em joystick\+\_\+id} & The id of the joystick which is being checked.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Joysticks position structure (for x and y axis positions). 
+\end{DoxyReturn}

@@ -1,0 +1,139 @@
+\chapter{🚀 Function Generator and Oscilloscope on ESP32 Bytelab Dev\+Kit}
+\hypertarget{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README}{}\label{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README}\index{🚀 Function Generator and Oscilloscope on ESP32 Bytelab DevKit@{🚀 Function Generator and Oscilloscope on ESP32 Bytelab DevKit}}
+\label{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README_autotoc_md0}%
+\Hypertarget{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README_autotoc_md0}%
+
+
+Welcome to the {\bfseries{ESP32 Function Generator and Oscilloscope}} project, developed as part of the {\bfseries{Bytelab Software Academy 2024}} final task! This project combines the power of an oscilloscope with a function generator, packed with versatile features and built for the {\bfseries{ESP32}} platform.\hypertarget{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README_autotoc_md1}{}\doxysection{\texorpdfstring{📋 Overview}{📋 Overview}}\label{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README_autotoc_md1}
+This project includes\+:
+\begin{DoxyItemize}
+\item {\bfseries{Oscilloscope}}\+: Capable of measuring and displaying two signals in real-\/time.
+\item {\bfseries{Function Generator}}\+: Generates 4 waveform types with adjustable frequency, amplitude, and duty cycle.
+\end{DoxyItemize}
+
+Perfect for anyone looking to explore signal analysis and waveform generation with an easy-\/to-\/use interface that supports both touchscreen and physical controls!\hypertarget{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README_autotoc_md2}{}\doxysection{\texorpdfstring{🔌 Pinout}{🔌 Pinout}}\label{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README_autotoc_md2}
+The pin connections for the oscilloscope and function generator are as follows\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Component   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Pin   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ESP32 Pin    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Component   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Pin   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ESP32 Pin    }\\\cline{1-3}
+\endhead
+{\bfseries{Oscilloscope CH1}}   &BTN\+\_\+3   &GPIO33    \\\cline{1-3}
+{\bfseries{Oscilloscope CH2}}   &BTN\+\_\+2   &GPIO32    \\\cline{1-3}
+{\bfseries{Function Output}}   &BTN\+\_\+4   &GPIO25   \\\cline{1-3}
+\end{longtabu}
+\hypertarget{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README_autotoc_md3}{}\doxysection{\texorpdfstring{🎮 Controls}{🎮 Controls}}\label{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README_autotoc_md3}
+
+\begin{DoxyItemize}
+\item {\bfseries{Touchscreen}}\+: Directly interact with on-\/screen elements.
+\item {\bfseries{Joystick}}\+: Navigate through options by moving left/right.
+\item {\bfseries{Button (BTN\+\_\+1)}}\+: Select an item or confirm an action.
+\end{DoxyItemize}\hypertarget{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README_autotoc_md4}{}\doxysection{\texorpdfstring{🛠️ Requirements}{🛠️ Requirements}}\label{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README_autotoc_md4}
+Before getting started, ensure you have the following\+:
+\begin{DoxyItemize}
+\item {\bfseries{ESP-\/\+IDF}} version 5.\+0 or higher.
+\item {\bfseries{LVGL}} library version 8.\+3.\texorpdfstring{$\ast$}{*}
+\end{DoxyItemize}\hypertarget{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README_autotoc_md5}{}\doxysection{\texorpdfstring{🚀 Getting Started}{🚀 Getting Started}}\label{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README_autotoc_md5}
+\hypertarget{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README_autotoc_md6}{}\doxysubsection{\texorpdfstring{Project Structure}{Project Structure}}\label{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README_autotoc_md6}
+This project utilizes two key submodules\+:
+\begin{DoxyItemize}
+\item {\bfseries{\href{https://github.com/lvgl/lvgl}{\texttt{ LVGL}}}}\+: A powerful graphics library.
+\item {\bfseries{\href{https://github.com/lvgl/lvgl_esp32_drivers}{\texttt{ LVGL ESP32 Drivers}}}}\+: Hardware drivers for LVGL. {\itshape (Note\+: A custom patch for version 8.\+3 is provided)}.
+\end{DoxyItemize}\hypertarget{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README_autotoc_md7}{}\doxysubsection{\texorpdfstring{Build and Run}{Build and Run}}\label{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README_autotoc_md7}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Clone the repository}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ clone\ -\/-\/recursive\ https://git.byte-\/lab.com/byte-\/lab/academy/blesa/blesa-\/2024/majda-\/bakmaz/mashina.git}
+
+\end{DoxyCode}
+
+\item {\bfseries{Apply the LVGL 8.\+3 patch}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd\ components/lvgl\_esp32\_drivers}
+\DoxyCodeLine{git\ apply\ -\/-\/ignore-\/space-\/change\ -\/-\/ignore-\/whitespace\ ../lvgl\_esp32\_drivers\_8-\/3.patch}
+
+\end{DoxyCode}
+
+\item {\bfseries{Set up ESP-\/\+IDF environment}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{.\ \$HOME/esp/esp-\/idf/export.sh}
+
+\end{DoxyCode}
+
+\item {\bfseries{Build the project}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{idf.py\ build}
+
+\end{DoxyCode}
+
+\item {\bfseries{Flash the project}} to your ESP32\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{idf.py\ flash\ /dev/ttyUSB0}
+
+\end{DoxyCode}
+ ⚠️ Ensure the {\bfseries{TCH\+\_\+\+IRQ switch}} is set to {\ttfamily OFF} if using the Byte\+Lab Development Kit.
+\item {\bfseries{Monitor the output}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{idf.py\ monitor\ /dev/ttyUSB0}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}\hypertarget{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README_autotoc_md8}{}\doxysection{\texorpdfstring{📐 Features}{📐 Features}}\label{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README_autotoc_md8}
+\hypertarget{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README_autotoc_md9}{}\doxysubsection{\texorpdfstring{Function Generator}{Function Generator}}\label{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README_autotoc_md9}
+
+\begin{DoxyItemize}
+\item {\bfseries{Waveforms Supported}}\+:
+\begin{DoxyItemize}
+\item Sine
+\item Square
+\item Triangle
+\item Sawtooth
+\end{DoxyItemize}
+\item {\bfseries{Adjustable Parameters}}\+:
+\begin{DoxyItemize}
+\item Frequency
+\item Amplitude (0V to Vmax)
+\item Duty Cycle (0\% to 100\%)
+\end{DoxyItemize}
+\item {\bfseries{On-\/screen visualization}} of the generated waveform.
+\item {\bfseries{Presets}}\+:
+\begin{DoxyItemize}
+\item Up to 5 saveable presets
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README_autotoc_md10}{}\doxysubsection{\texorpdfstring{Oscilloscope}{Oscilloscope}}\label{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README_autotoc_md10}
+
+\begin{DoxyItemize}
+\item {\bfseries{Real-\/time waveform display}} for two channels.
+\item {\bfseries{Adjustable Settings}}\+:
+\begin{DoxyItemize}
+\item Time Base\+: 10 ms/div to 1 ms/div
+\item Voltage Scale\+: 500m\+V/div to 100V/div
+\item Channel Selection\+: CH1 or CH2
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README_autotoc_md11}{}\doxysubsection{\texorpdfstring{Other Features}{Other Features}}\label{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README_autotoc_md11}
+
+\begin{DoxyItemize}
+\item {\bfseries{Temperature \& Humidity Monitoring}}\+:
+\begin{DoxyItemize}
+\item Automatic shutdown if temperature exceeds 32°C.
+\end{DoxyItemize}
+\item {\bfseries{LED Signalization}} for device states\+:
+\begin{DoxyItemize}
+\item device turned on {\bfseries{GREEN LED on}}
+\item Function Generator on {\bfseries{RED LED fast blink}}
+\item Oscilloscope on {\bfseries{RED LED on}}
+\item Wi-\/\+Fi connected {\bfseries{BLUE LED on}}
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README_autotoc_md12}{}\doxysection{\texorpdfstring{⚡ Features in Development}{⚡ Features in Development}}\label{md__2home_2mbakmaz_2bytelab2024_2final__task_2mashina_2README_autotoc_md12}
+
+\begin{DoxyItemize}
+\item Historical data logging for temperature and humidity.
+\item Enhanced Wi-\/\+Fi features for screenshot sharing and provisioning. 
+\end{DoxyItemize}

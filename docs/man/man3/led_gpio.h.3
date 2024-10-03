@@ -1,0 +1,124 @@
+.TH "/home/mbakmaz/bytelab2024/final_task/mashina/components/led/platform/inc/led_gpio.h" 3 "Version ." "Mashina" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/mbakmaz/bytelab2024/final_task/mashina/components/led/platform/inc/led_gpio.h \- See the source file\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fB_led_gpio_t\fP \fBled_gpio_t\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBled_state_t\fP { \fBLED_OFF\fP = 0, \fBLED_ON\fP = 1 }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBled_gpio_t\fP * \fBled_gpio_create\fP (uint8_t pin)"
+.br
+.RI "It creates a LED GPIO object and initializes it\&. "
+.ti -1c
+.RI "void \fBled_gpio_delete\fP (\fBled_gpio_t\fP *p_led)"
+.br
+.RI "This function frees the memory allocated for the led_gpio_t structure\&. "
+.ti -1c
+.RI "void \fBled_gpio_on\fP (\fBled_gpio_t\fP *p_led)"
+.br
+.RI "Turns LED GPIO on\&. "
+.ti -1c
+.RI "void \fBled_gpio_off\fP (\fBled_gpio_t\fP *p_led)"
+.br
+.RI "Turns LED GPIO off\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+See the source file\&. 
+
+
+.PP
+\fB\fP
+.RS 4
+
+.RE
+.PP
+COPYRIGHT NOTICE: (c) 2022 Byte Lab Grupa d\&.o\&.o\&. All rights reserved\&. 
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fB_led_gpio_t\fP \fBled_gpio_t\fP"
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBled_state_t\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BILED_OFF \fP
+.TP
+\f(BILED_ON \fP
+.SH "Function Documentation"
+.PP 
+.SS "\fBled_gpio_t\fP * led_gpio_create (uint8_t pin)"
+
+.PP
+It creates a LED GPIO object and initializes it\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpin\fP The GPIO pin number that the button is connected to\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A pointer to a led_gpio_t struct\&. 
+.RE
+.PP
+
+.SS "void led_gpio_delete (\fBled_gpio_t\fP * p_led)"
+
+.PP
+This function frees the memory allocated for the led_gpio_t structure\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIp_led\fP A pointer to the led_gpio_t structure that was created by the \fBled_gpio_create()\fP function\&. 
+.RE
+.PP
+
+.SS "void led_gpio_off (\fBled_gpio_t\fP * p_led)"
+
+.PP
+Turns LED GPIO off\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIp_led\fP A pointer to the led_gpio_t structure that was created by the \fBled_gpio_create()\fP function\&. 
+.RE
+.PP
+
+.SS "void led_gpio_on (\fBled_gpio_t\fP * p_led)"
+
+.PP
+Turns LED GPIO on\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIp_led\fP A pointer to the led_gpio_t structure that was created by the \fBled_gpio_create()\fP function\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Mashina from the source code\&.

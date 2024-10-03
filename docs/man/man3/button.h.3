@@ -1,0 +1,108 @@
+.TH "/home/mbakmaz/bytelab2024/final_task/mashina/components/button/button.h" 3 "Version ." "Mashina" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/mbakmaz/bytelab2024/final_task/mashina/components/button/button.h \- See the source file\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <stdio\&.h>\fP
+.br
+\fR#include <button_gpio\&.h>\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef void(* \fBbutton_pressed_t\fP) (void *)"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBbutton_id_t\fP { \fBBUTTON_1\fP, \fBBUTTON_2\fP, \fBBUTTON_3\fP, \fBBUTTON_4\fP, \fBBUTTON_COUNT\fP }"
+.br
+.ti -1c
+.RI "enum \fBbutton_err_t\fP { \fBBUTTON_ERR_NONE\fP = 0, \fBBUTTON_ERR\fP = -1, \fBBUTTON_ERR_CREATE\fP = -2, \fBBUTTON_ERR_UNKNOWN_BUTTON\fP = -3 }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBbutton_err_t\fP \fBbutton_create\fP (\fBbutton_id_t\fP btn_id, \fBbutton_pressed_t\fP p_btn_cb)"
+.br
+.RI "It creates a button object based on the button type and initializes it\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+See the source file\&. 
+
+
+.PP
+\fB\fP
+.RS 4
+
+.RE
+.PP
+COPYRIGHT NOTICE: (c) 2022 Byte Lab Grupa d\&.o\&.o\&. All rights reserved\&. 
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef void(* button_pressed_t) (void *)"
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBbutton_err_t\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIBUTTON_ERR_NONE \fP
+.TP
+\f(BIBUTTON_ERR \fP
+.TP
+\f(BIBUTTON_ERR_CREATE \fP
+.TP
+\f(BIBUTTON_ERR_UNKNOWN_BUTTON \fP
+.SS "enum \fBbutton_id_t\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIBUTTON_1 \fP
+.TP
+\f(BIBUTTON_2 \fP
+.TP
+\f(BIBUTTON_3 \fP
+.TP
+\f(BIBUTTON_4 \fP
+.TP
+\f(BIBUTTON_COUNT \fP
+.SH "Function Documentation"
+.PP 
+.SS "\fBbutton_err_t\fP button_create (\fBbutton_id_t\fP btn_id, \fBbutton_pressed_t\fP p_btn_cb)"
+
+.PP
+It creates a button object based on the button type and initializes it\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIbtn_id\fP The id of the button to create\&. 
+.br
+\fIp_btn_cb\fP This is the callback function that will be called when the button is pressed\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Status of creation\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Mashina from the source code\&.

@@ -1,0 +1,110 @@
+.TH "/home/mbakmaz/bytelab2024/final_task/mashina/components/oscilloscope/platform/src/timer.c" 3 "Version ." "Mashina" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/mbakmaz/bytelab2024/final_task/mashina/components/oscilloscope/platform/src/timer.c \- Esp timer wrapper class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'timer\&.h'\fP
+.br
+\fR#include 'esp_timer\&.h'\fP
+.br
+\fR#include <unistd\&.h>\fP
+.br
+\fR#include 'esp_log\&.h'\fP
+.br
+\fR#include <stdlib\&.h>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fB_osc_timer_t\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBosc_timer_t\fP * \fBosc_timer_create\fP (\fBtimer_callback\fP cb, void *args, int period_uc)"
+.br
+.RI "Creates new instance of esp timer\&. "
+.ti -1c
+.RI "void \fBosc_timer_start\fP (\fBosc_timer_t\fP *p_timer)"
+.br
+.RI "Starts timer\&. "
+.ti -1c
+.RI "void \fBosc_timer_stop\fP (\fBosc_timer_t\fP *p_timer)"
+.br
+.RI "Stops timer\&. "
+.ti -1c
+.RI "void \fBosc_timer_delete\fP (\fBosc_timer_t\fP *p_timer)"
+.br
+.RI "Deletes timer instance and frees memory\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Esp timer wrapper class\&. 
+
+COPYRIGHT NOTICE: (c) 2024 Byte Lab Grupa d\&.o\&.o\&. All rights reserved\&. 
+.SH "Function Documentation"
+.PP 
+.SS "\fBosc_timer_t\fP * osc_timer_create (\fBtimer_callback\fP cb, void * args, int period_uc)"
+
+.PP
+Creates new instance of esp timer\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcb\fP The timer callback function 
+.br
+\fIperiod_uc\fP Period for timer callback in microseconds 
+.br
+\fIargs\fP Callback function arguments 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+osc_timer_t* Pointer to the new timer 
+.RE
+.PP
+
+.SS "void osc_timer_delete (\fBosc_timer_t\fP * p_timer)"
+
+.PP
+Deletes timer instance and frees memory\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItimer\fP Timer to delete 
+.RE
+.PP
+
+.SS "void osc_timer_start (\fBosc_timer_t\fP * p_timer)"
+
+.PP
+Starts timer\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItimer\fP Instance of timer to start 
+.RE
+.PP
+
+.SS "void osc_timer_stop (\fBosc_timer_t\fP * p_timer)"
+
+.PP
+Stops timer\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItimer\fP Instance of timer to stop 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Mashina from the source code\&.

@@ -1,0 +1,58 @@
+.TH "_oscilloscope_t" 3 "Version ." "Mashina" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+_oscilloscope_t
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "int \fBpin\fP"
+.br
+.ti -1c
+.RI "int \fBchan\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBadc_raw\fP [\fBOSCILLOSCOPE_SAMPLE_NUMBER\fP]"
+.br
+.ti -1c
+.RI "int \fBtimer_tick\fP"
+.br
+.ti -1c
+.RI "bool \fBis_running\fP"
+.br
+.ti -1c
+.RI "QueueHandle_t \fBqueue\fP"
+.br
+.ti -1c
+.RI "\fBpotentiometer_t\fP * \fBp_pot\fP"
+.br
+.ti -1c
+.RI "\fBosc_timer_t\fP * \fBp_tim\fP"
+.br
+.in -1c
+.SH "Field Documentation"
+.PP 
+.SS "uint32_t adc_raw[\fBOSCILLOSCOPE_SAMPLE_NUMBER\fP]"
+
+.SS "int chan"
+
+.SS "bool is_running"
+
+.SS "\fBpotentiometer_t\fP* p_pot"
+
+.SS "\fBosc_timer_t\fP* p_tim"
+
+.SS "int pin"
+
+.SS "QueueHandle_t queue"
+
+.SS "int timer_tick"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Mashina from the source code\&.

@@ -1,0 +1,178 @@
+\doxysection{/home/mbakmaz/bytelab2024/final\+\_\+task/mashina/components/ui\+\_\+app/gui.c File Reference}
+\hypertarget{gui_8c}{}\label{gui_8c}\index{/home/mbakmaz/bytelab2024/final\_task/mashina/components/ui\_app/gui.c@{/home/mbakmaz/bytelab2024/final\_task/mashina/components/ui\_app/gui.c}}
+
+
+This file is an example for how to use the LVGL library.  
+
+
+{\ttfamily \#include "{}gui.\+h"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}freertos/\+Free\+RTOS.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/task.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+freertos\+\_\+hooks.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/semphr.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+log.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+timer.\+h"{}}\newline
+{\ttfamily \#include "{}lvgl.\+h"{}}\newline
+{\ttfamily \#include "{}lvgl\+\_\+helpers.\+h"{}}\newline
+{\ttfamily \#include "{}squareline/ui.\+h"{}}\newline
+{\ttfamily \#include "{}button.\+h"{}}\newline
+{\ttfamily \#include "{}joystick.\+h"{}}\newline
+{\ttfamily \#include "{}led.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{gui_8c_a31c507ab1a1074ac1ab0a4ce6bbba2f6}{LV\+\_\+\+TICK\+\_\+\+PERIOD\+\_\+\+MS}}~(1U)
+\item 
+\#define \mbox{\hyperlink{gui_8c_a6af3275d535f6c3de258323fe3ac7406}{DEBOUNCE\+\_\+\+THRESH}}~(5)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{gui_8c_a8fac5dc0f0c18318a9c5a70c69d39f6f}{gui\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes LVGL, TFT drivers and input drivers and starts task needed for GUI operation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gui_8c_ad660d473b7b959779e65e6a8dcd73ac8}{gui\+\_\+receive\+\_\+joystick\+\_\+pos}} (int pos)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>\mbox{\hyperlink{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69}{button\_id\_t}} \mbox{\hyperlink{gui_8c_a81a1da994b55dd4bd8ee29e85bebdd3d}{physical\_btn}}\\
+\>\mbox{\hyperlink{joystick_8h_ad599c835dc79f7435efdc8083d5f233b}{joystick\_id\_t}} \mbox{\hyperlink{gui_8c_a32713d6d9ea65566a3f7c7a557085997}{joystick}}\\
+\>bool \mbox{\hyperlink{gui_8c_a16f2384d5fa0f252da461317d86ca64e}{physical\_btn\_pressed\_flag}}\\
+\>\mbox{\hyperlink{joystick_8h_a5a11fcab04d00f05b11056b65987995f}{joystick\_discrete\_position\_t}} \mbox{\hyperlink{gui_8c_a791e16446521a82f012e24df39fc4528}{j\_pos}}\\
+\>bool \mbox{\hyperlink{gui_8c_a3b359363d0cbae1fbdfa5a32f98b501c}{j\_pos\_changed}}\\
+\>lv\_group\_t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gui_8c_abccbf8d20520ec6e79cb8d1adcb9e17b}{focus\_scr\_0}}\\
+\>lv\_group\_t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gui_8c_aaa024bddb8c81c3791f0b10e546f7a0b}{focus\_scr\_1}}\\
+\>lv\_group\_t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gui_8c_a64e94e14b43bc175198d426af36607ac}{focus\_scr\_2}}\\
+\>SemaphoreHandle\_t \mbox{\hyperlink{gui_8c_ae693e12d85d77c5f3e07023755de243a}{btn\_mutex}}\\
+\} \mbox{\hyperlink{gui_8c_a340fa4fc68a4f6ba479186915cebd87c}{gui\_io}}\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em Struct to hold gui config variables. \end{DoxyCompactList}\item 
+lv\+\_\+indev\+\_\+drv\+\_\+t \mbox{\hyperlink{gui_8c_a893a5912f6cd9bea34a39d6a0e40b791}{io\+\_\+drv}}
+\item 
+lv\+\_\+indev\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{gui_8c_a10e95f68d5e7abdbfea99f0ae291ff80}{indev\+\_\+io}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file is an example for how to use the LVGL library. 
+
+COPYRIGHT NOTICE\+: (c) 2022 Byte Lab Grupa d.\+o.\+o. All rights reserved. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{gui_8c_a6af3275d535f6c3de258323fe3ac7406}\index{gui.c@{gui.c}!DEBOUNCE\_THRESH@{DEBOUNCE\_THRESH}}
+\index{DEBOUNCE\_THRESH@{DEBOUNCE\_THRESH}!gui.c@{gui.c}}
+\doxysubsubsection{\texorpdfstring{DEBOUNCE\_THRESH}{DEBOUNCE\_THRESH}}
+{\footnotesize\ttfamily \label{gui_8c_a6af3275d535f6c3de258323fe3ac7406} 
+\#define DEBOUNCE\+\_\+\+THRESH~(5)}
+
+\Hypertarget{gui_8c_a31c507ab1a1074ac1ab0a4ce6bbba2f6}\index{gui.c@{gui.c}!LV\_TICK\_PERIOD\_MS@{LV\_TICK\_PERIOD\_MS}}
+\index{LV\_TICK\_PERIOD\_MS@{LV\_TICK\_PERIOD\_MS}!gui.c@{gui.c}}
+\doxysubsubsection{\texorpdfstring{LV\_TICK\_PERIOD\_MS}{LV\_TICK\_PERIOD\_MS}}
+{\footnotesize\ttfamily \label{gui_8c_a31c507ab1a1074ac1ab0a4ce6bbba2f6} 
+\#define LV\+\_\+\+TICK\+\_\+\+PERIOD\+\_\+\+MS~(1U)}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{gui_8c_a8fac5dc0f0c18318a9c5a70c69d39f6f}\index{gui.c@{gui.c}!gui\_init@{gui\_init}}
+\index{gui\_init@{gui\_init}!gui.c@{gui.c}}
+\doxysubsubsection{\texorpdfstring{gui\_init()}{gui\_init()}}
+{\footnotesize\ttfamily \label{gui_8c_a8fac5dc0f0c18318a9c5a70c69d39f6f} 
+void gui\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes LVGL, TFT drivers and input drivers and starts task needed for GUI operation. 
+
+\Hypertarget{gui_8c_ad660d473b7b959779e65e6a8dcd73ac8}\index{gui.c@{gui.c}!gui\_receive\_joystick\_pos@{gui\_receive\_joystick\_pos}}
+\index{gui\_receive\_joystick\_pos@{gui\_receive\_joystick\_pos}!gui.c@{gui.c}}
+\doxysubsubsection{\texorpdfstring{gui\_receive\_joystick\_pos()}{gui\_receive\_joystick\_pos()}}
+{\footnotesize\ttfamily \label{gui_8c_ad660d473b7b959779e65e6a8dcd73ac8} 
+void gui\+\_\+receive\+\_\+joystick\+\_\+pos (\begin{DoxyParamCaption}\item[{int}]{pos}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{gui_8c_ae693e12d85d77c5f3e07023755de243a}\index{gui.c@{gui.c}!btn\_mutex@{btn\_mutex}}
+\index{btn\_mutex@{btn\_mutex}!gui.c@{gui.c}}
+\doxysubsubsection{\texorpdfstring{btn\_mutex}{btn\_mutex}}
+{\footnotesize\ttfamily \label{gui_8c_ae693e12d85d77c5f3e07023755de243a} 
+Semaphore\+Handle\+\_\+t btn\+\_\+mutex}
+
+\Hypertarget{gui_8c_abccbf8d20520ec6e79cb8d1adcb9e17b}\index{gui.c@{gui.c}!focus\_scr\_0@{focus\_scr\_0}}
+\index{focus\_scr\_0@{focus\_scr\_0}!gui.c@{gui.c}}
+\doxysubsubsection{\texorpdfstring{focus\_scr\_0}{focus\_scr\_0}}
+{\footnotesize\ttfamily \label{gui_8c_abccbf8d20520ec6e79cb8d1adcb9e17b} 
+lv\+\_\+group\+\_\+t\texorpdfstring{$\ast$}{*} focus\+\_\+scr\+\_\+0}
+
+\Hypertarget{gui_8c_aaa024bddb8c81c3791f0b10e546f7a0b}\index{gui.c@{gui.c}!focus\_scr\_1@{focus\_scr\_1}}
+\index{focus\_scr\_1@{focus\_scr\_1}!gui.c@{gui.c}}
+\doxysubsubsection{\texorpdfstring{focus\_scr\_1}{focus\_scr\_1}}
+{\footnotesize\ttfamily \label{gui_8c_aaa024bddb8c81c3791f0b10e546f7a0b} 
+lv\+\_\+group\+\_\+t\texorpdfstring{$\ast$}{*} focus\+\_\+scr\+\_\+1}
+
+\Hypertarget{gui_8c_a64e94e14b43bc175198d426af36607ac}\index{gui.c@{gui.c}!focus\_scr\_2@{focus\_scr\_2}}
+\index{focus\_scr\_2@{focus\_scr\_2}!gui.c@{gui.c}}
+\doxysubsubsection{\texorpdfstring{focus\_scr\_2}{focus\_scr\_2}}
+{\footnotesize\ttfamily \label{gui_8c_a64e94e14b43bc175198d426af36607ac} 
+lv\+\_\+group\+\_\+t\texorpdfstring{$\ast$}{*} focus\+\_\+scr\+\_\+2}
+
+\Hypertarget{gui_8c_a340fa4fc68a4f6ba479186915cebd87c}\index{gui.c@{gui.c}!gui\_io@{gui\_io}}
+\index{gui\_io@{gui\_io}!gui.c@{gui.c}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily \label{gui_8c_a340fa4fc68a4f6ba479186915cebd87c} 
+struct  \{ ... \}  gui\+\_\+io}
+
+
+
+Struct to hold gui config variables. 
+
+\Hypertarget{gui_8c_a10e95f68d5e7abdbfea99f0ae291ff80}\index{gui.c@{gui.c}!indev\_io@{indev\_io}}
+\index{indev\_io@{indev\_io}!gui.c@{gui.c}}
+\doxysubsubsection{\texorpdfstring{indev\_io}{indev\_io}}
+{\footnotesize\ttfamily \label{gui_8c_a10e95f68d5e7abdbfea99f0ae291ff80} 
+lv\+\_\+indev\+\_\+t\texorpdfstring{$\ast$}{*} indev\+\_\+io}
+
+\Hypertarget{gui_8c_a893a5912f6cd9bea34a39d6a0e40b791}\index{gui.c@{gui.c}!io\_drv@{io\_drv}}
+\index{io\_drv@{io\_drv}!gui.c@{gui.c}}
+\doxysubsubsection{\texorpdfstring{io\_drv}{io\_drv}}
+{\footnotesize\ttfamily \label{gui_8c_a893a5912f6cd9bea34a39d6a0e40b791} 
+lv\+\_\+indev\+\_\+drv\+\_\+t io\+\_\+drv}
+
+\Hypertarget{gui_8c_a791e16446521a82f012e24df39fc4528}\index{gui.c@{gui.c}!j\_pos@{j\_pos}}
+\index{j\_pos@{j\_pos}!gui.c@{gui.c}}
+\doxysubsubsection{\texorpdfstring{j\_pos}{j\_pos}}
+{\footnotesize\ttfamily \label{gui_8c_a791e16446521a82f012e24df39fc4528} 
+\mbox{\hyperlink{joystick_8h_a5a11fcab04d00f05b11056b65987995f}{joystick\+\_\+discrete\+\_\+position\+\_\+t}} j\+\_\+pos}
+
+\Hypertarget{gui_8c_a3b359363d0cbae1fbdfa5a32f98b501c}\index{gui.c@{gui.c}!j\_pos\_changed@{j\_pos\_changed}}
+\index{j\_pos\_changed@{j\_pos\_changed}!gui.c@{gui.c}}
+\doxysubsubsection{\texorpdfstring{j\_pos\_changed}{j\_pos\_changed}}
+{\footnotesize\ttfamily \label{gui_8c_a3b359363d0cbae1fbdfa5a32f98b501c} 
+bool j\+\_\+pos\+\_\+changed}
+
+\Hypertarget{gui_8c_a32713d6d9ea65566a3f7c7a557085997}\index{gui.c@{gui.c}!joystick@{joystick}}
+\index{joystick@{joystick}!gui.c@{gui.c}}
+\doxysubsubsection{\texorpdfstring{joystick}{joystick}}
+{\footnotesize\ttfamily \label{gui_8c_a32713d6d9ea65566a3f7c7a557085997} 
+\mbox{\hyperlink{joystick_8h_ad599c835dc79f7435efdc8083d5f233b}{joystick\+\_\+id\+\_\+t}} joystick}
+
+\Hypertarget{gui_8c_a81a1da994b55dd4bd8ee29e85bebdd3d}\index{gui.c@{gui.c}!physical\_btn@{physical\_btn}}
+\index{physical\_btn@{physical\_btn}!gui.c@{gui.c}}
+\doxysubsubsection{\texorpdfstring{physical\_btn}{physical\_btn}}
+{\footnotesize\ttfamily \label{gui_8c_a81a1da994b55dd4bd8ee29e85bebdd3d} 
+\mbox{\hyperlink{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69}{button\+\_\+id\+\_\+t}} physical\+\_\+btn}
+
+\Hypertarget{gui_8c_a16f2384d5fa0f252da461317d86ca64e}\index{gui.c@{gui.c}!physical\_btn\_pressed\_flag@{physical\_btn\_pressed\_flag}}
+\index{physical\_btn\_pressed\_flag@{physical\_btn\_pressed\_flag}!gui.c@{gui.c}}
+\doxysubsubsection{\texorpdfstring{physical\_btn\_pressed\_flag}{physical\_btn\_pressed\_flag}}
+{\footnotesize\ttfamily \label{gui_8c_a16f2384d5fa0f252da461317d86ca64e} 
+bool physical\+\_\+btn\+\_\+pressed\+\_\+flag}
+

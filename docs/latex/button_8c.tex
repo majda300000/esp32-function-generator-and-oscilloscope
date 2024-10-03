@@ -1,0 +1,49 @@
+\doxysection{/home/mbakmaz/bytelab2024/final\+\_\+task/mashina/components/button/button.c File Reference}
+\hypertarget{button_8c}{}\label{button_8c}\index{/home/mbakmaz/bytelab2024/final\_task/mashina/components/button/button.c@{/home/mbakmaz/bytelab2024/final\_task/mashina/components/button/button.c}}
+
+
+Button implementation for Byte Lab Development Kit.  
+
+
+{\ttfamily \#include "{}button.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct__button__config__t}{\+\_\+button\+\_\+config\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{button_8h_a09d4d27c5babe9f26f61c77e50bc34fd}{button\+\_\+err\+\_\+t}} \mbox{\hyperlink{button_8c_aa5f109031476d9d810fc612b2e8deb71}{button\+\_\+create}} (\mbox{\hyperlink{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69}{button\+\_\+id\+\_\+t}} btn\+\_\+id, \mbox{\hyperlink{button_8h_a9dd6b837ed5d286038db41b45fdc39d4}{button\+\_\+pressed\+\_\+t}} p\+\_\+btn\+\_\+cb)
+\begin{DoxyCompactList}\small\item\em It creates a button object based on the button type and initializes it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Button implementation for Byte Lab Development Kit. 
+
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+COPYRIGHT NOTICE\+: (c) 2022 Byte Lab Grupa d.\+o.\+o. All rights reserved. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{button_8c_aa5f109031476d9d810fc612b2e8deb71}\index{button.c@{button.c}!button\_create@{button\_create}}
+\index{button\_create@{button\_create}!button.c@{button.c}}
+\doxysubsubsection{\texorpdfstring{button\_create()}{button\_create()}}
+{\footnotesize\ttfamily \label{button_8c_aa5f109031476d9d810fc612b2e8deb71} 
+\mbox{\hyperlink{button_8h_a09d4d27c5babe9f26f61c77e50bc34fd}{button\+\_\+err\+\_\+t}} button\+\_\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69}{button\+\_\+id\+\_\+t}}}]{btn\+\_\+id}{, }\item[{\mbox{\hyperlink{button_8h_a9dd6b837ed5d286038db41b45fdc39d4}{button\+\_\+pressed\+\_\+t}}}]{p\+\_\+btn\+\_\+cb}{}\end{DoxyParamCaption})}
+
+
+
+It creates a button object based on the button type and initializes it. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em btn\+\_\+id} & The id of the button to create. \\
+\hline
+\mbox{\texttt{ in}}  & {\em p\+\_\+btn\+\_\+cb} & This is the callback function that will be called when the button is pressed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of creation. 
+\end{DoxyReturn}

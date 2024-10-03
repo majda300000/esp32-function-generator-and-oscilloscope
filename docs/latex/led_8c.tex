@@ -1,0 +1,96 @@
+\doxysection{/home/mbakmaz/bytelab2024/final\+\_\+task/mashina/components/led/led.c File Reference}
+\hypertarget{led_8c}{}\label{led_8c}\index{/home/mbakmaz/bytelab2024/final\_task/mashina/components/led/led.c@{/home/mbakmaz/bytelab2024/final\_task/mashina/components/led/led.c}}
+
+
+High level LED driver.  
+
+
+{\ttfamily \#include "{}led.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+log.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/\+Free\+RTOS.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/task.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/timers.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/semphr.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct__led__t}{\+\_\+led\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} \mbox{\hyperlink{led_8c_a2a7427a84163514c7c9d77e1e835591e}{led\+\_\+create}} (\mbox{\hyperlink{led_8h_af8035fb15444d8810efaebb6e9a48903}{led\+\_\+name\+\_\+t}} led)
+\begin{DoxyCompactList}\small\item\em Create LED driver and configure all needed functionalities. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} \mbox{\hyperlink{led_8c_a4370f952b230fff915edf708469da9a7}{led\+\_\+pattern\+\_\+run}} (\mbox{\hyperlink{led_8h_af8035fb15444d8810efaebb6e9a48903}{led\+\_\+name\+\_\+t}} led, \mbox{\hyperlink{led_8h_a30745a8e50a1e1860c3ef04f1e5559ff}{led\+\_\+pattern\+\_\+t}} led\+\_\+pattern, uint32\+\_\+t timeout\+\_\+ms)
+\begin{DoxyCompactList}\small\item\em Set led pattern. Don\textquotesingle{}t call this function from ISR. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} \mbox{\hyperlink{led_8c_a8511c5b3a4deec755f7c52208fed564a}{led\+\_\+pattern\+\_\+reset}} (\mbox{\hyperlink{led_8h_af8035fb15444d8810efaebb6e9a48903}{led\+\_\+name\+\_\+t}} led)
+\begin{DoxyCompactList}\small\item\em Reset LED pattern. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+High level LED driver. 
+
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+COPYRIGHT NOTICE\+: (c) 2022 Byte Lab Grupa d.\+o.\+o. All rights reserved. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{led_8c_a2a7427a84163514c7c9d77e1e835591e}\index{led.c@{led.c}!led\_create@{led\_create}}
+\index{led\_create@{led\_create}!led.c@{led.c}}
+\doxysubsubsection{\texorpdfstring{led\_create()}{led\_create()}}
+{\footnotesize\ttfamily \label{led_8c_a2a7427a84163514c7c9d77e1e835591e} 
+\mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} led\+\_\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{led_8h_af8035fb15444d8810efaebb6e9a48903}{led\+\_\+name\+\_\+t}}}]{led}{}\end{DoxyParamCaption})}
+
+
+
+Create LED driver and configure all needed functionalities. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em led} & -\/ Name of the LED to be created.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of creation. 
+\end{DoxyReturn}
+\Hypertarget{led_8c_a8511c5b3a4deec755f7c52208fed564a}\index{led.c@{led.c}!led\_pattern\_reset@{led\_pattern\_reset}}
+\index{led\_pattern\_reset@{led\_pattern\_reset}!led.c@{led.c}}
+\doxysubsubsection{\texorpdfstring{led\_pattern\_reset()}{led\_pattern\_reset()}}
+{\footnotesize\ttfamily \label{led_8c_a8511c5b3a4deec755f7c52208fed564a} 
+\mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} led\+\_\+pattern\+\_\+reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{led_8h_af8035fb15444d8810efaebb6e9a48903}{led\+\_\+name\+\_\+t}}}]{led}{}\end{DoxyParamCaption})}
+
+
+
+Reset LED pattern. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em led} & -\/ LED name.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of pattern reseting. 
+\end{DoxyReturn}
+\Hypertarget{led_8c_a4370f952b230fff915edf708469da9a7}\index{led.c@{led.c}!led\_pattern\_run@{led\_pattern\_run}}
+\index{led\_pattern\_run@{led\_pattern\_run}!led.c@{led.c}}
+\doxysubsubsection{\texorpdfstring{led\_pattern\_run()}{led\_pattern\_run()}}
+{\footnotesize\ttfamily \label{led_8c_a4370f952b230fff915edf708469da9a7} 
+\mbox{\hyperlink{led_8h_a3d3e6ae20813940d2bbc54b606205933}{led\+\_\+err\+\_\+t}} led\+\_\+pattern\+\_\+run (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{led_8h_af8035fb15444d8810efaebb6e9a48903}{led\+\_\+name\+\_\+t}}}]{led}{, }\item[{\mbox{\hyperlink{led_8h_a30745a8e50a1e1860c3ef04f1e5559ff}{led\+\_\+pattern\+\_\+t}}}]{led\+\_\+pattern}{, }\item[{uint32\+\_\+t}]{timeout\+\_\+ms}{}\end{DoxyParamCaption})}
+
+
+
+Set led pattern. Don\textquotesingle{}t call this function from ISR. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em led} & -\/ LED name. \\
+\hline
+\mbox{\texttt{ in}}  & {\em led\+\_\+pattern} & -\/ LED pattern to be run. \\
+\hline
+\mbox{\texttt{ in}}  & {\em timeout\+\_\+ms} & -\/ timeout in milliseconds (if 0 run infinitely).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of pattern starting. 
+\end{DoxyReturn}

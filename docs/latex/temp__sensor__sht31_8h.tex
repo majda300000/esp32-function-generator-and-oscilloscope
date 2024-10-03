@@ -1,0 +1,69 @@
+\doxysection{/home/mbakmaz/bytelab2024/final\+\_\+task/mashina/components/temp\+\_\+sensor\+\_\+sht31/temp\+\_\+sensor\+\_\+sht31.h File Reference}
+\hypertarget{temp__sensor__sht31_8h}{}\label{temp__sensor__sht31_8h}\index{/home/mbakmaz/bytelab2024/final\_task/mashina/components/temp\_sensor\_sht31/temp\_sensor\_sht31.h@{/home/mbakmaz/bytelab2024/final\_task/mashina/components/temp\_sensor\_sht31/temp\_sensor\_sht31.h}}
+
+
+See the source file.  
+
+
+{\ttfamily \#include "{}esp\+\_\+system.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+log.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{temp__sensor__sht31_8h_af58bdcbba04b8d295cfd879adcb62650}{temp\+\_\+sensor\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize the SHT31 sensor. \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{temp__sensor__sht31_8h_a004315d9d82f6669ead6689efe63897e}{temp\+\_\+sensor\+\_\+read}} (float \texorpdfstring{$\ast$}{*}temperature, float \texorpdfstring{$\ast$}{*}humidity)
+\begin{DoxyCompactList}\small\item\em Read temperature and humidity from SHT31 sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+See the source file. 
+
+COPYRIGHT NOTICE\+: (c) 2024 Byte Lab Grupa d.\+o.\+o. All rights reserved. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{temp__sensor__sht31_8h_af58bdcbba04b8d295cfd879adcb62650}\index{temp\_sensor\_sht31.h@{temp\_sensor\_sht31.h}!temp\_sensor\_init@{temp\_sensor\_init}}
+\index{temp\_sensor\_init@{temp\_sensor\_init}!temp\_sensor\_sht31.h@{temp\_sensor\_sht31.h}}
+\doxysubsubsection{\texorpdfstring{temp\_sensor\_init()}{temp\_sensor\_init()}}
+{\footnotesize\ttfamily \label{temp__sensor__sht31_8h_af58bdcbba04b8d295cfd879adcb62650} 
+esp\+\_\+err\+\_\+t temp\+\_\+sensor\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Initialize the SHT31 sensor. 
+
+Sends the high precision measurement command to the SHT31 sensor.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item ESP\+\_\+\+OK\+: Success
+\item Others\+: Failure 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\Hypertarget{temp__sensor__sht31_8h_a004315d9d82f6669ead6689efe63897e}\index{temp\_sensor\_sht31.h@{temp\_sensor\_sht31.h}!temp\_sensor\_read@{temp\_sensor\_read}}
+\index{temp\_sensor\_read@{temp\_sensor\_read}!temp\_sensor\_sht31.h@{temp\_sensor\_sht31.h}}
+\doxysubsubsection{\texorpdfstring{temp\_sensor\_read()}{temp\_sensor\_read()}}
+{\footnotesize\ttfamily \label{temp__sensor__sht31_8h_a004315d9d82f6669ead6689efe63897e} 
+esp\+\_\+err\+\_\+t temp\+\_\+sensor\+\_\+read (\begin{DoxyParamCaption}\item[{float \texorpdfstring{$\ast$}{*}}]{temperature}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{humidity}{}\end{DoxyParamCaption})}
+
+
+
+Read temperature and humidity from SHT31 sensor. 
+
+Reads the measurement data from the SHT31 sensor and converts the raw values into temperature (°C) and humidity (\%).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em temperature} & Pointer to store the temperature value \\
+\hline
+\mbox{\texttt{ out}}  & {\em humidity} & Pointer to store the humidity value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item ESP\+\_\+\+OK\+: Success
+\item Others\+: Failure 
+\end{DoxyItemize}
+\end{DoxyReturn}

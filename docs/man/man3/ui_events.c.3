@@ -1,0 +1,126 @@
+.TH "/home/mbakmaz/bytelab2024/final_task/mashina/components/ui_app/squareline/ui_events.c" 3 "Version ." "Mashina" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/mbakmaz/bytelab2024/final_task/mashina/components/ui_app/squareline/ui_events.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'ui\&.h'\fP
+.br
+\fR#include '\&.\&./ui_app\&.h'\fP
+.br
+\fR#include '\&.\&./osc_chart/osc_chart\&.h'\fP
+.br
+\fR#include 'fn_gen\&.h'\fP
+.br
+\fR#include 'led\&.h'\fP
+.br
+\fR#include 'esp_log\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDUTY_CYCLE_INCREMENT\fP   (5)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBui_signal_type_dropdown_cb\fP (lv_event_t *p_e)"
+.br
+.ti -1c
+.RI "void \fBui_freq_arc_cb\fP (lv_event_t *p_e)"
+.br
+.ti -1c
+.RI "void \fBui_ampl_arc_cb\fP (lv_event_t *p_e)"
+.br
+.ti -1c
+.RI "void \fBui_start_btn_checked_cb\fP (lv_event_t *p_e)"
+.br
+.ti -1c
+.RI "void \fBui_start_btn_unchecked_cb\fP (lv_event_t *p_e)"
+.br
+.ti -1c
+.RI "void \fBui_duty_cycle_dropdown_cb\fP (lv_event_t *p_e)"
+.br
+.ti -1c
+.RI "void \fBch1_show\fP (lv_event_t *e)"
+.br
+.ti -1c
+.RI "void \fBch1_hide\fP (lv_event_t *e)"
+.br
+.ti -1c
+.RI "void \fBch2_show\fP (lv_event_t *e)"
+.br
+.ti -1c
+.RI "void \fBch2_hide\fP (lv_event_t *e)"
+.br
+.ti -1c
+.RI "void \fBset_div_10ms\fP (lv_event_t *e)"
+.br
+.ti -1c
+.RI "void \fBset_div_1ms\fP (lv_event_t *e)"
+.br
+.ti -1c
+.RI "void \fBset_div_500mV\fP (lv_event_t *e)"
+.br
+.ti -1c
+.RI "void \fBset_div_100mV\fP (lv_event_t *e)"
+.br
+.ti -1c
+.RI "void \fBui_save_preset\fP (lv_event_t *e)"
+.br
+.ti -1c
+.RI "void \fBui_init_preset\fP (lv_event_t *e)"
+.br
+.ti -1c
+.RI "void \fBui_load_preset\fP (lv_event_t *p_e)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DUTY_CYCLE_INCREMENT   (5)"
+
+.SH "Function Documentation"
+.PP 
+.SS "void ch1_hide (lv_event_t * e)"
+
+.SS "void ch1_show (lv_event_t * e)"
+
+.SS "void ch2_hide (lv_event_t * e)"
+
+.SS "void ch2_show (lv_event_t * e)"
+
+.SS "void set_div_100mV (lv_event_t * e)"
+
+.SS "void set_div_10ms (lv_event_t * e)"
+
+.SS "void set_div_1ms (lv_event_t * e)"
+
+.SS "void set_div_500mV (lv_event_t * e)"
+
+.SS "void ui_ampl_arc_cb (lv_event_t * p_e)"
+
+.SS "void ui_duty_cycle_dropdown_cb (lv_event_t * p_e)"
+
+.SS "void ui_freq_arc_cb (lv_event_t * p_e)"
+
+.SS "void ui_init_preset (lv_event_t * e)"
+
+.SS "void ui_load_preset (lv_event_t * p_e)"
+
+.SS "void ui_save_preset (lv_event_t * e)"
+
+.SS "void ui_signal_type_dropdown_cb (lv_event_t * p_e)"
+
+.SS "void ui_start_btn_checked_cb (lv_event_t * p_e)"
+
+.SS "void ui_start_btn_unchecked_cb (lv_event_t * p_e)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Mashina from the source code\&.

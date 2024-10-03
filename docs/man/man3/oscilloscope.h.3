@@ -1,0 +1,136 @@
+.TH "/home/mbakmaz/bytelab2024/final_task/mashina/components/oscilloscope/oscilloscope.h" 3 "Version ." "Mashina" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/mbakmaz/bytelab2024/final_task/mashina/components/oscilloscope/oscilloscope.h \- See the source file\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'potentiometer\&.h'\fP
+.br
+\fR#include 'timer\&.h'\fP
+.br
+\fR#include 'freertos/FreeRTOS\&.h'\fP
+.br
+\fR#include 'freertos/queue\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBOSCILLOSCOPE_TIMER_PERIOD_US\fP   (250)"
+.br
+.ti -1c
+.RI "#define \fBOSCILLOSCOPE_WINDOW_MS\fP   (50)"
+.br
+.ti -1c
+.RI "#define \fBOSCILLOSCOPE_SAMPLE_NUMBER\fP       (\fBOSCILLOSCOPE_WINDOW_MS\fP * 1000 / \fBOSCILLOSCOPE_TIMER_PERIOD_US\fP)"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fB_oscilloscope_t\fP \fBoscilloscope_t\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBoscilloscope_t\fP * \fBoscilloscope_create\fP (int pin, int channel_number)"
+.br
+.RI "Creates new instance of oscilloscope that records signal on channel\&. "
+.ti -1c
+.RI "void \fBoscilloscope_start\fP (\fBoscilloscope_t\fP *\fBp_osc\fP)"
+.br
+.RI "Starts timer that reads adc values and fills up buffer\&. "
+.ti -1c
+.RI "void \fBoscilloscope_stop\fP (\fBoscilloscope_t\fP *\fBp_osc\fP)"
+.br
+.RI "Stops timer that reads adc values\&. "
+.ti -1c
+.RI "void \fBoscilloscope_send_new_data\fP (\fBoscilloscope_t\fP *\fBp_osc\fP, int *data)"
+.br
+.RI "Copies most recent adc reading buffer to data\&. "
+.ti -1c
+.RI "void \fBoscilloscope_print\fP (\fBoscilloscope_t\fP *\fBp_osc\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+See the source file\&. 
+
+COPYRIGHT NOTICE: (c) 2024 Byte Lab Grupa d\&.o\&.o\&. All rights reserved\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define OSCILLOSCOPE_SAMPLE_NUMBER       (\fBOSCILLOSCOPE_WINDOW_MS\fP * 1000 / \fBOSCILLOSCOPE_TIMER_PERIOD_US\fP)"
+
+.SS "#define OSCILLOSCOPE_TIMER_PERIOD_US   (250)"
+
+.SS "#define OSCILLOSCOPE_WINDOW_MS   (50)"
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fB_oscilloscope_t\fP \fBoscilloscope_t\fP"
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBoscilloscope_t\fP * oscilloscope_create (int pin, int channel_number)"
+
+.PP
+Creates new instance of oscilloscope that records signal on channel\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIchannel_number\fP channel to record signal from 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+oscilloscope_t* handle of oscilloscope 
+.RE
+.PP
+
+.SS "void oscilloscope_print (\fBoscilloscope_t\fP * p_osc)"
+
+.SS "void oscilloscope_send_new_data (\fBoscilloscope_t\fP * p_osc, int * data)"
+
+.PP
+Copies most recent adc reading buffer to data\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIp_osc\fP Oscilloscope handler which to read from 
+.br
+\fIdata\fP [out] Pointer to empy data 
+.RE
+.PP
+
+.SS "void oscilloscope_start (\fBoscilloscope_t\fP * p_osc)"
+
+.PP
+Starts timer that reads adc values and fills up buffer\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIp_osc\fP 
+.RE
+.PP
+
+.SS "void oscilloscope_stop (\fBoscilloscope_t\fP * p_osc)"
+
+.PP
+Stops timer that reads adc values\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIp_osc\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Mashina from the source code\&.

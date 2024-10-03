@@ -1,0 +1,90 @@
+\doxysection{/home/mbakmaz/bytelab2024/final\+\_\+task/mashina/components/button/platform/src/button\+\_\+gpio.c File Reference}
+\hypertarget{button__gpio_8c}{}\label{button__gpio_8c}\index{/home/mbakmaz/bytelab2024/final\_task/mashina/components/button/platform/src/button\_gpio.c@{/home/mbakmaz/bytelab2024/final\_task/mashina/components/button/platform/src/button\_gpio.c}}
+{\ttfamily \#include "{}button\+\_\+gpio.\+h"{}}\newline
+{\ttfamily \#include "{}driver/gpio.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct__button__gpio__t}{\+\_\+button\+\_\+gpio\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{button__gpio_8c_af8baf7d9859733667317e58c0ff707d1}{ESP\+\_\+\+INTR\+\_\+\+FLAG\+\_\+\+DEFAULT}}~(0)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{button__gpio_8h_abcd9652bbb4c8f3a5403f73e946cf3d4}{button\+\_\+gpio\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{button__gpio_8c_adc89b5debc29642a103555703193a1c7}{button\+\_\+gpio\+\_\+create}} (uint8\+\_\+t pin, bool b\+\_\+is\+\_\+active\+\_\+on\+\_\+high\+\_\+level, \mbox{\hyperlink{button__gpio_8h_a8421a23c28dee385c39fc60f9011c543}{btn\+\_\+gpio\+\_\+pressed\+\_\+t}} p\+\_\+button\+\_\+pressed\+\_\+cb)
+\begin{DoxyCompactList}\small\item\em It creates a button object and initializes it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{button__gpio_8c_a218116d9cac8fc010a1af59b597f8826}{button\+\_\+gpio\+\_\+delete}} (\mbox{\hyperlink{button__gpio_8h_abcd9652bbb4c8f3a5403f73e946cf3d4}{button\+\_\+gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+\_\+btn)
+\begin{DoxyCompactList}\small\item\em This function frees the memory allocated for the button\+\_\+gpio\+\_\+t structure. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{button__gpio_8c_a26ffefb7ff02bfa80c1593b4861d6c10}{button\+\_\+gpio\+\_\+is\+\_\+pressed}} (\mbox{\hyperlink{button__gpio_8h_abcd9652bbb4c8f3a5403f73e946cf3d4}{button\+\_\+gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+\_\+btn)
+\begin{DoxyCompactList}\small\item\em This function checks if the button is pressed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{button__gpio_8c_af8baf7d9859733667317e58c0ff707d1}\index{button\_gpio.c@{button\_gpio.c}!ESP\_INTR\_FLAG\_DEFAULT@{ESP\_INTR\_FLAG\_DEFAULT}}
+\index{ESP\_INTR\_FLAG\_DEFAULT@{ESP\_INTR\_FLAG\_DEFAULT}!button\_gpio.c@{button\_gpio.c}}
+\doxysubsubsection{\texorpdfstring{ESP\_INTR\_FLAG\_DEFAULT}{ESP\_INTR\_FLAG\_DEFAULT}}
+{\footnotesize\ttfamily \label{button__gpio_8c_af8baf7d9859733667317e58c0ff707d1} 
+\#define ESP\+\_\+\+INTR\+\_\+\+FLAG\+\_\+\+DEFAULT~(0)}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{button__gpio_8c_adc89b5debc29642a103555703193a1c7}\index{button\_gpio.c@{button\_gpio.c}!button\_gpio\_create@{button\_gpio\_create}}
+\index{button\_gpio\_create@{button\_gpio\_create}!button\_gpio.c@{button\_gpio.c}}
+\doxysubsubsection{\texorpdfstring{button\_gpio\_create()}{button\_gpio\_create()}}
+{\footnotesize\ttfamily \label{button__gpio_8c_adc89b5debc29642a103555703193a1c7} 
+\mbox{\hyperlink{button__gpio_8h_abcd9652bbb4c8f3a5403f73e946cf3d4}{button\+\_\+gpio\+\_\+t}} \texorpdfstring{$\ast$}{*} button\+\_\+gpio\+\_\+create (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pin}{, }\item[{bool}]{b\+\_\+is\+\_\+active\+\_\+on\+\_\+high\+\_\+level}{, }\item[{\mbox{\hyperlink{button__gpio_8h_a8421a23c28dee385c39fc60f9011c543}{btn\+\_\+gpio\+\_\+pressed\+\_\+t}}}]{p\+\_\+button\+\_\+pressed\+\_\+cb}{}\end{DoxyParamCaption})}
+
+
+
+It creates a button object and initializes it. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pin} & The GPIO pin number that the button is connected to. \\
+\hline
+\mbox{\texttt{ in}}  & {\em b\+\_\+is\+\_\+active\+\_\+on\+\_\+high\+\_\+level} & If true, the button is active when the GPIO is high. If false, the button is active when the GPIO is low. \\
+\hline
+\mbox{\texttt{ in}}  & {\em p\+\_\+button\+\_\+pressed\+\_\+cb} & This is the callback function that will be called when the button is pressed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to a button\+\_\+gpio\+\_\+t struct. 
+\end{DoxyReturn}
+\Hypertarget{button__gpio_8c_a218116d9cac8fc010a1af59b597f8826}\index{button\_gpio.c@{button\_gpio.c}!button\_gpio\_delete@{button\_gpio\_delete}}
+\index{button\_gpio\_delete@{button\_gpio\_delete}!button\_gpio.c@{button\_gpio.c}}
+\doxysubsubsection{\texorpdfstring{button\_gpio\_delete()}{button\_gpio\_delete()}}
+{\footnotesize\ttfamily \label{button__gpio_8c_a218116d9cac8fc010a1af59b597f8826} 
+void button\+\_\+gpio\+\_\+delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{button__gpio_8h_abcd9652bbb4c8f3a5403f73e946cf3d4}{button\+\_\+gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+btn}{}\end{DoxyParamCaption})}
+
+
+
+This function frees the memory allocated for the button\+\_\+gpio\+\_\+t structure. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p\+\_\+btn} & A pointer to the button\+\_\+gpio\+\_\+t structure that was created by the \doxylink{button__gpio_8h_adc89b5debc29642a103555703193a1c7}{button\+\_\+gpio\+\_\+create()} function. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{button__gpio_8c_a26ffefb7ff02bfa80c1593b4861d6c10}\index{button\_gpio.c@{button\_gpio.c}!button\_gpio\_is\_pressed@{button\_gpio\_is\_pressed}}
+\index{button\_gpio\_is\_pressed@{button\_gpio\_is\_pressed}!button\_gpio.c@{button\_gpio.c}}
+\doxysubsubsection{\texorpdfstring{button\_gpio\_is\_pressed()}{button\_gpio\_is\_pressed()}}
+{\footnotesize\ttfamily \label{button__gpio_8c_a26ffefb7ff02bfa80c1593b4861d6c10} 
+bool button\+\_\+gpio\+\_\+is\+\_\+pressed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{button__gpio_8h_abcd9652bbb4c8f3a5403f73e946cf3d4}{button\+\_\+gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+btn}{}\end{DoxyParamCaption})}
+
+
+
+This function checks if the button is pressed. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p\+\_\+btn} & A pointer to the button\+\_\+gpio\+\_\+t structure that was created in the previous step.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the button is pressed, false otherwise. 
+\end{DoxyReturn}

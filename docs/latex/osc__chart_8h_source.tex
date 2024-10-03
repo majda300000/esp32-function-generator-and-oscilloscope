@@ -1,0 +1,76 @@
+\doxysection{osc\+\_\+chart.\+h}
+\hypertarget{osc__chart_8h_source}{}\label{osc__chart_8h_source}\index{/home/mbakmaz/bytelab2024/final\_task/mashina/components/ui\_app/osc\_chart/osc\_chart.h@{/home/mbakmaz/bytelab2024/final\_task/mashina/components/ui\_app/osc\_chart/osc\_chart.h}}
+\mbox{\hyperlink{osc__chart_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ \_\_OSC\_CHART\_H\_\_}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ \_\_OSC\_CHART\_H\_\_}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ INCLUDES\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{oscilloscope_8h}{oscilloscope.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ui_8h}{ui.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ MACROS\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ DATA\ TYPES\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ Two\ oscilloscopes\ serving\ as\ two\ channels}}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{struct__oscilloscope__t}{oscilloscope\_t}}\ *\mbox{\hyperlink{structosc__chart__t_ace97a26ef5e2e597e0890ce213e2841e}{p\_chan\_1}};}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{struct__oscilloscope__t}{oscilloscope\_t}}\ *\mbox{\hyperlink{structosc__chart__t_abb9b27be1496423bae179ad7d7eaafe2}{p\_chan\_2}};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ Series\ for\ the\ two\ channels}}
+\DoxyCodeLine{00031\ \ \ \ \ lv\_chart\_series\_t\ *\mbox{\hyperlink{structosc__chart__t_a7872ab65046bdf6fb50298185cdb6e38}{p\_ser1}};}
+\DoxyCodeLine{00032\ \ \ \ \ lv\_chart\_series\_t\ *\mbox{\hyperlink{structosc__chart__t_aa824d81a66be30d2c198eca772d8712a}{p\_ser2}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Voltage\ and\ time\ divisions}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structosc__chart__t_aad8af845855fce7866e2449e4797bf03}{div\_mV}};}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structosc__chart__t_a3ed0d8e6e7323a79bee3fb198143f9ea}{div\_ms}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ Number\ of\ points\ shown\ on\ chart}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{structosc__chart__t_a5020b05054fbb7cd30ba0a4662fa8e4b}{data\_length}};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//\ Pointer\ to\ data\ to\ display}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ *\mbox{\hyperlink{structosc__chart__t_acae28b2fdc8d5ee33e718b5700254430}{data\_1}};}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ *\mbox{\hyperlink{structosc__chart__t_a343bd45bf451ca06edc73c4d1751acb8}{data\_2}};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ lvgl\ chart\ object}}
+\DoxyCodeLine{00046\ \ \ \ \ lv\_obj\_t\ *\mbox{\hyperlink{structosc__chart__t_aeebe20098200cb0796a6a0b671839abf}{chart}};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \}\ \mbox{\hyperlink{structosc__chart__t}{osc\_chart\_t}};}
+\DoxyCodeLine{00051\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ PUBLIC\ FUNCTION\ PROTOTYPES\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00061\ esp\_err\_t\ \mbox{\hyperlink{osc__chart_8h_a8320d67eaee066f90a94cd7ad31edbc2}{osc\_chart\_init}}(lv\_obj\_t\ *chart,\ \mbox{\hyperlink{struct__oscilloscope__t}{oscilloscope\_t}}\ *p\_osc1,\ \mbox{\hyperlink{struct__oscilloscope__t}{oscilloscope\_t}}\ *p\_osc2);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{osc__chart_8h_ace92a1aad34a47a906f29f440e87e8b1}{osc\_chart\_ch1\_show}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{osc__chart_8h_a384746e531abd9947299528d5c2cf963}{osc\_chart\_ch1\_hide}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00079\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{osc__chart_8h_ad50ca9495c089f8016986e430dae84bc}{osc\_chart\_ch2\_show}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00085\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{osc__chart_8h_a7eec9201697f1c74cf1e9aba51572ddb}{osc\_chart\_ch2\_hide}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00091\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{osc__chart_8h_a1f2b2f9635f5317cd969e3f0065736db}{ui\_set\_div\_10ms}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00097\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{osc__chart_8h_a227f2f01d43341454e6cfebeeb4bff1d}{ui\_set\_div\_1ms}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{osc__chart_8h_a266e0f2e79519f1513bba306c9a78d67}{ui\_set\_div\_500mV}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00109\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{osc__chart_8h_a6fd4c166dfd8c101393583609f38e5bd}{ui\_set\_div\_100mV}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00115\ \}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_OSC\_CHART\_H\_\_}}
+
+\end{DoxyCode}

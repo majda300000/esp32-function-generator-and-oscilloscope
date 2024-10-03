@@ -1,0 +1,132 @@
+\doxysection{/home/mbakmaz/bytelab2024/final\+\_\+task/mashina/components/button/button.h File Reference}
+\hypertarget{button_8h}{}\label{button_8h}\index{/home/mbakmaz/bytelab2024/final\_task/mashina/components/button/button.h@{/home/mbakmaz/bytelab2024/final\_task/mashina/components/button/button.h}}
+
+
+See the source file.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$button\+\_\+gpio.\+h$>$}\newline
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{button_8h_a9dd6b837ed5d286038db41b45fdc39d4}{button\+\_\+pressed\+\_\+t}}) (void \texorpdfstring{$\ast$}{*})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69}{button\+\_\+id\+\_\+t}} \{ \newline
+\mbox{\hyperlink{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69a60fdded36114049211edfe95a7ad6335}{BUTTON\+\_\+1}}
+, \mbox{\hyperlink{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69af517ae2c92b6a906cfe017cb2c4cf5d6}{BUTTON\+\_\+2}}
+, \mbox{\hyperlink{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69a99e905f2b95d0eb72f968e81243c4c28}{BUTTON\+\_\+3}}
+, \mbox{\hyperlink{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69aa5bb77fb4c55853d07d50a3075f459f4}{BUTTON\+\_\+4}}
+, \newline
+\mbox{\hyperlink{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69a5eced1b61300568bf3ad61ebe3d7b3d8}{BUTTON\+\_\+\+COUNT}}
+ \}
+\item 
+enum \mbox{\hyperlink{button_8h_a09d4d27c5babe9f26f61c77e50bc34fd}{button\+\_\+err\+\_\+t}} \{ \mbox{\hyperlink{button_8h_a09d4d27c5babe9f26f61c77e50bc34fdade5ee8be67f15f1fb90d05cfc9eb977a}{BUTTON\+\_\+\+ERR\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{button_8h_a09d4d27c5babe9f26f61c77e50bc34fda8db84b1f5212a277232a81a0cb6f921f}{BUTTON\+\_\+\+ERR}} = -\/1
+, \mbox{\hyperlink{button_8h_a09d4d27c5babe9f26f61c77e50bc34fdab81ec308186e70d0cd1d35738a5b567d}{BUTTON\+\_\+\+ERR\+\_\+\+CREATE}} = -\/2
+, \mbox{\hyperlink{button_8h_a09d4d27c5babe9f26f61c77e50bc34fdadfe15c9b2ac479b4881af08f84add5af}{BUTTON\+\_\+\+ERR\+\_\+\+UNKNOWN\+\_\+\+BUTTON}} = -\/3
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{button_8h_a09d4d27c5babe9f26f61c77e50bc34fd}{button\+\_\+err\+\_\+t}} \mbox{\hyperlink{button_8h_aa5f109031476d9d810fc612b2e8deb71}{button\+\_\+create}} (\mbox{\hyperlink{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69}{button\+\_\+id\+\_\+t}} btn\+\_\+id, \mbox{\hyperlink{button_8h_a9dd6b837ed5d286038db41b45fdc39d4}{button\+\_\+pressed\+\_\+t}} p\+\_\+btn\+\_\+cb)
+\begin{DoxyCompactList}\small\item\em It creates a button object based on the button type and initializes it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+See the source file. 
+
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+COPYRIGHT NOTICE\+: (c) 2022 Byte Lab Grupa d.\+o.\+o. All rights reserved. 
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{button_8h_a9dd6b837ed5d286038db41b45fdc39d4}\index{button.h@{button.h}!button\_pressed\_t@{button\_pressed\_t}}
+\index{button\_pressed\_t@{button\_pressed\_t}!button.h@{button.h}}
+\doxysubsubsection{\texorpdfstring{button\_pressed\_t}{button\_pressed\_t}}
+{\footnotesize\ttfamily \label{button_8h_a9dd6b837ed5d286038db41b45fdc39d4} 
+typedef void(\texorpdfstring{$\ast$}{*} button\+\_\+pressed\+\_\+t) (void \texorpdfstring{$\ast$}{*})}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{button_8h_a09d4d27c5babe9f26f61c77e50bc34fd}\index{button.h@{button.h}!button\_err\_t@{button\_err\_t}}
+\index{button\_err\_t@{button\_err\_t}!button.h@{button.h}}
+\doxysubsubsection{\texorpdfstring{button\_err\_t}{button\_err\_t}}
+{\footnotesize\ttfamily \label{button_8h_a09d4d27c5babe9f26f61c77e50bc34fd} 
+enum \mbox{\hyperlink{button_8h_a09d4d27c5babe9f26f61c77e50bc34fd}{button\+\_\+err\+\_\+t}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_ERR\_NONE@{BUTTON\_ERR\_NONE}!button.h@{button.h}}\index{button.h@{button.h}!BUTTON\_ERR\_NONE@{BUTTON\_ERR\_NONE}}}\Hypertarget{button_8h_a09d4d27c5babe9f26f61c77e50bc34fdade5ee8be67f15f1fb90d05cfc9eb977a}\label{button_8h_a09d4d27c5babe9f26f61c77e50bc34fd} 
+BUTTON\+\_\+\+ERR\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_ERR@{BUTTON\_ERR}!button.h@{button.h}}\index{button.h@{button.h}!BUTTON\_ERR@{BUTTON\_ERR}}}\Hypertarget{button_8h_a09d4d27c5babe9f26f61c77e50bc34fda8db84b1f5212a277232a81a0cb6f921f}\label{button_8h_a09d4d27c5babe9f26f61c77e50bc34fd} 
+BUTTON\+\_\+\+ERR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_ERR\_CREATE@{BUTTON\_ERR\_CREATE}!button.h@{button.h}}\index{button.h@{button.h}!BUTTON\_ERR\_CREATE@{BUTTON\_ERR\_CREATE}}}\Hypertarget{button_8h_a09d4d27c5babe9f26f61c77e50bc34fdab81ec308186e70d0cd1d35738a5b567d}\label{button_8h_a09d4d27c5babe9f26f61c77e50bc34fd} 
+BUTTON\+\_\+\+ERR\+\_\+\+CREATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_ERR\_UNKNOWN\_BUTTON@{BUTTON\_ERR\_UNKNOWN\_BUTTON}!button.h@{button.h}}\index{button.h@{button.h}!BUTTON\_ERR\_UNKNOWN\_BUTTON@{BUTTON\_ERR\_UNKNOWN\_BUTTON}}}\Hypertarget{button_8h_a09d4d27c5babe9f26f61c77e50bc34fdadfe15c9b2ac479b4881af08f84add5af}\label{button_8h_a09d4d27c5babe9f26f61c77e50bc34fd} 
+BUTTON\+\_\+\+ERR\+\_\+\+UNKNOWN\+\_\+\+BUTTON&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69}\index{button.h@{button.h}!button\_id\_t@{button\_id\_t}}
+\index{button\_id\_t@{button\_id\_t}!button.h@{button.h}}
+\doxysubsubsection{\texorpdfstring{button\_id\_t}{button\_id\_t}}
+{\footnotesize\ttfamily \label{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69} 
+enum \mbox{\hyperlink{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69}{button\+\_\+id\+\_\+t}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_1@{BUTTON\_1}!button.h@{button.h}}\index{button.h@{button.h}!BUTTON\_1@{BUTTON\_1}}}\Hypertarget{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69a60fdded36114049211edfe95a7ad6335}\label{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69} 
+BUTTON\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_2@{BUTTON\_2}!button.h@{button.h}}\index{button.h@{button.h}!BUTTON\_2@{BUTTON\_2}}}\Hypertarget{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69af517ae2c92b6a906cfe017cb2c4cf5d6}\label{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69} 
+BUTTON\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_3@{BUTTON\_3}!button.h@{button.h}}\index{button.h@{button.h}!BUTTON\_3@{BUTTON\_3}}}\Hypertarget{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69a99e905f2b95d0eb72f968e81243c4c28}\label{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69} 
+BUTTON\+\_\+3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_4@{BUTTON\_4}!button.h@{button.h}}\index{button.h@{button.h}!BUTTON\_4@{BUTTON\_4}}}\Hypertarget{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69aa5bb77fb4c55853d07d50a3075f459f4}\label{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69} 
+BUTTON\+\_\+4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_COUNT@{BUTTON\_COUNT}!button.h@{button.h}}\index{button.h@{button.h}!BUTTON\_COUNT@{BUTTON\_COUNT}}}\Hypertarget{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69a5eced1b61300568bf3ad61ebe3d7b3d8}\label{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69} 
+BUTTON\+\_\+\+COUNT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{button_8h_aa5f109031476d9d810fc612b2e8deb71}\index{button.h@{button.h}!button\_create@{button\_create}}
+\index{button\_create@{button\_create}!button.h@{button.h}}
+\doxysubsubsection{\texorpdfstring{button\_create()}{button\_create()}}
+{\footnotesize\ttfamily \label{button_8h_aa5f109031476d9d810fc612b2e8deb71} 
+\mbox{\hyperlink{button_8h_a09d4d27c5babe9f26f61c77e50bc34fd}{button\+\_\+err\+\_\+t}} button\+\_\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{button_8h_aa4f1ea6f585e6aacce1ff590abd3fb69}{button\+\_\+id\+\_\+t}}}]{btn\+\_\+id}{, }\item[{\mbox{\hyperlink{button_8h_a9dd6b837ed5d286038db41b45fdc39d4}{button\+\_\+pressed\+\_\+t}}}]{p\+\_\+btn\+\_\+cb}{}\end{DoxyParamCaption})}
+
+
+
+It creates a button object based on the button type and initializes it. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em btn\+\_\+id} & The id of the button to create. \\
+\hline
+\mbox{\texttt{ in}}  & {\em p\+\_\+btn\+\_\+cb} & This is the callback function that will be called when the button is pressed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status of creation. 
+\end{DoxyReturn}

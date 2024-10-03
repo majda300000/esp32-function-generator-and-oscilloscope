@@ -1,0 +1,194 @@
+.TH "/home/mbakmaz/bytelab2024/final_task/mashina/components/ui_app/osc_chart/osc_chart.c" 3 "Version ." "Mashina" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/mbakmaz/bytelab2024/final_task/mashina/components/ui_app/osc_chart/osc_chart.c \- Class to handle lvgl chart used as oscilloscope\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'osc_chart\&.h'\fP
+.br
+\fR#include '\&.\&./ui_app\&.h'\fP
+.br
+\fR#include 'fn_gen\&.h'\fP
+.br
+\fR#include '\&.\&./gui\&.h'\fP
+.br
+\fR#include 'ui\&.h'\fP
+.br
+\fR#include 'oscilloscope\&.h'\fP
+.br
+\fR#include <stdbool\&.h>\fP
+.br
+\fR#include <stdio\&.h>\fP
+.br
+\fR#include <stdlib\&.h>\fP
+.br
+\fR#include <string\&.h>\fP
+.br
+\fR#include 'freertos/FreeRTOS\&.h'\fP
+.br
+\fR#include 'freertos/task\&.h'\fP
+.br
+\fR#include 'esp_freertos_hooks\&.h'\fP
+.br
+\fR#include 'freertos/semphr\&.h'\fP
+.br
+\fR#include 'esp_log\&.h'\fP
+.br
+\fR#include 'esp_timer\&.h'\fP
+.br
+\fR#include 'esp_sleep\&.h'\fP
+.br
+\fR#include 'esp_err\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBCHART_TASK_PERIOD_MS\fP   (250)"
+.br
+.ti -1c
+.RI "#define \fBCHART_TASK_STACK_SIZE\fP   (1024 * 4)"
+.br
+.ti -1c
+.RI "#define \fBCHART_SER_A_COLOR\fP   (0xff99ff)"
+.br
+.ti -1c
+.RI "#define \fBCHART_SER_B_COLOR\fP   (0x5bc6ca)"
+.br
+.ti -1c
+.RI "#define \fBCHART_DIV_1_MS\fP   (10)"
+.br
+.ti -1c
+.RI "#define \fBCHART_DIV_2_MS\fP   (1)"
+.br
+.ti -1c
+.RI "#define \fBCHART_DIV_1_MV\fP   (500)"
+.br
+.ti -1c
+.RI "#define \fBCHART_DIV_2_MV\fP   (100)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "esp_err_t \fBosc_chart_init\fP (lv_obj_t *chart, \fBoscilloscope_t\fP *p_osc1, \fBoscilloscope_t\fP *p_osc2)"
+.br
+.RI "Initializes char unit\&. "
+.ti -1c
+.RI "void \fBosc_chart_ch1_show\fP ()"
+.br
+.RI "Displays channel 1 on chart\&. "
+.ti -1c
+.RI "void \fBosc_chart_ch1_hide\fP ()"
+.br
+.RI "Hides channel 2 from chart\&. "
+.ti -1c
+.RI "void \fBosc_chart_ch2_show\fP ()"
+.br
+.RI "Displays channel 2 on chart\&. "
+.ti -1c
+.RI "void \fBosc_chart_ch2_hide\fP ()"
+.br
+.RI "Hides channel 2 from chart\&. "
+.ti -1c
+.RI "void \fBui_set_div_10ms\fP (void)"
+.br
+.RI "Sets shart divX to 10ms\&. "
+.ti -1c
+.RI "void \fBui_set_div_1ms\fP (void)"
+.br
+.RI "Sets shart divX to 1ms\&. "
+.ti -1c
+.RI "void \fBui_set_div_500mV\fP (void)"
+.br
+.RI "Sets shart divY to 500mV\&. "
+.ti -1c
+.RI "void \fBui_set_div_100mV\fP (void)"
+.br
+.RI "Sets shart divY to 100mV\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class to handle lvgl chart used as oscilloscope\&. 
+
+COPYRIGHT NOTICE: (c) 2024 Byte Lab Grupa d\&.o\&.o\&. All rights reserved\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define CHART_DIV_1_MS   (10)"
+
+.SS "#define CHART_DIV_1_MV   (500)"
+
+.SS "#define CHART_DIV_2_MS   (1)"
+
+.SS "#define CHART_DIV_2_MV   (100)"
+
+.SS "#define CHART_SER_A_COLOR   (0xff99ff)"
+
+.SS "#define CHART_SER_B_COLOR   (0x5bc6ca)"
+
+.SS "#define CHART_TASK_PERIOD_MS   (250)"
+
+.SS "#define CHART_TASK_STACK_SIZE   (1024 * 4)"
+
+.SH "Function Documentation"
+.PP 
+.SS "void osc_chart_ch1_hide (void )"
+
+.PP
+Hides channel 2 from chart\&. 
+.SS "void osc_chart_ch1_show (void )"
+
+.PP
+Displays channel 1 on chart\&. 
+.SS "void osc_chart_ch2_hide (void )"
+
+.PP
+Hides channel 2 from chart\&. 
+.SS "void osc_chart_ch2_show (void )"
+
+.PP
+Displays channel 2 on chart\&. 
+.SS "esp_err_t osc_chart_init (lv_obj_t * chart, \fBoscilloscope_t\fP * p_osc1, \fBoscilloscope_t\fP * p_osc2)"
+
+.PP
+Initializes char unit\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIchart\fP Pointer to lvgl chart object 
+.br
+\fIp_osc1\fP pointer to oscilloscope object for channel A 
+.br
+\fIp_osc2\fP pointer to oscilloscope object for channel B 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+esp_err_t 
+.RE
+.PP
+
+.SS "void ui_set_div_100mV (void )"
+
+.PP
+Sets shart divY to 100mV\&. 
+.SS "void ui_set_div_10ms (void )"
+
+.PP
+Sets shart divX to 10ms\&. 
+.SS "void ui_set_div_1ms (void )"
+
+.PP
+Sets shart divX to 1ms\&. 
+.SS "void ui_set_div_500mV (void )"
+
+.PP
+Sets shart divY to 500mV\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Mashina from the source code\&.

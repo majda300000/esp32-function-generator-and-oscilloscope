@@ -1,0 +1,164 @@
+\doxysection{/home/mbakmaz/bytelab2024/final\+\_\+task/mashina/components/ui\+\_\+app/squareline/ui\+\_\+events.c File Reference}
+\hypertarget{ui__events_8c}{}\label{ui__events_8c}\index{/home/mbakmaz/bytelab2024/final\_task/mashina/components/ui\_app/squareline/ui\_events.c@{/home/mbakmaz/bytelab2024/final\_task/mashina/components/ui\_app/squareline/ui\_events.c}}
+{\ttfamily \#include "{}ui.\+h"{}}\newline
+{\ttfamily \#include "{}../ui\+\_\+app.\+h"{}}\newline
+{\ttfamily \#include "{}../osc\+\_\+chart/osc\+\_\+chart.\+h"{}}\newline
+{\ttfamily \#include "{}fn\+\_\+gen.\+h"{}}\newline
+{\ttfamily \#include "{}led.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+log.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ui__events_8c_a70e0682369e4aa1a6f406a82b682714b}{DUTY\+\_\+\+CYCLE\+\_\+\+INCREMENT}}~(5)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ui__events_8c_a0a9978f2c1eb345c25e2ddbf4c96e421}{ui\+\_\+signal\+\_\+type\+\_\+dropdown\+\_\+cb}} (lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+e)
+\item 
+void \mbox{\hyperlink{ui__events_8c_ae08b9b068bfa4a1963ea74e6240a8a96}{ui\+\_\+freq\+\_\+arc\+\_\+cb}} (lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+e)
+\item 
+void \mbox{\hyperlink{ui__events_8c_aa5f426973eda7723ebfdcaa10feb85c8}{ui\+\_\+ampl\+\_\+arc\+\_\+cb}} (lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+e)
+\item 
+void \mbox{\hyperlink{ui__events_8c_a1d424a6caed0c12ea7c80aeafd0c9da4}{ui\+\_\+start\+\_\+btn\+\_\+checked\+\_\+cb}} (lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+e)
+\item 
+void \mbox{\hyperlink{ui__events_8c_a48978a2061c370ffe0d149358722c95e}{ui\+\_\+start\+\_\+btn\+\_\+unchecked\+\_\+cb}} (lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+e)
+\item 
+void \mbox{\hyperlink{ui__events_8c_a85ee18db67589885aef8b4ff9590e6e4}{ui\+\_\+duty\+\_\+cycle\+\_\+dropdown\+\_\+cb}} (lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+e)
+\item 
+void \mbox{\hyperlink{ui__events_8c_a0140f22f77560ba3ebb45f824adadd4e}{ch1\+\_\+show}} (lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}e)
+\item 
+void \mbox{\hyperlink{ui__events_8c_a40418fb64882823cb0d28d6c5f21d035}{ch1\+\_\+hide}} (lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}e)
+\item 
+void \mbox{\hyperlink{ui__events_8c_af1b6f894054ffe8db1be838fddddd9e3}{ch2\+\_\+show}} (lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}e)
+\item 
+void \mbox{\hyperlink{ui__events_8c_a3ed2c035432a44339630becaa7371aa7}{ch2\+\_\+hide}} (lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}e)
+\item 
+void \mbox{\hyperlink{ui__events_8c_ac06eef56f566bc705eb3f227f83e1ca2}{set\+\_\+div\+\_\+10ms}} (lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}e)
+\item 
+void \mbox{\hyperlink{ui__events_8c_aca28d8b77881a563f9358e55d1eb78df}{set\+\_\+div\+\_\+1ms}} (lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}e)
+\item 
+void \mbox{\hyperlink{ui__events_8c_a00e0df2b4b5e338e38050700d6d16d35}{set\+\_\+div\+\_\+500mV}} (lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}e)
+\item 
+void \mbox{\hyperlink{ui__events_8c_a7c4b854824e9292b0c9f7a9d277fd60d}{set\+\_\+div\+\_\+100mV}} (lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}e)
+\item 
+void \mbox{\hyperlink{ui__events_8c_a664e6e845ac39c8b54364a4d611e43a1}{ui\+\_\+save\+\_\+preset}} (lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}e)
+\item 
+void \mbox{\hyperlink{ui__events_8c_a770e5a52d8a48971c12a903ffae26f8f}{ui\+\_\+init\+\_\+preset}} (lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}e)
+\item 
+void \mbox{\hyperlink{ui__events_8c_a93d4006bbe24782be313d0fd77a361ed}{ui\+\_\+load\+\_\+preset}} (lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+e)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{ui__events_8c_a70e0682369e4aa1a6f406a82b682714b}\index{ui\_events.c@{ui\_events.c}!DUTY\_CYCLE\_INCREMENT@{DUTY\_CYCLE\_INCREMENT}}
+\index{DUTY\_CYCLE\_INCREMENT@{DUTY\_CYCLE\_INCREMENT}!ui\_events.c@{ui\_events.c}}
+\doxysubsubsection{\texorpdfstring{DUTY\_CYCLE\_INCREMENT}{DUTY\_CYCLE\_INCREMENT}}
+{\footnotesize\ttfamily \label{ui__events_8c_a70e0682369e4aa1a6f406a82b682714b} 
+\#define DUTY\+\_\+\+CYCLE\+\_\+\+INCREMENT~(5)}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ui__events_8c_a40418fb64882823cb0d28d6c5f21d035}\index{ui\_events.c@{ui\_events.c}!ch1\_hide@{ch1\_hide}}
+\index{ch1\_hide@{ch1\_hide}!ui\_events.c@{ui\_events.c}}
+\doxysubsubsection{\texorpdfstring{ch1\_hide()}{ch1\_hide()}}
+{\footnotesize\ttfamily \label{ui__events_8c_a40418fb64882823cb0d28d6c5f21d035} 
+void ch1\+\_\+hide (\begin{DoxyParamCaption}\item[{lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})}
+
+\Hypertarget{ui__events_8c_a0140f22f77560ba3ebb45f824adadd4e}\index{ui\_events.c@{ui\_events.c}!ch1\_show@{ch1\_show}}
+\index{ch1\_show@{ch1\_show}!ui\_events.c@{ui\_events.c}}
+\doxysubsubsection{\texorpdfstring{ch1\_show()}{ch1\_show()}}
+{\footnotesize\ttfamily \label{ui__events_8c_a0140f22f77560ba3ebb45f824adadd4e} 
+void ch1\+\_\+show (\begin{DoxyParamCaption}\item[{lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})}
+
+\Hypertarget{ui__events_8c_a3ed2c035432a44339630becaa7371aa7}\index{ui\_events.c@{ui\_events.c}!ch2\_hide@{ch2\_hide}}
+\index{ch2\_hide@{ch2\_hide}!ui\_events.c@{ui\_events.c}}
+\doxysubsubsection{\texorpdfstring{ch2\_hide()}{ch2\_hide()}}
+{\footnotesize\ttfamily \label{ui__events_8c_a3ed2c035432a44339630becaa7371aa7} 
+void ch2\+\_\+hide (\begin{DoxyParamCaption}\item[{lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})}
+
+\Hypertarget{ui__events_8c_af1b6f894054ffe8db1be838fddddd9e3}\index{ui\_events.c@{ui\_events.c}!ch2\_show@{ch2\_show}}
+\index{ch2\_show@{ch2\_show}!ui\_events.c@{ui\_events.c}}
+\doxysubsubsection{\texorpdfstring{ch2\_show()}{ch2\_show()}}
+{\footnotesize\ttfamily \label{ui__events_8c_af1b6f894054ffe8db1be838fddddd9e3} 
+void ch2\+\_\+show (\begin{DoxyParamCaption}\item[{lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})}
+
+\Hypertarget{ui__events_8c_a7c4b854824e9292b0c9f7a9d277fd60d}\index{ui\_events.c@{ui\_events.c}!set\_div\_100mV@{set\_div\_100mV}}
+\index{set\_div\_100mV@{set\_div\_100mV}!ui\_events.c@{ui\_events.c}}
+\doxysubsubsection{\texorpdfstring{set\_div\_100mV()}{set\_div\_100mV()}}
+{\footnotesize\ttfamily \label{ui__events_8c_a7c4b854824e9292b0c9f7a9d277fd60d} 
+void set\+\_\+div\+\_\+100mV (\begin{DoxyParamCaption}\item[{lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})}
+
+\Hypertarget{ui__events_8c_ac06eef56f566bc705eb3f227f83e1ca2}\index{ui\_events.c@{ui\_events.c}!set\_div\_10ms@{set\_div\_10ms}}
+\index{set\_div\_10ms@{set\_div\_10ms}!ui\_events.c@{ui\_events.c}}
+\doxysubsubsection{\texorpdfstring{set\_div\_10ms()}{set\_div\_10ms()}}
+{\footnotesize\ttfamily \label{ui__events_8c_ac06eef56f566bc705eb3f227f83e1ca2} 
+void set\+\_\+div\+\_\+10ms (\begin{DoxyParamCaption}\item[{lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})}
+
+\Hypertarget{ui__events_8c_aca28d8b77881a563f9358e55d1eb78df}\index{ui\_events.c@{ui\_events.c}!set\_div\_1ms@{set\_div\_1ms}}
+\index{set\_div\_1ms@{set\_div\_1ms}!ui\_events.c@{ui\_events.c}}
+\doxysubsubsection{\texorpdfstring{set\_div\_1ms()}{set\_div\_1ms()}}
+{\footnotesize\ttfamily \label{ui__events_8c_aca28d8b77881a563f9358e55d1eb78df} 
+void set\+\_\+div\+\_\+1ms (\begin{DoxyParamCaption}\item[{lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})}
+
+\Hypertarget{ui__events_8c_a00e0df2b4b5e338e38050700d6d16d35}\index{ui\_events.c@{ui\_events.c}!set\_div\_500mV@{set\_div\_500mV}}
+\index{set\_div\_500mV@{set\_div\_500mV}!ui\_events.c@{ui\_events.c}}
+\doxysubsubsection{\texorpdfstring{set\_div\_500mV()}{set\_div\_500mV()}}
+{\footnotesize\ttfamily \label{ui__events_8c_a00e0df2b4b5e338e38050700d6d16d35} 
+void set\+\_\+div\+\_\+500mV (\begin{DoxyParamCaption}\item[{lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})}
+
+\Hypertarget{ui__events_8c_aa5f426973eda7723ebfdcaa10feb85c8}\index{ui\_events.c@{ui\_events.c}!ui\_ampl\_arc\_cb@{ui\_ampl\_arc\_cb}}
+\index{ui\_ampl\_arc\_cb@{ui\_ampl\_arc\_cb}!ui\_events.c@{ui\_events.c}}
+\doxysubsubsection{\texorpdfstring{ui\_ampl\_arc\_cb()}{ui\_ampl\_arc\_cb()}}
+{\footnotesize\ttfamily \label{ui__events_8c_aa5f426973eda7723ebfdcaa10feb85c8} 
+void ui\+\_\+ampl\+\_\+arc\+\_\+cb (\begin{DoxyParamCaption}\item[{lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+e}{}\end{DoxyParamCaption})}
+
+\Hypertarget{ui__events_8c_a85ee18db67589885aef8b4ff9590e6e4}\index{ui\_events.c@{ui\_events.c}!ui\_duty\_cycle\_dropdown\_cb@{ui\_duty\_cycle\_dropdown\_cb}}
+\index{ui\_duty\_cycle\_dropdown\_cb@{ui\_duty\_cycle\_dropdown\_cb}!ui\_events.c@{ui\_events.c}}
+\doxysubsubsection{\texorpdfstring{ui\_duty\_cycle\_dropdown\_cb()}{ui\_duty\_cycle\_dropdown\_cb()}}
+{\footnotesize\ttfamily \label{ui__events_8c_a85ee18db67589885aef8b4ff9590e6e4} 
+void ui\+\_\+duty\+\_\+cycle\+\_\+dropdown\+\_\+cb (\begin{DoxyParamCaption}\item[{lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+e}{}\end{DoxyParamCaption})}
+
+\Hypertarget{ui__events_8c_ae08b9b068bfa4a1963ea74e6240a8a96}\index{ui\_events.c@{ui\_events.c}!ui\_freq\_arc\_cb@{ui\_freq\_arc\_cb}}
+\index{ui\_freq\_arc\_cb@{ui\_freq\_arc\_cb}!ui\_events.c@{ui\_events.c}}
+\doxysubsubsection{\texorpdfstring{ui\_freq\_arc\_cb()}{ui\_freq\_arc\_cb()}}
+{\footnotesize\ttfamily \label{ui__events_8c_ae08b9b068bfa4a1963ea74e6240a8a96} 
+void ui\+\_\+freq\+\_\+arc\+\_\+cb (\begin{DoxyParamCaption}\item[{lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+e}{}\end{DoxyParamCaption})}
+
+\Hypertarget{ui__events_8c_a770e5a52d8a48971c12a903ffae26f8f}\index{ui\_events.c@{ui\_events.c}!ui\_init\_preset@{ui\_init\_preset}}
+\index{ui\_init\_preset@{ui\_init\_preset}!ui\_events.c@{ui\_events.c}}
+\doxysubsubsection{\texorpdfstring{ui\_init\_preset()}{ui\_init\_preset()}}
+{\footnotesize\ttfamily \label{ui__events_8c_a770e5a52d8a48971c12a903ffae26f8f} 
+void ui\+\_\+init\+\_\+preset (\begin{DoxyParamCaption}\item[{lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})}
+
+\Hypertarget{ui__events_8c_a93d4006bbe24782be313d0fd77a361ed}\index{ui\_events.c@{ui\_events.c}!ui\_load\_preset@{ui\_load\_preset}}
+\index{ui\_load\_preset@{ui\_load\_preset}!ui\_events.c@{ui\_events.c}}
+\doxysubsubsection{\texorpdfstring{ui\_load\_preset()}{ui\_load\_preset()}}
+{\footnotesize\ttfamily \label{ui__events_8c_a93d4006bbe24782be313d0fd77a361ed} 
+void ui\+\_\+load\+\_\+preset (\begin{DoxyParamCaption}\item[{lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+e}{}\end{DoxyParamCaption})}
+
+\Hypertarget{ui__events_8c_a664e6e845ac39c8b54364a4d611e43a1}\index{ui\_events.c@{ui\_events.c}!ui\_save\_preset@{ui\_save\_preset}}
+\index{ui\_save\_preset@{ui\_save\_preset}!ui\_events.c@{ui\_events.c}}
+\doxysubsubsection{\texorpdfstring{ui\_save\_preset()}{ui\_save\_preset()}}
+{\footnotesize\ttfamily \label{ui__events_8c_a664e6e845ac39c8b54364a4d611e43a1} 
+void ui\+\_\+save\+\_\+preset (\begin{DoxyParamCaption}\item[{lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})}
+
+\Hypertarget{ui__events_8c_a0a9978f2c1eb345c25e2ddbf4c96e421}\index{ui\_events.c@{ui\_events.c}!ui\_signal\_type\_dropdown\_cb@{ui\_signal\_type\_dropdown\_cb}}
+\index{ui\_signal\_type\_dropdown\_cb@{ui\_signal\_type\_dropdown\_cb}!ui\_events.c@{ui\_events.c}}
+\doxysubsubsection{\texorpdfstring{ui\_signal\_type\_dropdown\_cb()}{ui\_signal\_type\_dropdown\_cb()}}
+{\footnotesize\ttfamily \label{ui__events_8c_a0a9978f2c1eb345c25e2ddbf4c96e421} 
+void ui\+\_\+signal\+\_\+type\+\_\+dropdown\+\_\+cb (\begin{DoxyParamCaption}\item[{lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+e}{}\end{DoxyParamCaption})}
+
+\Hypertarget{ui__events_8c_a1d424a6caed0c12ea7c80aeafd0c9da4}\index{ui\_events.c@{ui\_events.c}!ui\_start\_btn\_checked\_cb@{ui\_start\_btn\_checked\_cb}}
+\index{ui\_start\_btn\_checked\_cb@{ui\_start\_btn\_checked\_cb}!ui\_events.c@{ui\_events.c}}
+\doxysubsubsection{\texorpdfstring{ui\_start\_btn\_checked\_cb()}{ui\_start\_btn\_checked\_cb()}}
+{\footnotesize\ttfamily \label{ui__events_8c_a1d424a6caed0c12ea7c80aeafd0c9da4} 
+void ui\+\_\+start\+\_\+btn\+\_\+checked\+\_\+cb (\begin{DoxyParamCaption}\item[{lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+e}{}\end{DoxyParamCaption})}
+
+\Hypertarget{ui__events_8c_a48978a2061c370ffe0d149358722c95e}\index{ui\_events.c@{ui\_events.c}!ui\_start\_btn\_unchecked\_cb@{ui\_start\_btn\_unchecked\_cb}}
+\index{ui\_start\_btn\_unchecked\_cb@{ui\_start\_btn\_unchecked\_cb}!ui\_events.c@{ui\_events.c}}
+\doxysubsubsection{\texorpdfstring{ui\_start\_btn\_unchecked\_cb()}{ui\_start\_btn\_unchecked\_cb()}}
+{\footnotesize\ttfamily \label{ui__events_8c_a48978a2061c370ffe0d149358722c95e} 
+void ui\+\_\+start\+\_\+btn\+\_\+unchecked\+\_\+cb (\begin{DoxyParamCaption}\item[{lv\+\_\+event\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+e}{}\end{DoxyParamCaption})}
+

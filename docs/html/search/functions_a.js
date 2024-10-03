@@ -1,0 +1,7 @@
+var searchData=
+[
+  ['potentiometer_5fcreate_0',['potentiometer_create',['../potentiometer_8c.html#a2dd736c46c9ff6207fe8b56498d5eb71',1,'potentiometer_create(uint8_t pin, uint8_t channel, uint16_t max_voltage_mv, bool b_is_reversed):&#160;potentiometer.c'],['../potentiometer_8h.html#a2dd736c46c9ff6207fe8b56498d5eb71',1,'potentiometer_create(uint8_t pin, uint8_t channel, uint16_t max_voltage_mv, bool b_is_reversed):&#160;potentiometer.c']]],
+  ['potentiometer_5fdelete_1',['potentiometer_delete',['../potentiometer_8c.html#a68ff2648b98d2c8d2949e2a64f1cbaad',1,'potentiometer_delete(potentiometer_t *p_potentiometer):&#160;potentiometer.c'],['../potentiometer_8h.html#a68ff2648b98d2c8d2949e2a64f1cbaad',1,'potentiometer_delete(potentiometer_t *p_potentiometer):&#160;potentiometer.c']]],
+  ['potentiometer_5fget_5fraw_2',['potentiometer_get_raw',['../potentiometer_8c.html#a1fb323d92e97d8461cbd603d54d77187',1,'potentiometer_get_raw(potentiometer_t *p_potentiometer):&#160;potentiometer.c'],['../potentiometer_8h.html#a1fb323d92e97d8461cbd603d54d77187',1,'potentiometer_get_raw(potentiometer_t *p_potentiometer):&#160;potentiometer.c']]],
+  ['potentiometer_5fposition_5fget_3',['potentiometer_position_get',['../potentiometer_8c.html#ab08b47a7426e71028e645a2a86c66600',1,'potentiometer_position_get(potentiometer_t *p_potentiometer):&#160;potentiometer.c'],['../potentiometer_8h.html#ab08b47a7426e71028e645a2a86c66600',1,'potentiometer_position_get(potentiometer_t *p_potentiometer):&#160;potentiometer.c']]]
+];

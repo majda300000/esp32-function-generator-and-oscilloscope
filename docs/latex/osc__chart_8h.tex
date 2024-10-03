@@ -1,0 +1,145 @@
+\doxysection{/home/mbakmaz/bytelab2024/final\+\_\+task/mashina/components/ui\+\_\+app/osc\+\_\+chart/osc\+\_\+chart.h File Reference}
+\hypertarget{osc__chart_8h}{}\label{osc__chart_8h}\index{/home/mbakmaz/bytelab2024/final\_task/mashina/components/ui\_app/osc\_chart/osc\_chart.h@{/home/mbakmaz/bytelab2024/final\_task/mashina/components/ui\_app/osc\_chart/osc\_chart.h}}
+
+
+See the source file.  
+
+
+{\ttfamily \#include "{}oscilloscope.\+h"{}}\newline
+{\ttfamily \#include "{}ui.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structosc__chart__t}{osc\+\_\+chart\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{osc__chart_8h_a8320d67eaee066f90a94cd7ad31edbc2}{osc\+\_\+chart\+\_\+init}} (lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*}chart, \mbox{\hyperlink{oscilloscope_8h_a95fdf0e1118bbf509126d9d2888f6ef1}{oscilloscope\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+\_\+osc1, \mbox{\hyperlink{oscilloscope_8h_a95fdf0e1118bbf509126d9d2888f6ef1}{oscilloscope\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+\_\+osc2)
+\begin{DoxyCompactList}\small\item\em Initializes char unit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{osc__chart_8h_ace92a1aad34a47a906f29f440e87e8b1}{osc\+\_\+chart\+\_\+ch1\+\_\+show}} (void)
+\begin{DoxyCompactList}\small\item\em Displays channel 1 on chart. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{osc__chart_8h_a384746e531abd9947299528d5c2cf963}{osc\+\_\+chart\+\_\+ch1\+\_\+hide}} (void)
+\begin{DoxyCompactList}\small\item\em Hides channel 2 from chart. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{osc__chart_8h_ad50ca9495c089f8016986e430dae84bc}{osc\+\_\+chart\+\_\+ch2\+\_\+show}} (void)
+\begin{DoxyCompactList}\small\item\em Displays channel 2 on chart. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{osc__chart_8h_a7eec9201697f1c74cf1e9aba51572ddb}{osc\+\_\+chart\+\_\+ch2\+\_\+hide}} (void)
+\begin{DoxyCompactList}\small\item\em Hides channel 2 from chart. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{osc__chart_8h_a1f2b2f9635f5317cd969e3f0065736db}{ui\+\_\+set\+\_\+div\+\_\+10ms}} (void)
+\begin{DoxyCompactList}\small\item\em Sets shart divX to 10ms. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{osc__chart_8h_a227f2f01d43341454e6cfebeeb4bff1d}{ui\+\_\+set\+\_\+div\+\_\+1ms}} (void)
+\begin{DoxyCompactList}\small\item\em Sets shart divX to 1ms. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{osc__chart_8h_a266e0f2e79519f1513bba306c9a78d67}{ui\+\_\+set\+\_\+div\+\_\+500mV}} (void)
+\begin{DoxyCompactList}\small\item\em Sets shart divY to 500mV. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{osc__chart_8h_a6fd4c166dfd8c101393583609f38e5bd}{ui\+\_\+set\+\_\+div\+\_\+100mV}} (void)
+\begin{DoxyCompactList}\small\item\em Sets shart divY to 100mV. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+See the source file. 
+
+COPYRIGHT NOTICE\+: (c) 2024 Byte Lab Grupa d.\+o.\+o. All rights reserved. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{osc__chart_8h_a384746e531abd9947299528d5c2cf963}\index{osc\_chart.h@{osc\_chart.h}!osc\_chart\_ch1\_hide@{osc\_chart\_ch1\_hide}}
+\index{osc\_chart\_ch1\_hide@{osc\_chart\_ch1\_hide}!osc\_chart.h@{osc\_chart.h}}
+\doxysubsubsection{\texorpdfstring{osc\_chart\_ch1\_hide()}{osc\_chart\_ch1\_hide()}}
+{\footnotesize\ttfamily \label{osc__chart_8h_a384746e531abd9947299528d5c2cf963} 
+void osc\+\_\+chart\+\_\+ch1\+\_\+hide (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Hides channel 2 from chart. 
+
+\Hypertarget{osc__chart_8h_ace92a1aad34a47a906f29f440e87e8b1}\index{osc\_chart.h@{osc\_chart.h}!osc\_chart\_ch1\_show@{osc\_chart\_ch1\_show}}
+\index{osc\_chart\_ch1\_show@{osc\_chart\_ch1\_show}!osc\_chart.h@{osc\_chart.h}}
+\doxysubsubsection{\texorpdfstring{osc\_chart\_ch1\_show()}{osc\_chart\_ch1\_show()}}
+{\footnotesize\ttfamily \label{osc__chart_8h_ace92a1aad34a47a906f29f440e87e8b1} 
+void osc\+\_\+chart\+\_\+ch1\+\_\+show (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Displays channel 1 on chart. 
+
+\Hypertarget{osc__chart_8h_a7eec9201697f1c74cf1e9aba51572ddb}\index{osc\_chart.h@{osc\_chart.h}!osc\_chart\_ch2\_hide@{osc\_chart\_ch2\_hide}}
+\index{osc\_chart\_ch2\_hide@{osc\_chart\_ch2\_hide}!osc\_chart.h@{osc\_chart.h}}
+\doxysubsubsection{\texorpdfstring{osc\_chart\_ch2\_hide()}{osc\_chart\_ch2\_hide()}}
+{\footnotesize\ttfamily \label{osc__chart_8h_a7eec9201697f1c74cf1e9aba51572ddb} 
+void osc\+\_\+chart\+\_\+ch2\+\_\+hide (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Hides channel 2 from chart. 
+
+\Hypertarget{osc__chart_8h_ad50ca9495c089f8016986e430dae84bc}\index{osc\_chart.h@{osc\_chart.h}!osc\_chart\_ch2\_show@{osc\_chart\_ch2\_show}}
+\index{osc\_chart\_ch2\_show@{osc\_chart\_ch2\_show}!osc\_chart.h@{osc\_chart.h}}
+\doxysubsubsection{\texorpdfstring{osc\_chart\_ch2\_show()}{osc\_chart\_ch2\_show()}}
+{\footnotesize\ttfamily \label{osc__chart_8h_ad50ca9495c089f8016986e430dae84bc} 
+void osc\+\_\+chart\+\_\+ch2\+\_\+show (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Displays channel 2 on chart. 
+
+\Hypertarget{osc__chart_8h_a8320d67eaee066f90a94cd7ad31edbc2}\index{osc\_chart.h@{osc\_chart.h}!osc\_chart\_init@{osc\_chart\_init}}
+\index{osc\_chart\_init@{osc\_chart\_init}!osc\_chart.h@{osc\_chart.h}}
+\doxysubsubsection{\texorpdfstring{osc\_chart\_init()}{osc\_chart\_init()}}
+{\footnotesize\ttfamily \label{osc__chart_8h_a8320d67eaee066f90a94cd7ad31edbc2} 
+esp\+\_\+err\+\_\+t osc\+\_\+chart\+\_\+init (\begin{DoxyParamCaption}\item[{lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*}}]{chart}{, }\item[{\mbox{\hyperlink{oscilloscope_8h_a95fdf0e1118bbf509126d9d2888f6ef1}{oscilloscope\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+osc1}{, }\item[{\mbox{\hyperlink{oscilloscope_8h_a95fdf0e1118bbf509126d9d2888f6ef1}{oscilloscope\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+osc2}{}\end{DoxyParamCaption})}
+
+
+
+Initializes char unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chart} & Pointer to lvgl chart object \\
+\hline
+{\em p\+\_\+osc1} & pointer to oscilloscope object for channel A \\
+\hline
+{\em p\+\_\+osc2} & pointer to oscilloscope object for channel B \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+esp\+\_\+err\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{osc__chart_8h_a6fd4c166dfd8c101393583609f38e5bd}\index{osc\_chart.h@{osc\_chart.h}!ui\_set\_div\_100mV@{ui\_set\_div\_100mV}}
+\index{ui\_set\_div\_100mV@{ui\_set\_div\_100mV}!osc\_chart.h@{osc\_chart.h}}
+\doxysubsubsection{\texorpdfstring{ui\_set\_div\_100mV()}{ui\_set\_div\_100mV()}}
+{\footnotesize\ttfamily \label{osc__chart_8h_a6fd4c166dfd8c101393583609f38e5bd} 
+void ui\+\_\+set\+\_\+div\+\_\+100mV (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Sets shart divY to 100mV. 
+
+\Hypertarget{osc__chart_8h_a1f2b2f9635f5317cd969e3f0065736db}\index{osc\_chart.h@{osc\_chart.h}!ui\_set\_div\_10ms@{ui\_set\_div\_10ms}}
+\index{ui\_set\_div\_10ms@{ui\_set\_div\_10ms}!osc\_chart.h@{osc\_chart.h}}
+\doxysubsubsection{\texorpdfstring{ui\_set\_div\_10ms()}{ui\_set\_div\_10ms()}}
+{\footnotesize\ttfamily \label{osc__chart_8h_a1f2b2f9635f5317cd969e3f0065736db} 
+void ui\+\_\+set\+\_\+div\+\_\+10ms (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Sets shart divX to 10ms. 
+
+\Hypertarget{osc__chart_8h_a227f2f01d43341454e6cfebeeb4bff1d}\index{osc\_chart.h@{osc\_chart.h}!ui\_set\_div\_1ms@{ui\_set\_div\_1ms}}
+\index{ui\_set\_div\_1ms@{ui\_set\_div\_1ms}!osc\_chart.h@{osc\_chart.h}}
+\doxysubsubsection{\texorpdfstring{ui\_set\_div\_1ms()}{ui\_set\_div\_1ms()}}
+{\footnotesize\ttfamily \label{osc__chart_8h_a227f2f01d43341454e6cfebeeb4bff1d} 
+void ui\+\_\+set\+\_\+div\+\_\+1ms (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Sets shart divX to 1ms. 
+
+\Hypertarget{osc__chart_8h_a266e0f2e79519f1513bba306c9a78d67}\index{osc\_chart.h@{osc\_chart.h}!ui\_set\_div\_500mV@{ui\_set\_div\_500mV}}
+\index{ui\_set\_div\_500mV@{ui\_set\_div\_500mV}!osc\_chart.h@{osc\_chart.h}}
+\doxysubsubsection{\texorpdfstring{ui\_set\_div\_500mV()}{ui\_set\_div\_500mV()}}
+{\footnotesize\ttfamily \label{osc__chart_8h_a266e0f2e79519f1513bba306c9a78d67} 
+void ui\+\_\+set\+\_\+div\+\_\+500mV (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Sets shart divY to 500mV. 
+

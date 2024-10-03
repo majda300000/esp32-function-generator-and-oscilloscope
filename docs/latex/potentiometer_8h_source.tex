@@ -1,0 +1,45 @@
+\doxysection{potentiometer.\+h}
+\hypertarget{potentiometer_8h_source}{}\label{potentiometer_8h_source}\index{/home/mbakmaz/bytelab2024/final\_task/mashina/components/potentiometer/potentiometer.h@{/home/mbakmaz/bytelab2024/final\_task/mashina/components/potentiometer/potentiometer.h}}
+\mbox{\hyperlink{potentiometer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ \_\_POTENTIOMETER\_H\_\_}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ \_\_POTENTIOMETER\_H\_\_}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ INCLUDES\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ MACROS\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ POTENTIOMETER\_MAX\_POSITION\ (1000U)}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ POTENTIOMETER\_ADC\_INT\_RANGE\ (4095)}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ VDD\ (3300)}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ DATA\ TYPES\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ Struct\ is\ hidden\ on\ purpose\ from\ an\ user.\ }}
+\DoxyCodeLine{00029\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__potentiometer__t}{\_potentiometer\_t}};}
+\DoxyCodeLine{00030\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__potentiometer__t}{\_potentiometer\_t}}\ \mbox{\hyperlink{struct__potentiometer__t}{potentiometer\_t}};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ PUBLIC\ FUNCTION\ PROTOTYPES\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00046\ \mbox{\hyperlink{struct__potentiometer__t}{potentiometer\_t}}\ *\mbox{\hyperlink{potentiometer_8h_a2dd736c46c9ff6207fe8b56498d5eb71}{potentiometer\_create}}(uint8\_t\ \mbox{\hyperlink{struct__potentiometer__t_ab40a673fb19c1e650e1f79de91788aa5}{pin}},\ uint8\_t\ \mbox{\hyperlink{struct__potentiometer__t_a715f5cb061d11eb75981741eda4dafcd}{channel}},\ uint16\_t\ \mbox{\hyperlink{struct__potentiometer__t_a6fba84f67bb20820f29f9d5749aa5c1f}{max\_voltage\_mv}},\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct__potentiometer__t_af6b6e0b8a39d78a815503ff990dff5db}{b\_is\_reversed}});}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{potentiometer_8h_a68ff2648b98d2c8d2949e2a64f1cbaad}{potentiometer\_delete}}(\mbox{\hyperlink{struct__potentiometer__t}{potentiometer\_t}}\ *p\_potentiometer);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00064\ uint32\_t\ \mbox{\hyperlink{potentiometer_8h_ab08b47a7426e71028e645a2a86c66600}{potentiometer\_position\_get}}(\mbox{\hyperlink{struct__potentiometer__t}{potentiometer\_t}}\ *p\_potentiometer);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{potentiometer_8h_a1fb323d92e97d8461cbd603d54d77187}{potentiometer\_get\_raw}}(\mbox{\hyperlink{struct__potentiometer__t}{potentiometer\_t}}\ *p\_potentiometer);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00078\ \}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_POTENTIOMETER\_H\_\_}}
+
+\end{DoxyCode}

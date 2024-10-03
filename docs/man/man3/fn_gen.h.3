@@ -1,0 +1,327 @@
+.TH "/home/mbakmaz/bytelab2024/final_task/mashina/components/function_generator/fn_gen.h" 3 "Version ." "Mashina" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/mbakmaz/bytelab2024/final_task/mashina/components/function_generator/fn_gen.h \- See the source file\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <stdint\&.h>\fP
+.br
+\fR#include <stdbool\&.h>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fB_fn_signal_config_t\fP"
+.br
+.ti -1c
+.RI "struct \fB_fn_generator_t\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBFN_GEN_POINT_ARR_LEN\fP   200"
+.br
+.ti -1c
+.RI "#define \fBFN_GEN_TIMER_INTR_US\fP   30"
+.br
+.ti -1c
+.RI "#define \fBFN_GEN_PRESET_NUMBER\fP   5"
+.br
+.ti -1c
+.RI "#define \fBVDD\fP   3300"
+.br
+.ti -1c
+.RI "#define \fBAMP_DAC\fP   255"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fB_fn_signal_config_t\fP \fBfn_signal_config_t\fP"
+.br
+.ti -1c
+.RI "typedef struct \fB_fn_generator_t\fP \fBfn_generator_t\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBfn_gen_error_t\fP { \fBFN_GEN_ERR_NONE\fP = 0, \fBFN_GEN_ERR\fP = -1, \fBFN_GEN_ERR_UNKNOWN_SIGNAL\fP = -2, \fBFN_GEN_ERR_CREATE\fP = -3 }"
+.br
+.ti -1c
+.RI "enum \fBfn_signal_type_t\fP { \fBFN_SIGNAL_SINE\fP, \fBFN_SIGNAL_SQUARE\fP, \fBFN_SIGNAL_TRIANGLE\fP, \fBFN_SIGNAL_SAWTOOTH\fP, \fBFN_SIGNAL_COUNT\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBfn_gen_init\fP ()"
+.br
+.RI "Initializes function generator module\&. "
+.ti -1c
+.RI "\fBfn_gen_error_t\fP \fBfn_gen_set_signal_config\fP (\fBfn_signal_config_t\fP config)"
+.br
+.RI "Sets parameters of signal to be generated\&. "
+.ti -1c
+.RI "\fBfn_gen_error_t\fP \fBfn_gen_set_signal_type\fP (\fBfn_signal_type_t\fP type)"
+.br
+.RI "Sets signal's type\&. "
+.ti -1c
+.RI "\fBfn_gen_error_t\fP \fBfn_gen_set_frequency\fP (int frequency_Hz)"
+.br
+.RI "Sets signal's frequency\&. "
+.ti -1c
+.RI "\fBfn_gen_error_t\fP \fBfn_gen_set_amplitude\fP (int amplitude_mV_pp)"
+.br
+.RI "Sets signal's amplitude\&. "
+.ti -1c
+.RI "\fBfn_gen_error_t\fP \fBfn_gen_set_duty_cycle\fP (int duty_cycle_percentage)"
+.br
+.RI "Sets square wave's duty cycle\&. "
+.ti -1c
+.RI "\fBfn_gen_error_t\fP \fBfn_gen_set_preset\fP (\fBfn_signal_config_t\fP config, int preset_num)"
+.br
+.RI "Saves config for preset number preset_num\&. "
+.ti -1c
+.RI "\fBfn_gen_error_t\fP \fBfn_gen_get_preset\fP (\fBfn_signal_config_t\fP *conf, int preset_num)"
+.br
+.RI "Returns config at preset with index preset_num\&. "
+.ti -1c
+.RI "\fBfn_gen_error_t\fP \fBfn_gen_load_preset\fP (int preset_num)"
+.br
+.RI "Sets signal config to preset with the index of preset_num\&. "
+.ti -1c
+.RI "\fBfn_gen_error_t\fP \fBfn_gen_signal_start_task\fP ()"
+.br
+.RI "Starts outputing signal to DAC\&. "
+.ti -1c
+.RI "\fBfn_gen_error_t\fP \fBfn_gen_signal_stop_task\fP ()"
+.br
+.RI "Stops outputing signal to DAC\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+See the source file\&. 
+
+COPYRIGHT NOTICE: (c) 2024 Byte Lab Grupa d\&.o\&.o\&. All rights reserved\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define AMP_DAC   255"
+
+.SS "#define FN_GEN_POINT_ARR_LEN   200"
+
+.SS "#define FN_GEN_PRESET_NUMBER   5"
+
+.SS "#define FN_GEN_TIMER_INTR_US   30"
+
+.SS "#define VDD   3300"
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fB_fn_generator_t\fP \fBfn_generator_t\fP"
+
+.SS "typedef struct \fB_fn_signal_config_t\fP \fBfn_signal_config_t\fP"
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBfn_gen_error_t\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIFN_GEN_ERR_NONE \fP
+.TP
+\f(BIFN_GEN_ERR \fP
+.TP
+\f(BIFN_GEN_ERR_UNKNOWN_SIGNAL \fP
+.TP
+\f(BIFN_GEN_ERR_CREATE \fP
+.SS "enum \fBfn_signal_type_t\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIFN_SIGNAL_SINE \fP
+.TP
+\f(BIFN_SIGNAL_SQUARE \fP
+.TP
+\f(BIFN_SIGNAL_TRIANGLE \fP
+.TP
+\f(BIFN_SIGNAL_SAWTOOTH \fP
+.TP
+\f(BIFN_SIGNAL_COUNT \fP
+.SH "Function Documentation"
+.PP 
+.SS "\fBfn_gen_error_t\fP fn_gen_get_preset (\fBfn_signal_config_t\fP * conf, int preset_num)"
+
+.PP
+Returns config at preset with index preset_num\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIconf\fP Pointer to place the config 
+.br
+\fIpreset_num\fP index 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+fn_gen_error_t 
+.RE
+.PP
+
+.SS "void fn_gen_init ()"
+
+.PP
+Initializes function generator module\&. 
+.SS "\fBfn_gen_error_t\fP fn_gen_load_preset (int preset_num)"
+
+.PP
+Sets signal config to preset with the index of preset_num\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpreset_num\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+fn_gen_error_t 
+.RE
+.PP
+
+.SS "\fBfn_gen_error_t\fP fn_gen_set_amplitude (int amplitude_mV_pp)"
+
+.PP
+Sets signal's amplitude\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIamplitude_mV_pp\fP Aplitude in mV from 0 to 3300 mV 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+fn_gen_error_t 
+.RE
+.PP
+
+.SS "\fBfn_gen_error_t\fP fn_gen_set_duty_cycle (int duty_cycle_percentage)"
+
+.PP
+Sets square wave's duty cycle\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIduty_cycle_percentage\fP from 0% to 100% 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+fn_gen_error_t 
+.RE
+.PP
+
+.SS "\fBfn_gen_error_t\fP fn_gen_set_frequency (int frequency_Hz)"
+
+.PP
+Sets signal's frequency\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfrequency_Hz\fP frequency in Hz from 0 to 3000 Hz 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+fn_gen_error_t 
+.RE
+.PP
+
+.SS "\fBfn_gen_error_t\fP fn_gen_set_preset (\fBfn_signal_config_t\fP config, int preset_num)"
+
+.PP
+Saves config for preset number preset_num\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIconfig\fP config to be saved 
+.br
+\fIpreset_num\fP number of preset 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+fn_gen_error_t 
+.RE
+.PP
+
+.SS "\fBfn_gen_error_t\fP fn_gen_set_signal_config (\fBfn_signal_config_t\fP config)"
+
+.PP
+Sets parameters of signal to be generated\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIconfig\fP Signal parameters 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+fn_gen_err_t 
+.RE
+.PP
+
+.SS "\fBfn_gen_error_t\fP fn_gen_set_signal_type (\fBfn_signal_type_t\fP type)"
+
+.PP
+Sets signal's type\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItype\fP enum type fn_signal_type_t 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+fn_gen_error_t 
+.RE
+.PP
+
+.SS "\fBfn_gen_error_t\fP fn_gen_signal_start_task ()"
+
+.PP
+Starts outputing signal to DAC\&. 
+.PP
+\fBReturns\fP
+.RS 4
+fn_gen_err_t 
+.RE
+.PP
+
+.SS "\fBfn_gen_error_t\fP fn_gen_signal_stop_task ()"
+
+.PP
+Stops outputing signal to DAC\&. 
+.PP
+\fBReturns\fP
+.RS 4
+fn_gen_err_t 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Mashina from the source code\&.

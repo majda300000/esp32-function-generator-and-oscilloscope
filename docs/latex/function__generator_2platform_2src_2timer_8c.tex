@@ -1,0 +1,56 @@
+\doxysection{/home/mbakmaz/bytelab2024/final\+\_\+task/mashina/components/function\+\_\+generator/platform/src/timer.c File Reference}
+\hypertarget{function__generator_2platform_2src_2timer_8c}{}\label{function__generator_2platform_2src_2timer_8c}\index{/home/mbakmaz/bytelab2024/final\_task/mashina/components/function\_generator/platform/src/timer.c@{/home/mbakmaz/bytelab2024/final\_task/mashina/components/function\_generator/platform/src/timer.c}}
+
+
+GP timer wrapper class.  
+
+
+{\ttfamily \#include "{}timer.\+h"{}}\newline
+{\ttfamily \#include "{}driver/gptimer.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+log.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{function__generator_2platform_2src_2timer_8c_a97cbd8e299851af63d9c47a588aa25cd}{timer\+\_\+init}} (int alarm\+\_\+count\+\_\+us, gptimer\+\_\+alarm\+\_\+cb\+\_\+t cb)
+\begin{DoxyCompactList}\small\item\em Initializes esp general purpose timer for singal generation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{function__generator_2platform_2src_2timer_8c_a161432848a326da3a1ea7765fc2bc023}{timer\+\_\+start}} ()
+\item 
+void \mbox{\hyperlink{function__generator_2platform_2src_2timer_8c_aa04078f48a0e8f5b6860a393ad06b535}{timer\+\_\+stop}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+GP timer wrapper class. 
+
+COPYRIGHT NOTICE\+: (c) 2024 Byte Lab Grupa d.\+o.\+o. All rights reserved. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{function__generator_2platform_2src_2timer_8c_a97cbd8e299851af63d9c47a588aa25cd}\index{timer.c@{timer.c}!timer\_init@{timer\_init}}
+\index{timer\_init@{timer\_init}!timer.c@{timer.c}}
+\doxysubsubsection{\texorpdfstring{timer\_init()}{timer\_init()}}
+{\footnotesize\ttfamily \label{function__generator_2platform_2src_2timer_8c_a97cbd8e299851af63d9c47a588aa25cd} 
+void timer\+\_\+init (\begin{DoxyParamCaption}\item[{int}]{alarm\+\_\+count\+\_\+us}{, }\item[{gptimer\+\_\+alarm\+\_\+cb\+\_\+t}]{cb}{}\end{DoxyParamCaption})}
+
+
+
+Initializes esp general purpose timer for singal generation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em alarm\+\_\+count\+\_\+us} & Execution time of each ISR interval in micro-\/seconds \\
+\hline
+{\em cb} & Timer callback function \\
+\hline
+\end{DoxyParams}
+\Hypertarget{function__generator_2platform_2src_2timer_8c_a161432848a326da3a1ea7765fc2bc023}\index{timer.c@{timer.c}!timer\_start@{timer\_start}}
+\index{timer\_start@{timer\_start}!timer.c@{timer.c}}
+\doxysubsubsection{\texorpdfstring{timer\_start()}{timer\_start()}}
+{\footnotesize\ttfamily \label{function__generator_2platform_2src_2timer_8c_a161432848a326da3a1ea7765fc2bc023} 
+void timer\+\_\+start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{function__generator_2platform_2src_2timer_8c_aa04078f48a0e8f5b6860a393ad06b535}\index{timer.c@{timer.c}!timer\_stop@{timer\_stop}}
+\index{timer\_stop@{timer\_stop}!timer.c@{timer.c}}
+\doxysubsubsection{\texorpdfstring{timer\_stop()}{timer\_stop()}}
+{\footnotesize\ttfamily \label{function__generator_2platform_2src_2timer_8c_aa04078f48a0e8f5b6860a393ad06b535} 
+void timer\+\_\+stop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+

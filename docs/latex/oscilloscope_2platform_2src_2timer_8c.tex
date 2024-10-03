@@ -1,0 +1,103 @@
+\doxysection{/home/mbakmaz/bytelab2024/final\+\_\+task/mashina/components/oscilloscope/platform/src/timer.c File Reference}
+\hypertarget{oscilloscope_2platform_2src_2timer_8c}{}\label{oscilloscope_2platform_2src_2timer_8c}\index{/home/mbakmaz/bytelab2024/final\_task/mashina/components/oscilloscope/platform/src/timer.c@{/home/mbakmaz/bytelab2024/final\_task/mashina/components/oscilloscope/platform/src/timer.c}}
+
+
+Esp timer wrapper class.  
+
+
+{\ttfamily \#include "{}timer.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+timer.\+h"{}}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include "{}esp\+\_\+log.\+h"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct__osc__timer__t}{\+\_\+osc\+\_\+timer\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{oscilloscope_2platform_2inc_2timer_8h_a7877de5613f0f6cfaeb00329fc52e0cb}{osc\+\_\+timer\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{oscilloscope_2platform_2src_2timer_8c_a316363af788750c67b64bd50a232f126}{osc\+\_\+timer\+\_\+create}} (\mbox{\hyperlink{oscilloscope_2platform_2inc_2timer_8h_a1beb074e0e4a9ce260ab89be2c8408d0}{timer\+\_\+callback}} cb, void \texorpdfstring{$\ast$}{*}args, int period\+\_\+uc)
+\begin{DoxyCompactList}\small\item\em Creates new instance of esp timer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{oscilloscope_2platform_2src_2timer_8c_a4639a9c86c4854576c99f19519da8d61}{osc\+\_\+timer\+\_\+start}} (\mbox{\hyperlink{oscilloscope_2platform_2inc_2timer_8h_a7877de5613f0f6cfaeb00329fc52e0cb}{osc\+\_\+timer\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+\_\+timer)
+\begin{DoxyCompactList}\small\item\em Starts timer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{oscilloscope_2platform_2src_2timer_8c_a3cb6a680b5243ca787319d57940b10b9}{osc\+\_\+timer\+\_\+stop}} (\mbox{\hyperlink{oscilloscope_2platform_2inc_2timer_8h_a7877de5613f0f6cfaeb00329fc52e0cb}{osc\+\_\+timer\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+\_\+timer)
+\begin{DoxyCompactList}\small\item\em Stops timer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{oscilloscope_2platform_2src_2timer_8c_aabaa9a72c84489cddd8d06c5e093e467}{osc\+\_\+timer\+\_\+delete}} (\mbox{\hyperlink{oscilloscope_2platform_2inc_2timer_8h_a7877de5613f0f6cfaeb00329fc52e0cb}{osc\+\_\+timer\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+\_\+timer)
+\begin{DoxyCompactList}\small\item\em Deletes timer instance and frees memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Esp timer wrapper class. 
+
+COPYRIGHT NOTICE\+: (c) 2024 Byte Lab Grupa d.\+o.\+o. All rights reserved. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{oscilloscope_2platform_2src_2timer_8c_a316363af788750c67b64bd50a232f126}\index{timer.c@{timer.c}!osc\_timer\_create@{osc\_timer\_create}}
+\index{osc\_timer\_create@{osc\_timer\_create}!timer.c@{timer.c}}
+\doxysubsubsection{\texorpdfstring{osc\_timer\_create()}{osc\_timer\_create()}}
+{\footnotesize\ttfamily \label{oscilloscope_2platform_2src_2timer_8c_a316363af788750c67b64bd50a232f126} 
+\mbox{\hyperlink{oscilloscope_2platform_2inc_2timer_8h_a7877de5613f0f6cfaeb00329fc52e0cb}{osc\+\_\+timer\+\_\+t}} \texorpdfstring{$\ast$}{*} osc\+\_\+timer\+\_\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{oscilloscope_2platform_2inc_2timer_8h_a1beb074e0e4a9ce260ab89be2c8408d0}{timer\+\_\+callback}}}]{cb}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{args}{, }\item[{int}]{period\+\_\+uc}{}\end{DoxyParamCaption})}
+
+
+
+Creates new instance of esp timer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cb} & The timer callback function \\
+\hline
+{\em period\+\_\+uc} & Period for timer callback in microseconds \\
+\hline
+{\em args} & Callback function arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+osc\+\_\+timer\+\_\+t\texorpdfstring{$\ast$}{*} Pointer to the new timer 
+\end{DoxyReturn}
+\Hypertarget{oscilloscope_2platform_2src_2timer_8c_aabaa9a72c84489cddd8d06c5e093e467}\index{timer.c@{timer.c}!osc\_timer\_delete@{osc\_timer\_delete}}
+\index{osc\_timer\_delete@{osc\_timer\_delete}!timer.c@{timer.c}}
+\doxysubsubsection{\texorpdfstring{osc\_timer\_delete()}{osc\_timer\_delete()}}
+{\footnotesize\ttfamily \label{oscilloscope_2platform_2src_2timer_8c_aabaa9a72c84489cddd8d06c5e093e467} 
+void osc\+\_\+timer\+\_\+delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{oscilloscope_2platform_2inc_2timer_8h_a7877de5613f0f6cfaeb00329fc52e0cb}{osc\+\_\+timer\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+timer}{}\end{DoxyParamCaption})}
+
+
+
+Deletes timer instance and frees memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timer} & Timer to delete \\
+\hline
+\end{DoxyParams}
+\Hypertarget{oscilloscope_2platform_2src_2timer_8c_a4639a9c86c4854576c99f19519da8d61}\index{timer.c@{timer.c}!osc\_timer\_start@{osc\_timer\_start}}
+\index{osc\_timer\_start@{osc\_timer\_start}!timer.c@{timer.c}}
+\doxysubsubsection{\texorpdfstring{osc\_timer\_start()}{osc\_timer\_start()}}
+{\footnotesize\ttfamily \label{oscilloscope_2platform_2src_2timer_8c_a4639a9c86c4854576c99f19519da8d61} 
+void osc\+\_\+timer\+\_\+start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{oscilloscope_2platform_2inc_2timer_8h_a7877de5613f0f6cfaeb00329fc52e0cb}{osc\+\_\+timer\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+timer}{}\end{DoxyParamCaption})}
+
+
+
+Starts timer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timer} & Instance of timer to start \\
+\hline
+\end{DoxyParams}
+\Hypertarget{oscilloscope_2platform_2src_2timer_8c_a3cb6a680b5243ca787319d57940b10b9}\index{timer.c@{timer.c}!osc\_timer\_stop@{osc\_timer\_stop}}
+\index{osc\_timer\_stop@{osc\_timer\_stop}!timer.c@{timer.c}}
+\doxysubsubsection{\texorpdfstring{osc\_timer\_stop()}{osc\_timer\_stop()}}
+{\footnotesize\ttfamily \label{oscilloscope_2platform_2src_2timer_8c_a3cb6a680b5243ca787319d57940b10b9} 
+void osc\+\_\+timer\+\_\+stop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{oscilloscope_2platform_2inc_2timer_8h_a7877de5613f0f6cfaeb00329fc52e0cb}{osc\+\_\+timer\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+timer}{}\end{DoxyParamCaption})}
+
+
+
+Stops timer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timer} & Instance of timer to stop \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,132 @@
+\doxysection{/home/mbakmaz/bytelab2024/final\+\_\+task/mashina/components/led/platform/inc/led\+\_\+gpio.h File Reference}
+\hypertarget{led__gpio_8h}{}\label{led__gpio_8h}\index{/home/mbakmaz/bytelab2024/final\_task/mashina/components/led/platform/inc/led\_gpio.h@{/home/mbakmaz/bytelab2024/final\_task/mashina/components/led/platform/inc/led\_gpio.h}}
+
+
+See the source file.  
+
+
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct__led__gpio__t}{\+\_\+led\+\_\+gpio\+\_\+t}} \mbox{\hyperlink{led__gpio_8h_acedc078cd33857dc073e5b1c4efb3455}{led\+\_\+gpio\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{led__gpio_8h_a25dc233a9dc8904b8ce586b61edc282d}{led\+\_\+state\+\_\+t}} \{ \mbox{\hyperlink{led__gpio_8h_a25dc233a9dc8904b8ce586b61edc282dafc0ca8cc6cbe215fd3f1ae6d40255b40}{LED\+\_\+\+OFF}} = 0
+, \mbox{\hyperlink{led__gpio_8h_a25dc233a9dc8904b8ce586b61edc282dadd01b80eb93658fb4cf7eb9aceb89a1d}{LED\+\_\+\+ON}} = 1
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{led__gpio_8h_acedc078cd33857dc073e5b1c4efb3455}{led\+\_\+gpio\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{led__gpio_8h_af6c880c2b7e4f7996f168172d8ea47eb}{led\+\_\+gpio\+\_\+create}} (uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em It creates a LED GPIO object and initializes it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{led__gpio_8h_ac519d91bc133b9bc61ddedb7bb6ef9a5}{led\+\_\+gpio\+\_\+delete}} (\mbox{\hyperlink{led__gpio_8h_acedc078cd33857dc073e5b1c4efb3455}{led\+\_\+gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+\_\+led)
+\begin{DoxyCompactList}\small\item\em This function frees the memory allocated for the led\+\_\+gpio\+\_\+t structure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{led__gpio_8h_a6a0f424f0e43e65d14bb690e7515fc11}{led\+\_\+gpio\+\_\+on}} (\mbox{\hyperlink{led__gpio_8h_acedc078cd33857dc073e5b1c4efb3455}{led\+\_\+gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+\_\+led)
+\begin{DoxyCompactList}\small\item\em Turns LED GPIO on. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{led__gpio_8h_a8ae6e878584e7008f72732b61fa6fcc4}{led\+\_\+gpio\+\_\+off}} (\mbox{\hyperlink{led__gpio_8h_acedc078cd33857dc073e5b1c4efb3455}{led\+\_\+gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+\_\+led)
+\begin{DoxyCompactList}\small\item\em Turns LED GPIO off. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+See the source file. 
+
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+COPYRIGHT NOTICE\+: (c) 2022 Byte Lab Grupa d.\+o.\+o. All rights reserved. 
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{led__gpio_8h_acedc078cd33857dc073e5b1c4efb3455}\index{led\_gpio.h@{led\_gpio.h}!led\_gpio\_t@{led\_gpio\_t}}
+\index{led\_gpio\_t@{led\_gpio\_t}!led\_gpio.h@{led\_gpio.h}}
+\doxysubsubsection{\texorpdfstring{led\_gpio\_t}{led\_gpio\_t}}
+{\footnotesize\ttfamily \label{led__gpio_8h_acedc078cd33857dc073e5b1c4efb3455} 
+typedef struct \mbox{\hyperlink{struct__led__gpio__t}{\+\_\+led\+\_\+gpio\+\_\+t}} \mbox{\hyperlink{led__gpio_8h_acedc078cd33857dc073e5b1c4efb3455}{led\+\_\+gpio\+\_\+t}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{led__gpio_8h_a25dc233a9dc8904b8ce586b61edc282d}\index{led\_gpio.h@{led\_gpio.h}!led\_state\_t@{led\_state\_t}}
+\index{led\_state\_t@{led\_state\_t}!led\_gpio.h@{led\_gpio.h}}
+\doxysubsubsection{\texorpdfstring{led\_state\_t}{led\_state\_t}}
+{\footnotesize\ttfamily \label{led__gpio_8h_a25dc233a9dc8904b8ce586b61edc282d} 
+enum \mbox{\hyperlink{led__gpio_8h_a25dc233a9dc8904b8ce586b61edc282d}{led\+\_\+state\+\_\+t}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_OFF@{LED\_OFF}!led\_gpio.h@{led\_gpio.h}}\index{led\_gpio.h@{led\_gpio.h}!LED\_OFF@{LED\_OFF}}}\Hypertarget{led__gpio_8h_a25dc233a9dc8904b8ce586b61edc282dafc0ca8cc6cbe215fd3f1ae6d40255b40}\label{led__gpio_8h_a25dc233a9dc8904b8ce586b61edc282d} 
+LED\+\_\+\+OFF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_ON@{LED\_ON}!led\_gpio.h@{led\_gpio.h}}\index{led\_gpio.h@{led\_gpio.h}!LED\_ON@{LED\_ON}}}\Hypertarget{led__gpio_8h_a25dc233a9dc8904b8ce586b61edc282dadd01b80eb93658fb4cf7eb9aceb89a1d}\label{led__gpio_8h_a25dc233a9dc8904b8ce586b61edc282d} 
+LED\+\_\+\+ON&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{led__gpio_8h_af6c880c2b7e4f7996f168172d8ea47eb}\index{led\_gpio.h@{led\_gpio.h}!led\_gpio\_create@{led\_gpio\_create}}
+\index{led\_gpio\_create@{led\_gpio\_create}!led\_gpio.h@{led\_gpio.h}}
+\doxysubsubsection{\texorpdfstring{led\_gpio\_create()}{led\_gpio\_create()}}
+{\footnotesize\ttfamily \label{led__gpio_8h_af6c880c2b7e4f7996f168172d8ea47eb} 
+\mbox{\hyperlink{led__gpio_8h_acedc078cd33857dc073e5b1c4efb3455}{led\+\_\+gpio\+\_\+t}} \texorpdfstring{$\ast$}{*} led\+\_\+gpio\+\_\+create (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pin}{}\end{DoxyParamCaption})}
+
+
+
+It creates a LED GPIO object and initializes it. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pin} & The GPIO pin number that the button is connected to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to a led\+\_\+gpio\+\_\+t struct. 
+\end{DoxyReturn}
+\Hypertarget{led__gpio_8h_ac519d91bc133b9bc61ddedb7bb6ef9a5}\index{led\_gpio.h@{led\_gpio.h}!led\_gpio\_delete@{led\_gpio\_delete}}
+\index{led\_gpio\_delete@{led\_gpio\_delete}!led\_gpio.h@{led\_gpio.h}}
+\doxysubsubsection{\texorpdfstring{led\_gpio\_delete()}{led\_gpio\_delete()}}
+{\footnotesize\ttfamily \label{led__gpio_8h_ac519d91bc133b9bc61ddedb7bb6ef9a5} 
+void led\+\_\+gpio\+\_\+delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{led__gpio_8h_acedc078cd33857dc073e5b1c4efb3455}{led\+\_\+gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+led}{}\end{DoxyParamCaption})}
+
+
+
+This function frees the memory allocated for the led\+\_\+gpio\+\_\+t structure. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p\+\_\+led} & A pointer to the led\+\_\+gpio\+\_\+t structure that was created by the \doxylink{led__gpio_8h_af6c880c2b7e4f7996f168172d8ea47eb}{led\+\_\+gpio\+\_\+create()} function. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{led__gpio_8h_a8ae6e878584e7008f72732b61fa6fcc4}\index{led\_gpio.h@{led\_gpio.h}!led\_gpio\_off@{led\_gpio\_off}}
+\index{led\_gpio\_off@{led\_gpio\_off}!led\_gpio.h@{led\_gpio.h}}
+\doxysubsubsection{\texorpdfstring{led\_gpio\_off()}{led\_gpio\_off()}}
+{\footnotesize\ttfamily \label{led__gpio_8h_a8ae6e878584e7008f72732b61fa6fcc4} 
+void led\+\_\+gpio\+\_\+off (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{led__gpio_8h_acedc078cd33857dc073e5b1c4efb3455}{led\+\_\+gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+led}{}\end{DoxyParamCaption})}
+
+
+
+Turns LED GPIO off. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p\+\_\+led} & A pointer to the led\+\_\+gpio\+\_\+t structure that was created by the \doxylink{led__gpio_8h_af6c880c2b7e4f7996f168172d8ea47eb}{led\+\_\+gpio\+\_\+create()} function. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{led__gpio_8h_a6a0f424f0e43e65d14bb690e7515fc11}\index{led\_gpio.h@{led\_gpio.h}!led\_gpio\_on@{led\_gpio\_on}}
+\index{led\_gpio\_on@{led\_gpio\_on}!led\_gpio.h@{led\_gpio.h}}
+\doxysubsubsection{\texorpdfstring{led\_gpio\_on()}{led\_gpio\_on()}}
+{\footnotesize\ttfamily \label{led__gpio_8h_a6a0f424f0e43e65d14bb690e7515fc11} 
+void led\+\_\+gpio\+\_\+on (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{led__gpio_8h_acedc078cd33857dc073e5b1c4efb3455}{led\+\_\+gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+led}{}\end{DoxyParamCaption})}
+
+
+
+Turns LED GPIO on. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p\+\_\+led} & A pointer to the led\+\_\+gpio\+\_\+t structure that was created by the \doxylink{led__gpio_8h_af6c880c2b7e4f7996f168172d8ea47eb}{led\+\_\+gpio\+\_\+create()} function. \\
+\hline
+\end{DoxyParams}

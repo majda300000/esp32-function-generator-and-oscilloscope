@@ -1,0 +1,163 @@
+.TH "/home/mbakmaz/bytelab2024/final_task/mashina/components/temp_sensor_sht31/temp_sensor_sht31.c" 3 "Version ." "Mashina" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/mbakmaz/bytelab2024/final_task/mashina/components/temp_sensor_sht31/temp_sensor_sht31.c \- Driver for the SHT31 temperature and humidity sensor using I2C protocol\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'temp_sensor_sht31\&.h'\fP
+.br
+\fR#include <stdio\&.h>\fP
+.br
+\fR#include 'freertos/FreeRTOS\&.h'\fP
+.br
+\fR#include 'freertos/task\&.h'\fP
+.br
+\fR#include 'esp_system\&.h'\fP
+.br
+\fR#include 'esp_log\&.h'\fP
+.br
+\fR#include 'driver/i2c\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBI2C_SCL_IO\fP   21"
+.br
+.RI "I2C SCL pin number\&. "
+.ti -1c
+.RI "#define \fBI2C_SDA_IO\fP   22"
+.br
+.RI "I2C SDA pin number\&. "
+.ti -1c
+.RI "#define \fBI2C_NUM\fP   I2C_NUM_0"
+.br
+.RI "I2C port number\&. "
+.ti -1c
+.RI "#define \fBI2C_TX_BUF_DISABLE\fP   0"
+.br
+.RI "I2C TX buffer disable\&. "
+.ti -1c
+.RI "#define \fBI2C_RX_BUF_DISABLE\fP   0"
+.br
+.RI "I2C RX buffer disable\&. "
+.ti -1c
+.RI "#define \fBI2C_FREQ_HZ\fP   100000"
+.br
+.RI "I2C clock frequency\&. "
+.ti -1c
+.RI "#define \fBSHT31_SENSOR_ADDR\fP   0x44"
+.br
+.RI "SHT31 sensor I2C address\&. "
+.ti -1c
+.RI "#define \fBSHT31_MEASURE_HIGH\fP   0x2130"
+.br
+.RI "Command for high precision measurement\&. "
+.ti -1c
+.RI "#define \fBSHT31_READ\fP   0xE000"
+.br
+.RI "Command to read measurement results\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "esp_err_t \fBtemp_sensor_init\fP (void)"
+.br
+.RI "Initialize the SHT31 sensor\&. "
+.ti -1c
+.RI "esp_err_t \fBtemp_sensor_read\fP (float *temperature, float *humidity)"
+.br
+.RI "Read temperature and humidity from SHT31 sensor\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Driver for the SHT31 temperature and humidity sensor using I2C protocol\&. 
+
+COPYRIGHT NOTICE: (c) 2024 Byte Lab Grupa d\&.o\&.o\&. All rights reserved\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define I2C_FREQ_HZ   100000"
+
+.PP
+I2C clock frequency\&. 
+.SS "#define I2C_NUM   I2C_NUM_0"
+
+.PP
+I2C port number\&. 
+.SS "#define I2C_RX_BUF_DISABLE   0"
+
+.PP
+I2C RX buffer disable\&. 
+.SS "#define I2C_SCL_IO   21"
+
+.PP
+I2C SCL pin number\&. 
+.SS "#define I2C_SDA_IO   22"
+
+.PP
+I2C SDA pin number\&. 
+.SS "#define I2C_TX_BUF_DISABLE   0"
+
+.PP
+I2C TX buffer disable\&. 
+.SS "#define SHT31_MEASURE_HIGH   0x2130"
+
+.PP
+Command for high precision measurement\&. 
+.SS "#define SHT31_READ   0xE000"
+
+.PP
+Command to read measurement results\&. 
+.SS "#define SHT31_SENSOR_ADDR   0x44"
+
+.PP
+SHT31 sensor I2C address\&. 
+.SH "Function Documentation"
+.PP 
+.SS "esp_err_t temp_sensor_init (void )"
+
+.PP
+Initialize the SHT31 sensor\&. Sends the high precision measurement command to the SHT31 sensor\&.
+
+.PP
+\fBReturns\fP
+.RS 4
+.IP "\(bu" 2
+ESP_OK: Success
+.IP "\(bu" 2
+Others: Failure 
+.PP
+.RE
+.PP
+
+.SS "esp_err_t temp_sensor_read (float * temperature, float * humidity)"
+
+.PP
+Read temperature and humidity from SHT31 sensor\&. Reads the measurement data from the SHT31 sensor and converts the raw values into temperature (°C) and humidity (%)\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fItemperature\fP Pointer to store the temperature value 
+.br
+\fIhumidity\fP Pointer to store the humidity value
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+.IP "\(bu" 2
+ESP_OK: Success
+.IP "\(bu" 2
+Others: Failure 
+.PP
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Mashina from the source code\&.

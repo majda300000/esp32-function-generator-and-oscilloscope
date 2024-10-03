@@ -1,0 +1,147 @@
+\doxysection{/home/mbakmaz/bytelab2024/final\+\_\+task/mashina/components/oscilloscope/oscilloscope.h File Reference}
+\hypertarget{oscilloscope_8h}{}\label{oscilloscope_8h}\index{/home/mbakmaz/bytelab2024/final\_task/mashina/components/oscilloscope/oscilloscope.h@{/home/mbakmaz/bytelab2024/final\_task/mashina/components/oscilloscope/oscilloscope.h}}
+
+
+See the source file.  
+
+
+{\ttfamily \#include "{}potentiometer.\+h"{}}\newline
+{\ttfamily \#include "{}timer.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/\+Free\+RTOS.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/queue.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{oscilloscope_8h_aa1cc31ef1370963c9ae18aea721ce76b}{OSCILLOSCOPE\+\_\+\+TIMER\+\_\+\+PERIOD\+\_\+\+US}}~(250)
+\item 
+\#define \mbox{\hyperlink{oscilloscope_8h_afcf3d822077e37834cbeb464b0c6897c}{OSCILLOSCOPE\+\_\+\+WINDOW\+\_\+\+MS}}~(50)
+\item 
+\#define \mbox{\hyperlink{oscilloscope_8h_ab12776e1d917063d72bad5434d092f95}{OSCILLOSCOPE\+\_\+\+SAMPLE\+\_\+\+NUMBER}}~    (\mbox{\hyperlink{oscilloscope_8h_afcf3d822077e37834cbeb464b0c6897c}{OSCILLOSCOPE\+\_\+\+WINDOW\+\_\+\+MS}} \texorpdfstring{$\ast$}{*} 1000 / \mbox{\hyperlink{oscilloscope_8h_aa1cc31ef1370963c9ae18aea721ce76b}{OSCILLOSCOPE\+\_\+\+TIMER\+\_\+\+PERIOD\+\_\+\+US}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct__oscilloscope__t}{\+\_\+oscilloscope\+\_\+t}} \mbox{\hyperlink{oscilloscope_8h_a95fdf0e1118bbf509126d9d2888f6ef1}{oscilloscope\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{oscilloscope_8h_a95fdf0e1118bbf509126d9d2888f6ef1}{oscilloscope\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{oscilloscope_8h_a3c546bef74d74b7881df49519b0d8110}{oscilloscope\+\_\+create}} (int pin, int channel\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Creates new instance of oscilloscope that records signal on channel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{oscilloscope_8h_a4b0971c43e12b33e21e45fba73f4d6df}{oscilloscope\+\_\+start}} (\mbox{\hyperlink{oscilloscope_8h_a95fdf0e1118bbf509126d9d2888f6ef1}{oscilloscope\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{ui__app_8c_a15938075e0ba814cbb182c3fe052777f}{p\+\_\+osc}})
+\begin{DoxyCompactList}\small\item\em Starts timer that reads adc values and fills up buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{oscilloscope_8h_a23ec665b3b70854f425e8737ae196364}{oscilloscope\+\_\+stop}} (\mbox{\hyperlink{oscilloscope_8h_a95fdf0e1118bbf509126d9d2888f6ef1}{oscilloscope\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{ui__app_8c_a15938075e0ba814cbb182c3fe052777f}{p\+\_\+osc}})
+\begin{DoxyCompactList}\small\item\em Stops timer that reads adc values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{oscilloscope_8h_a5d6023096a8a9c88ad426c92f0d5f824}{oscilloscope\+\_\+send\+\_\+new\+\_\+data}} (\mbox{\hyperlink{oscilloscope_8h_a95fdf0e1118bbf509126d9d2888f6ef1}{oscilloscope\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{ui__app_8c_a15938075e0ba814cbb182c3fe052777f}{p\+\_\+osc}}, int \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Copies most recent adc reading buffer to data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{oscilloscope_8h_acd318642f9795daa55915072f723d6fb}{oscilloscope\+\_\+print}} (\mbox{\hyperlink{oscilloscope_8h_a95fdf0e1118bbf509126d9d2888f6ef1}{oscilloscope\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{ui__app_8c_a15938075e0ba814cbb182c3fe052777f}{p\+\_\+osc}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+See the source file. 
+
+COPYRIGHT NOTICE\+: (c) 2024 Byte Lab Grupa d.\+o.\+o. All rights reserved. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{oscilloscope_8h_ab12776e1d917063d72bad5434d092f95}\index{oscilloscope.h@{oscilloscope.h}!OSCILLOSCOPE\_SAMPLE\_NUMBER@{OSCILLOSCOPE\_SAMPLE\_NUMBER}}
+\index{OSCILLOSCOPE\_SAMPLE\_NUMBER@{OSCILLOSCOPE\_SAMPLE\_NUMBER}!oscilloscope.h@{oscilloscope.h}}
+\doxysubsubsection{\texorpdfstring{OSCILLOSCOPE\_SAMPLE\_NUMBER}{OSCILLOSCOPE\_SAMPLE\_NUMBER}}
+{\footnotesize\ttfamily \label{oscilloscope_8h_ab12776e1d917063d72bad5434d092f95} 
+\#define OSCILLOSCOPE\+\_\+\+SAMPLE\+\_\+\+NUMBER~    (\mbox{\hyperlink{oscilloscope_8h_afcf3d822077e37834cbeb464b0c6897c}{OSCILLOSCOPE\+\_\+\+WINDOW\+\_\+\+MS}} \texorpdfstring{$\ast$}{*} 1000 / \mbox{\hyperlink{oscilloscope_8h_aa1cc31ef1370963c9ae18aea721ce76b}{OSCILLOSCOPE\+\_\+\+TIMER\+\_\+\+PERIOD\+\_\+\+US}})}
+
+\Hypertarget{oscilloscope_8h_aa1cc31ef1370963c9ae18aea721ce76b}\index{oscilloscope.h@{oscilloscope.h}!OSCILLOSCOPE\_TIMER\_PERIOD\_US@{OSCILLOSCOPE\_TIMER\_PERIOD\_US}}
+\index{OSCILLOSCOPE\_TIMER\_PERIOD\_US@{OSCILLOSCOPE\_TIMER\_PERIOD\_US}!oscilloscope.h@{oscilloscope.h}}
+\doxysubsubsection{\texorpdfstring{OSCILLOSCOPE\_TIMER\_PERIOD\_US}{OSCILLOSCOPE\_TIMER\_PERIOD\_US}}
+{\footnotesize\ttfamily \label{oscilloscope_8h_aa1cc31ef1370963c9ae18aea721ce76b} 
+\#define OSCILLOSCOPE\+\_\+\+TIMER\+\_\+\+PERIOD\+\_\+\+US~(250)}
+
+\Hypertarget{oscilloscope_8h_afcf3d822077e37834cbeb464b0c6897c}\index{oscilloscope.h@{oscilloscope.h}!OSCILLOSCOPE\_WINDOW\_MS@{OSCILLOSCOPE\_WINDOW\_MS}}
+\index{OSCILLOSCOPE\_WINDOW\_MS@{OSCILLOSCOPE\_WINDOW\_MS}!oscilloscope.h@{oscilloscope.h}}
+\doxysubsubsection{\texorpdfstring{OSCILLOSCOPE\_WINDOW\_MS}{OSCILLOSCOPE\_WINDOW\_MS}}
+{\footnotesize\ttfamily \label{oscilloscope_8h_afcf3d822077e37834cbeb464b0c6897c} 
+\#define OSCILLOSCOPE\+\_\+\+WINDOW\+\_\+\+MS~(50)}
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{oscilloscope_8h_a95fdf0e1118bbf509126d9d2888f6ef1}\index{oscilloscope.h@{oscilloscope.h}!oscilloscope\_t@{oscilloscope\_t}}
+\index{oscilloscope\_t@{oscilloscope\_t}!oscilloscope.h@{oscilloscope.h}}
+\doxysubsubsection{\texorpdfstring{oscilloscope\_t}{oscilloscope\_t}}
+{\footnotesize\ttfamily \label{oscilloscope_8h_a95fdf0e1118bbf509126d9d2888f6ef1} 
+typedef struct \mbox{\hyperlink{struct__oscilloscope__t}{\+\_\+oscilloscope\+\_\+t}} \mbox{\hyperlink{oscilloscope_8h_a95fdf0e1118bbf509126d9d2888f6ef1}{oscilloscope\+\_\+t}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{oscilloscope_8h_a3c546bef74d74b7881df49519b0d8110}\index{oscilloscope.h@{oscilloscope.h}!oscilloscope\_create@{oscilloscope\_create}}
+\index{oscilloscope\_create@{oscilloscope\_create}!oscilloscope.h@{oscilloscope.h}}
+\doxysubsubsection{\texorpdfstring{oscilloscope\_create()}{oscilloscope\_create()}}
+{\footnotesize\ttfamily \label{oscilloscope_8h_a3c546bef74d74b7881df49519b0d8110} 
+\mbox{\hyperlink{oscilloscope_8h_a95fdf0e1118bbf509126d9d2888f6ef1}{oscilloscope\+\_\+t}} \texorpdfstring{$\ast$}{*} oscilloscope\+\_\+create (\begin{DoxyParamCaption}\item[{int}]{pin}{, }\item[{int}]{channel\+\_\+number}{}\end{DoxyParamCaption})}
+
+
+
+Creates new instance of oscilloscope that records signal on channel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel\+\_\+number} & channel to record signal from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+oscilloscope\+\_\+t\texorpdfstring{$\ast$}{*} handle of oscilloscope 
+\end{DoxyReturn}
+\Hypertarget{oscilloscope_8h_acd318642f9795daa55915072f723d6fb}\index{oscilloscope.h@{oscilloscope.h}!oscilloscope\_print@{oscilloscope\_print}}
+\index{oscilloscope\_print@{oscilloscope\_print}!oscilloscope.h@{oscilloscope.h}}
+\doxysubsubsection{\texorpdfstring{oscilloscope\_print()}{oscilloscope\_print()}}
+{\footnotesize\ttfamily \label{oscilloscope_8h_acd318642f9795daa55915072f723d6fb} 
+void oscilloscope\+\_\+print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{oscilloscope_8h_a95fdf0e1118bbf509126d9d2888f6ef1}{oscilloscope\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+osc}{}\end{DoxyParamCaption})}
+
+\Hypertarget{oscilloscope_8h_a5d6023096a8a9c88ad426c92f0d5f824}\index{oscilloscope.h@{oscilloscope.h}!oscilloscope\_send\_new\_data@{oscilloscope\_send\_new\_data}}
+\index{oscilloscope\_send\_new\_data@{oscilloscope\_send\_new\_data}!oscilloscope.h@{oscilloscope.h}}
+\doxysubsubsection{\texorpdfstring{oscilloscope\_send\_new\_data()}{oscilloscope\_send\_new\_data()}}
+{\footnotesize\ttfamily \label{oscilloscope_8h_a5d6023096a8a9c88ad426c92f0d5f824} 
+void oscilloscope\+\_\+send\+\_\+new\+\_\+data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{oscilloscope_8h_a95fdf0e1118bbf509126d9d2888f6ef1}{oscilloscope\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+osc}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Copies most recent adc reading buffer to data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+osc} & Oscilloscope handler which to read from \\
+\hline
+{\em data} & \mbox{[}out\mbox{]} Pointer to empy data \\
+\hline
+\end{DoxyParams}
+\Hypertarget{oscilloscope_8h_a4b0971c43e12b33e21e45fba73f4d6df}\index{oscilloscope.h@{oscilloscope.h}!oscilloscope\_start@{oscilloscope\_start}}
+\index{oscilloscope\_start@{oscilloscope\_start}!oscilloscope.h@{oscilloscope.h}}
+\doxysubsubsection{\texorpdfstring{oscilloscope\_start()}{oscilloscope\_start()}}
+{\footnotesize\ttfamily \label{oscilloscope_8h_a4b0971c43e12b33e21e45fba73f4d6df} 
+void oscilloscope\+\_\+start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{oscilloscope_8h_a95fdf0e1118bbf509126d9d2888f6ef1}{oscilloscope\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+osc}{}\end{DoxyParamCaption})}
+
+
+
+Starts timer that reads adc values and fills up buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+osc} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{oscilloscope_8h_a23ec665b3b70854f425e8737ae196364}\index{oscilloscope.h@{oscilloscope.h}!oscilloscope\_stop@{oscilloscope\_stop}}
+\index{oscilloscope\_stop@{oscilloscope\_stop}!oscilloscope.h@{oscilloscope.h}}
+\doxysubsubsection{\texorpdfstring{oscilloscope\_stop()}{oscilloscope\_stop()}}
+{\footnotesize\ttfamily \label{oscilloscope_8h_a23ec665b3b70854f425e8737ae196364} 
+void oscilloscope\+\_\+stop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{oscilloscope_8h_a95fdf0e1118bbf509126d9d2888f6ef1}{oscilloscope\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+osc}{}\end{DoxyParamCaption})}
+
+
+
+Stops timer that reads adc values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+osc} & \\
+\hline
+\end{DoxyParams}

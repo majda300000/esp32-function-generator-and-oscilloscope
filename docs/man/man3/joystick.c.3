@@ -1,0 +1,99 @@
+.TH "/home/mbakmaz/bytelab2024/final_task/mashina/components/joystick/joystick.c" 3 "Version ." "Mashina" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/mbakmaz/bytelab2024/final_task/mashina/components/joystick/joystick.c \- This file implements Joystick as two potentiometers\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'joystick\&.h'\fP
+.br
+\fR#include 'stdbool\&.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fB_joystick_config_t\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBJOYSTICK_THRESHOLD_CENTER_LOW\fP   400"
+.br
+.ti -1c
+.RI "#define \fBJOYSTICK_THRESHOLD_CENTER_HIGH\fP   600"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBjoystick_err_t\fP \fBjoystick_create\fP (\fBjoystick_id_t\fP joystick_id)"
+.br
+.RI "The function creates the joystick object\&. "
+.ti -1c
+.RI "\fBjoystick_position_t\fP \fBjoystick_position_get\fP (\fBjoystick_id_t\fP joystick_id)"
+.br
+.RI "This function returns the joysticks position as a structure containing 2 positions (for x and y axis)\&. Both of the positions can be in the interval [0, JOYSTICK_MAX_POSITION]\&. "
+.ti -1c
+.RI "\fBjoystick_discrete_position_t\fP \fBjoystick_discrete_position_get\fP (\fBjoystick_id_t\fP joystick_id)"
+.br
+.RI "This function returns the joysticks position as a discrete poition of MIDDLE, UP, DOWN, LEFT or RIGHT\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file implements Joystick as two potentiometers\&. 
+
+COPYRIGHT NOTICE: (c) 2023 Byte Lab Grupa d\&.o\&.o\&. All rights reserved\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define JOYSTICK_THRESHOLD_CENTER_HIGH   600"
+
+.SS "#define JOYSTICK_THRESHOLD_CENTER_LOW   400"
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBjoystick_err_t\fP joystick_create (\fBjoystick_id_t\fP joystick_id)"
+
+.PP
+The function creates the joystick object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick_id\fP The id of the joystick to create\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The status of creation\&. 
+.RE
+.PP
+
+.SS "\fBjoystick_discrete_position_t\fP joystick_discrete_position_get (\fBjoystick_id_t\fP joystick_id)"
+
+.PP
+This function returns the joysticks position as a discrete poition of MIDDLE, UP, DOWN, LEFT or RIGHT\&. 
+.SS "\fBjoystick_position_t\fP joystick_position_get (\fBjoystick_id_t\fP joystick_id)"
+
+.PP
+This function returns the joysticks position as a structure containing 2 positions (for x and y axis)\&. Both of the positions can be in the interval [0, JOYSTICK_MAX_POSITION]\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick_id\fP The id of the joystick which is being checked\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Joysticks position structure (for x and y axis positions)\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Mashina from the source code\&.

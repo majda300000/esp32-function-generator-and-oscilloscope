@@ -1,0 +1,123 @@
+.TH "/home/mbakmaz/bytelab2024/final_task/mashina/components/ui_app/osc_chart/osc_chart.h" 3 "Version ." "Mashina" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/mbakmaz/bytelab2024/final_task/mashina/components/ui_app/osc_chart/osc_chart.h \- See the source file\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'oscilloscope\&.h'\fP
+.br
+\fR#include 'ui\&.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBosc_chart_t\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "esp_err_t \fBosc_chart_init\fP (lv_obj_t *chart, \fBoscilloscope_t\fP *p_osc1, \fBoscilloscope_t\fP *p_osc2)"
+.br
+.RI "Initializes char unit\&. "
+.ti -1c
+.RI "void \fBosc_chart_ch1_show\fP (void)"
+.br
+.RI "Displays channel 1 on chart\&. "
+.ti -1c
+.RI "void \fBosc_chart_ch1_hide\fP (void)"
+.br
+.RI "Hides channel 2 from chart\&. "
+.ti -1c
+.RI "void \fBosc_chart_ch2_show\fP (void)"
+.br
+.RI "Displays channel 2 on chart\&. "
+.ti -1c
+.RI "void \fBosc_chart_ch2_hide\fP (void)"
+.br
+.RI "Hides channel 2 from chart\&. "
+.ti -1c
+.RI "void \fBui_set_div_10ms\fP (void)"
+.br
+.RI "Sets shart divX to 10ms\&. "
+.ti -1c
+.RI "void \fBui_set_div_1ms\fP (void)"
+.br
+.RI "Sets shart divX to 1ms\&. "
+.ti -1c
+.RI "void \fBui_set_div_500mV\fP (void)"
+.br
+.RI "Sets shart divY to 500mV\&. "
+.ti -1c
+.RI "void \fBui_set_div_100mV\fP (void)"
+.br
+.RI "Sets shart divY to 100mV\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+See the source file\&. 
+
+COPYRIGHT NOTICE: (c) 2024 Byte Lab Grupa d\&.o\&.o\&. All rights reserved\&. 
+.SH "Function Documentation"
+.PP 
+.SS "void osc_chart_ch1_hide (void )"
+
+.PP
+Hides channel 2 from chart\&. 
+.SS "void osc_chart_ch1_show (void )"
+
+.PP
+Displays channel 1 on chart\&. 
+.SS "void osc_chart_ch2_hide (void )"
+
+.PP
+Hides channel 2 from chart\&. 
+.SS "void osc_chart_ch2_show (void )"
+
+.PP
+Displays channel 2 on chart\&. 
+.SS "esp_err_t osc_chart_init (lv_obj_t * chart, \fBoscilloscope_t\fP * p_osc1, \fBoscilloscope_t\fP * p_osc2)"
+
+.PP
+Initializes char unit\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIchart\fP Pointer to lvgl chart object 
+.br
+\fIp_osc1\fP pointer to oscilloscope object for channel A 
+.br
+\fIp_osc2\fP pointer to oscilloscope object for channel B 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+esp_err_t 
+.RE
+.PP
+
+.SS "void ui_set_div_100mV (void )"
+
+.PP
+Sets shart divY to 100mV\&. 
+.SS "void ui_set_div_10ms (void )"
+
+.PP
+Sets shart divX to 10ms\&. 
+.SS "void ui_set_div_1ms (void )"
+
+.PP
+Sets shart divX to 1ms\&. 
+.SS "void ui_set_div_500mV (void )"
+
+.PP
+Sets shart divY to 500mV\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Mashina from the source code\&.

@@ -1,0 +1,75 @@
+.TH "/home/mbakmaz/bytelab2024/final_task/mashina/components/temp_sensor_sht31/temp_sensor_sht31.h" 3 "Version ." "Mashina" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/mbakmaz/bytelab2024/final_task/mashina/components/temp_sensor_sht31/temp_sensor_sht31.h \- See the source file\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'esp_system\&.h'\fP
+.br
+\fR#include 'esp_log\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "esp_err_t \fBtemp_sensor_init\fP (void)"
+.br
+.RI "Initialize the SHT31 sensor\&. "
+.ti -1c
+.RI "esp_err_t \fBtemp_sensor_read\fP (float *temperature, float *humidity)"
+.br
+.RI "Read temperature and humidity from SHT31 sensor\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+See the source file\&. 
+
+COPYRIGHT NOTICE: (c) 2024 Byte Lab Grupa d\&.o\&.o\&. All rights reserved\&. 
+.SH "Function Documentation"
+.PP 
+.SS "esp_err_t temp_sensor_init (void )"
+
+.PP
+Initialize the SHT31 sensor\&. Sends the high precision measurement command to the SHT31 sensor\&.
+
+.PP
+\fBReturns\fP
+.RS 4
+.IP "\(bu" 2
+ESP_OK: Success
+.IP "\(bu" 2
+Others: Failure 
+.PP
+.RE
+.PP
+
+.SS "esp_err_t temp_sensor_read (float * temperature, float * humidity)"
+
+.PP
+Read temperature and humidity from SHT31 sensor\&. Reads the measurement data from the SHT31 sensor and converts the raw values into temperature (°C) and humidity (%)\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fItemperature\fP Pointer to store the temperature value 
+.br
+\fIhumidity\fP Pointer to store the humidity value
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+.IP "\(bu" 2
+ESP_OK: Success
+.IP "\(bu" 2
+Others: Failure 
+.PP
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Mashina from the source code\&.
